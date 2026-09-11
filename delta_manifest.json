@@ -1,7 +1,7 @@
 {
-  "id": "metacore_delta_lab_v0_2",
-  "version": "0.2.0",
-  "status": "PUBLIC_TOOLING_READY_GATEWAY_DISABLED",
+  "id": "metacore_delta_lab_v0_3",
+  "version": "0.3.1",
+  "status": "PUBLIC_CAPSULE_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
   "principle": "PRIVATE_ARCHITECTURE_PUBLICLY_TESTABLE_BEHAVIOR",
@@ -31,5 +31,10 @@
   "methodology": "METHODOLOGY.md",
   "security_model": "SECURITY_MODEL.md",
   "grounding": "GROUNDING.md",
-  "local_tool": "tools/delta_lab.py"
+  "local_tool": "tools/delta_lab.py",
+  "capsule_schema": "specs/capsule.schema.json",
+  "suite_manifest": "suite/TEST_SUITE_MANIFEST.json",
+  "proof_model": "PROOF_MODEL.md",
+  "contributing": "CONTRIBUTING_TESTS.md",
+  "validity_controls": "VALIDITY_CONTROLS.md"
 }

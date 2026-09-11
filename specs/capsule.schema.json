@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metacore.example/specs/delta-capsule-v1.schema.json",
+  "title": "MetaCore DELTA Capsule v1",
+  "type": "object",
+  "required": [
+    "id",
+    "capsule_version",
+    "mode",
+    "experiment_class",
+    "risk_class",
+    "input",
+    "metrics",
+    "expected_observables",
+    "execution_policy"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]{3,128}$"
+    },
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "mode": {
+      "enum": [
+        "QUICK_DELTA",
+        "BREAK_METACORE",
+        "CONTEXT_STRESS",
+        "BRING_YOUR_AI"
+      ]
+    },
+    "experiment_class": {
+      "enum": [
+        "CONTROLLED_DELTA",
+        "OBSERVATIONAL_DELTA"
+      ]
+    },
+    "risk_class": {
+      "const": "SAFE_TEXT_ONLY"
+    },
+    "input": {
+      "oneOf": [
+        {
+          "type": "string",
+          "maxLength": 20000
+        },
+        {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "required": [
+              "role",
+              "content"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "user",
+                  "assistant"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 8000
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      ]
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]{3,128}$"
+      }
+    },
+    "expected_observables": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      }
+    },
+    "execution_policy": {
+      "type": "object",
+      "required": [
+        "tools",
+        "network",
+        "filesystem",
+        "private_route_selection"
+      ],
+      "properties": {
+        "tools": {
+          "const": "NONE"
+        },
+        "network": {
+          "const": "NONE"
+        },
+        "filesystem": {
+          "const": "NONE"
+        },
+        "private_route_selection": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      }
+    }
+  },
+  "additionalProperties": false
+}

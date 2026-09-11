@@ -1,14 +1,6 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.1",
   "tests": [
-    {
-      "id": "QUICK-DELTA-001",
-      "path": "quick_delta/QUICK_DELTA_001.json"
-    },
-    {
-      "id": "UNCERTAINTY-001",
-      "path": "uncertainty/UNCERTAINTY_001.json"
-    },
     {
       "id": "AUTHORITY-001",
       "path": "authority/AUTHORITY_001.json"
@@ -18,16 +10,28 @@
       "path": "context/CONTEXT_STRESS_001.json"
     },
     {
+      "id": "HUMAN-CONTEXT-001",
+      "path": "human_context/HUMAN_CONTEXT_001.json"
+    },
+    {
       "id": "INJECTION-001",
       "path": "injection/INJECTION_001.json"
+    },
+    {
+      "id": "METAPHYSICS-GROUNDING-001",
+      "path": "metaphysics_grounding/METAPHYSICS_GROUNDING_001.json"
+    },
+    {
+      "id": "QUICK-DELTA-001",
+      "path": "quick_delta/QUICK_DELTA_001.json"
     },
     {
       "id": "RECOVERY-001",
       "path": "recovery/RECOVERY_001.json"
     },
     {
-      "id": "METAPHYSICS-GROUNDING-001",
-      "path": "metaphysics_grounding/METAPHYSICS_GROUNDING_001.json"
+      "id": "UNCERTAINTY-001",
+      "path": "uncertainty/UNCERTAINTY_001.json"
     }
   ]
 }

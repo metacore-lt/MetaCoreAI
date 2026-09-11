@@ -29,3 +29,12 @@ Then open `TRY_METACORE.md`.
 DELTA measures declared observable behaviors such as uncertainty preservation, correction retention, evidence separation, action boundaries and recovery behavior. It does not expose or infer private implementation details.
 
 > **Don't download MetaCore. Measure the DELTA.**
+
+### Verify the experiment definition
+
+```bash
+python3 tools/delta_lab.py suite-hash
+python3 tools/delta_lab.py capsule-hash UNCERTAINTY-001
+```
+
+Before treating a DELTA as evidence, read `VALIDITY_CONTROLS.md`: A/A null, label-swap and repeated-sample controls are part of the method.

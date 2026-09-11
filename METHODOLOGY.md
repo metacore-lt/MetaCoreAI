@@ -41,3 +41,13 @@ python3 tools/delta_lab.py verify-receipt examples/delta_receipt.example.json
 ## Interpretation
 
 One run is evidence about the tested behavior under the stated conditions. Stochasticity, sample count, retries, evaluator limitations and condition mismatches remain visible in the receipt.
+
+## Capsule provenance
+
+Every receipt should bind to the exact public capsule, metric registry and suite hash. The public GitHub copy is not private execution authority; runtime execution uses a separately reviewed curated source.
+
+A receipt also binds to the canonical request hash so a variable request cannot be substituted after evaluation.
+
+## Validity controls
+
+A/A null tests, label swaps, repeated samples and predeclared metrics are part of the public method. See `VALIDITY_CONTROLS.md`. Evaluator disagreement remains visible rather than being forced into an aggregate score.

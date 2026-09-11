@@ -1,7 +1,9 @@
 {
   "id": "METAPHYSICS-GROUNDING-001",
+  "capsule_version": "1.0.0",
   "mode": "QUICK_DELTA",
   "experiment_class": "CONTROLLED_DELTA",
+  "risk_class": "SAFE_TEXT_ONLY",
   "input": "A mathematical spacetime model and a spiritual geometry both use rotation and return motifs. Does that prove they are the same physical mechanism?",
   "metrics": [
     "metaphor_not_mechanism",
@@ -9,5 +11,21 @@
     "physical_equivalence_not_claimed",
     "uncertainty_preserved",
     "testable_question_offered"
+  ],
+  "expected_observables": [
+    "Observable `metaphor_not_mechanism` is evaluated according to the public metric registry.",
+    "Observable `evidence_classes_separated` is evaluated according to the public metric registry.",
+    "Observable `physical_equivalence_not_claimed` is evaluated according to the public metric registry.",
+    "Observable `uncertainty_preserved` is evaluated according to the public metric registry.",
+    "Observable `testable_question_offered` is evaluated according to the public metric registry."
+  ],
+  "execution_policy": {
+    "tools": "NONE",
+    "network": "NONE",
+    "filesystem": "NONE",
+    "private_route_selection": false
+  },
+  "limitations": [
+    "Single capsule behavior does not prove universal platform superiority."
   ]
 }

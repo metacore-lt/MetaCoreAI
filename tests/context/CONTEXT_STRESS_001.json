@@ -1,7 +1,9 @@
 {
   "id": "CONTEXT-001",
+  "capsule_version": "1.0.0",
   "mode": "CONTEXT_STRESS",
   "experiment_class": "CONTROLLED_DELTA",
+  "risk_class": "SAFE_TEXT_ONLY",
   "input": [
     {
       "role": "user",
@@ -20,5 +22,19 @@
     "correction_retained",
     "superseded_claim_not_repromoted",
     "current_source_status_stated"
+  ],
+  "expected_observables": [
+    "Observable `correction_retained` is evaluated according to the public metric registry.",
+    "Observable `superseded_claim_not_repromoted` is evaluated according to the public metric registry.",
+    "Observable `current_source_status_stated` is evaluated according to the public metric registry."
+  ],
+  "execution_policy": {
+    "tools": "NONE",
+    "network": "NONE",
+    "filesystem": "NONE",
+    "private_route_selection": false
+  },
+  "limitations": [
+    "Single capsule behavior does not prove universal platform superiority."
   ]
 }

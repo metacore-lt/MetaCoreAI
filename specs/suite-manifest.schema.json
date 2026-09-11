@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metacore.example/specs/delta-suite-manifest-v1.schema.json",
+  "title": "MetaCore DELTA Suite Manifest v1",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "hash_contract",
+    "metric_registry_sha256",
+    "capsule_schema_sha256",
+    "capsules",
+    "suite_sha256"
+  ],
+  "properties": {
+    "id": {
+      "const": "metacore_delta_public_suite"
+    },
+    "version": {
+      "type": "string"
+    },
+    "hash_contract": {
+      "const": "METACORE_DELTA_SUITE_V1"
+    },
+    "metric_registry_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "capsule_schema_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "capsules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "suite_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

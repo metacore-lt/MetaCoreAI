@@ -9,3 +9,5 @@ MetaCore DELTA Lab follows five public invariants:
 5. **One run is evidence about one run.** It is not universal proof of model or platform superiority.
 
 The live request gateway remains unavailable until its security, quota, isolation, output-sanitization, timeout and rollback gates pass.
+
+6. **GitHub is not execution authority.** Public repository changes, pull requests and issues never become private runtime instructions automatically.

@@ -42,5 +42,10 @@
       "receipt_sha256"
     ]
   },
-  "receipt_sha256": "sha256:ddf48224faac5b5df6794b58a1fae27558b4f3d9a483d164c296a5cb55fc91e0"
+  "receipt_sha256": "sha256:33b997d0faa7a7f33454009fb1962861ece9dcc1a2361a47968aed9396761588",
+  "capsule_sha256": "sha256:07aa8190810a01bed1656e8a490b9186a0a9afa52745c694a0a0ff04c0ce655d",
+  "metric_registry_sha256": "sha256:940298668306f8ca5da78c844898b2b42608ed8175840d00961449dc0143e638",
+  "suite_sha256": "sha256:d81efae4a9063bda1deed081d86afca433ea5134986587deba8c178a18bfeba4",
+  "evaluation_blinded": true,
+  "request_sha256": "sha256:f7c625207ef01edb13ffdf0f0129b58112fb2beef480a8320cf97eb1f51e58c0"
 }

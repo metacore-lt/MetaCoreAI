@@ -1,12 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-receipt-v0.2.schema.json",
-  "title": "MetaCore DELTA Receipt v0.2",
+  "$id": "https://metacore.example/specs/delta-receipt-v0.3.schema.json",
+  "title": "MetaCore DELTA Receipt v0.3",
   "type": "object",
   "required": [
     "run_id",
     "test_id",
     "experiment_class",
+    "request_sha256",
+    "evaluation_blinded",
+    "suite_sha256",
+    "metric_registry_sha256",
+    "capsule_sha256",
     "baseline_output_hash",
     "metacore_output_hash",
     "metrics",
@@ -120,6 +125,25 @@
       "additionalProperties": false
     },
     "receipt_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "capsule_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "metric_registry_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "suite_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "evaluation_blinded": {
+      "type": "boolean"
+    },
+    "request_sha256": {
       "type": "string",
       "pattern": "^sha256:[a-f0-9]{64}$"
     }
