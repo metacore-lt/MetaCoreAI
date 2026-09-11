@@ -1,0 +1,327 @@
+{
+  "id": "metacore_company_ai_adoption_model_v1",
+  "version": "1.0.0",
+  "status": "ACTIVE_CANONICAL_PUBLIC_SAFE",
+  "updated_at": "2026-09-10T20:29:51.447361+00:00",
+  "scope": "organizational deployment profile for MetaCore Business",
+  "category": "Business AI Adoption / Organizational MetaCore Deployment",
+  "purpose": "Teach any MetaCore-connected AI how to adapt the platform to a business subject by mapping company truth, authority, people, processes, systems, AI roles, observability, measured delta and controlled scale.",
+  "north_star": "UNDERSTAND_THE_COMPANY_BEFORE_AUTOMATING_THE_COMPANY",
+  "platform_relation": {
+    "platform": "MetaCore Persistent AI Operating Platform",
+    "deployment_scale": "ORGANIZATIONAL",
+    "product_profile": "MetaCore Business",
+    "architecture_rule": "Compose existing MetaCore platform planes around the company; do not create a new top-level platform plane."
+  },
+  "company_as_subject": {
+    "definition": "A company is modeled as a governed operational subject with owners, sources of truth, roles, processes, systems, decisions, evidence, current state and measurable outcomes.",
+    "not_a_single_memory": "Company context is federated across owned systems and documents; MetaCore should route to the smallest relevant branch rather than merge all company data into one uncontrolled memory.",
+    "state_dimensions": [
+      "identity_and_mission",
+      "owners_and_authority",
+      "source_of_truth",
+      "people_and_roles",
+      "processes_and_handoffs",
+      "systems_and_connections",
+      "persona_and_experts",
+      "runtime_and_observability",
+      "kpi_baseline_and_delta",
+      "scale_and_recovery"
+    ]
+  },
+  "adoption_router": [
+    "COMPANY_IDENTITY",
+    "MISSION_AND_BUSINESS_OBJECTIVE",
+    "SOURCE_OF_TRUTH",
+    "AUTHORITY",
+    "PERSONA_AND_EXPERTS",
+    "PROCESS_AND_HANDOFFS",
+    "CONNECTIONS_AND_TOOLS",
+    "RUNTIME",
+    "OBSERVABILITY",
+    "KPI_DELTA",
+    "SCALE"
+  ],
+  "organizational_layers": [
+    {
+      "id": "L0_HUMAN_GOVERNANCE",
+      "contains": [
+        "executive sponsor",
+        "MetaCore owner",
+        "process owners",
+        "technical owner",
+        "security/data owner",
+        "approval matrix"
+      ]
+    },
+    {
+      "id": "L1_IDENTITY_ACCESS",
+      "contains": [
+        "users",
+        "roles",
+        "scoped credentials",
+        "MCP/API profiles",
+        "SSO when available"
+      ]
+    },
+    {
+      "id": "L2_COMPANY_METACORE_RUNTIME",
+      "contains": [
+        "shared base_core method",
+        "company context",
+        "Company AI Persona",
+        "bounded Experts",
+        "adaptive workbench",
+        "routing",
+        "continuity"
+      ]
+    },
+    {
+      "id": "L3_KNOWLEDGE_DATA",
+      "contains": [
+        "canonical documents",
+        "source inventory",
+        "CRM/ERP/accounting/warehouse/support sources",
+        "historical context with freshness labels"
+      ]
+    },
+    {
+      "id": "L4_PROCESS_AUTOMATION",
+      "contains": [
+        "workflows",
+        "handoffs",
+        "agent tasks",
+        "approval gates",
+        "exceptions",
+        "controlled automation"
+      ]
+    },
+    {
+      "id": "L5_OBSERVABILITY_EVIDENCE",
+      "contains": [
+        "source freshness",
+        "tool health",
+        "holds",
+        "errors",
+        "audit events",
+        "KPI baseline",
+        "KPI delta",
+        "employee feedback"
+      ]
+    },
+    {
+      "id": "L6_RECOVERY",
+      "contains": [
+        "backup",
+        "restore",
+        "rollback",
+        "credential rotation",
+        "incident handoff"
+      ]
+    }
+  ],
+  "adoption_lifecycle": [
+    {
+      "phase": "PHASE_0_DISCOVERY_AUTHORITY",
+      "output": "company start profile + owners/authority + first business objective"
+    },
+    {
+      "phase": "PHASE_1_DOCUMENT_DATA",
+      "output": "document/system inventory + approved source-of-truth shortlist"
+    },
+    {
+      "phase": "PHASE_2_PROCESS_ROLE_SYSTEM",
+      "output": "process shortlist + role/task + handoff + decision + KPI baseline maps"
+    },
+    {
+      "phase": "GATE_A_START_PACKAGE_ACCEPTANCE",
+      "verdicts": [
+        "GO",
+        "REVIEW",
+        "HOLD"
+      ],
+      "authority": "permits L1 preparation only, not production writes"
+    },
+    {
+      "phase": "PHASE_3_L1_ARCHITECTURE_BUILD",
+      "output": "minimum company MetaCore instance for first pilot"
+    },
+    {
+      "phase": "PHASE_4_CONNECTIVITY",
+      "output": "minimum-privilege human/AI/client/tool connections"
+    },
+    {
+      "phase": "GATE_B_TECHNICAL_GO_LIVE",
+      "verdicts": [
+        "READY",
+        "REVIEW",
+        "HOLD"
+      ],
+      "authority": "technical readiness does not equal unrestricted automation authority"
+    },
+    {
+      "phase": "PHASE_5_CONTROLLED_GO_LIVE",
+      "output": "one bounded real workflow, read/analyze/draft first"
+    },
+    {
+      "phase": "PHASE_6_HYPERCARE",
+      "output": "stabilized pilot, local holds, issue/failure patterns"
+    },
+    {
+      "phase": "PHASE_7_PILOT_DELTA",
+      "output": "measured before/after business delta"
+    },
+    {
+      "phase": "GATE_C_BUSINESS_ACCEPTANCE",
+      "verdicts": [
+        "STOP",
+        "ITERATE",
+        "SCALE"
+      ],
+      "authority": "scale requires verified value and owner acceptance"
+    },
+    {
+      "phase": "PHASE_8_SCALE",
+      "output": "controlled expansion by users/tasks/tools/systems/experts/departments"
+    }
+  ],
+  "company_ai_blueprint_semantics": {
+    "company": "identity, organization, process catalogue and baseline facts",
+    "source_of_truth": "which company source/owner is authoritative for each material fact",
+    "authority": "who may read, draft, approve, write, execute or commit",
+    "persona": "cross-company context interface and router; not autonomous executive authority",
+    "experts": "bounded specialist AI roles created from real responsibilities, not decorative agent count",
+    "process": "triggers, inputs, roles, systems, handoffs, decisions, outputs, exceptions and KPI",
+    "connections": "approved technical access paths; capability never grants authority",
+    "runtime": "current mission, readiness, holds and operation state",
+    "observability": "freshness, tool health, holds, errors and audit",
+    "kpi_delta": "measured value before/after pilot; estimated productivity gain remains hypothesis until measured",
+    "scale": "next process/system/expert/write-scope candidates only after stable verified delta"
+  },
+  "human_ai_operating_split": {
+    "human_premium": [
+      "accountability",
+      "business decisions",
+      "creativity",
+      "negotiation",
+      "client relationships",
+      "ambiguous/high-context judgment",
+      "exception ownership"
+    ],
+    "ai_leverage": [
+      "context retrieval",
+      "drafting",
+      "summarization",
+      "classification",
+      "structured extraction",
+      "handoff preparation",
+      "cross-system synchronization",
+      "monitoring",
+      "exception surfacing",
+      "evidence and continuity"
+    ],
+    "rule": "Use AI to increase verified business output and reduce coordination/error cost without silently moving accountability away from authorized people."
+  },
+  "first_pilot_rule": {
+    "principle": "START_WITH_THE_SMALLEST_USEFUL_OPERATIONAL_SLICE",
+    "target": [
+      "one department",
+      "one recurring process",
+      "1-3 canonical sources",
+      "one employee-facing AI client",
+      "one controlled tool/integration",
+      "one measurable KPI"
+    ],
+    "scale_condition": "Expand only from verified delta and known failure/rollback behavior."
+  },
+  "initial_ai_behavior_when_company_detected": [
+    "identify the company mission and current business objective from available authorized context",
+    "map known owners and approval roles; mark missing authority rather than guessing",
+    "identify source-of-truth systems/documents for the requested process",
+    "map the process, roles, handoffs, decisions, exceptions and baseline KPI",
+    "assemble only the minimum Persona/Experts/tools needed for the first mission",
+    "start integrations READ_ONLY or DRAFT where practical",
+    "keep missing dependency as local HOLD when possible",
+    "measure mission/business delta before recommending scale"
+  ],
+  "company_state_claim_classes": [
+    "COMPANY_FACT",
+    "SOURCE_OWNER_RECORD",
+    "PROCESS_OBSERVATION",
+    "ROLE_MANDATE",
+    "SYSTEM_CAPABILITY",
+    "READINESS_STATE",
+    "KPI_BASELINE",
+    "KPI_DELTA",
+    "AI_OPPORTUNITY_HYPOTHESIS",
+    "HOLD",
+    "UNKNOWN"
+  ],
+  "hard_rules": [
+    "DOCUMENT_AND_PROCESS_TRUTH_BEFORE_AUTOMATION",
+    "SOURCE_OF_TRUTH_OWNS_FACTS",
+    "TOOL_CAPABILITY_DOES_NOT_GRANT_AUTHORITY",
+    "HUMAN_MISSION_DOES_NOT_UPGRADE_EVIDENCE",
+    "READ_OR_DRAFT_BEFORE_HIGHER_RISK_WRITE_WHERE_PRACTICAL",
+    "PRODUCTION_WRITES_REQUIRE_EXPLICIT_OWNER_SCOPE",
+    "HOLD_IS_LOCAL_BY_DEFAULT",
+    "SECRETS_ARE_REFERENCES_NOT_BASE_CORE_CONTENT",
+    "ESTIMATED_PRODUCTIVITY_GAIN_IS_HYPOTHESIS_UNTIL_MEASURED",
+    "PILOT_BEFORE_SCALE",
+    "SCALE_FROM_VERIFIED_DELTA_NOT_INFRASTRUCTURE_AVAILABILITY",
+    "COMPANY_PRIVATE_STATE_DOES_NOT_LIVE_IN_SHARED_BASE_CORE"
+  ],
+  "storage_boundary": {
+    "shared_base_core": "stores reusable public-safe method, routing and adoption model only",
+    "company_instance": "stores authorized company-specific facts, documents, process state, connections, audit and continuity",
+    "credentials": "stored only in approved secret/credential systems; never embedded in this shared module"
+  },
+  "connectivity_pattern": [
+    "employee/local AI client -> approved integration fabric -> company MetaCore workspace",
+    "company MetaCore -> approved source systems/tools",
+    "write/execute paths remain separately scoped and auditable"
+  ],
+  "tier_orientation": {
+    "METACLOUD_1GB": "managed persistent company context/workspace for scoped read, analysis, drafting and continuity workflows",
+    "METACORE_CODEX_50": "dedicated company execution/development workspace for deeper integrations and operational tooling where required",
+    "rule": "Select the minimum tier and access paths required for the first real process; product availability and pricing resolve through current platform authority."
+  },
+  "kpi_examples": [
+    "revenue_per_FTE",
+    "active_customers_per_FTE",
+    "orders_per_FTE",
+    "lead_to_response_time",
+    "support_resolution_time",
+    "operation_cost",
+    "error_rework_rate",
+    "manual_handoffs_per_process",
+    "decision_cycle_time"
+  ],
+  "source_lineage": {
+    "source_class": "INTERNAL_COMPANY_AI_FACTORY_CANON_REVIEWED_FOR_PUBLIC_DERIVATIVE",
+    "factory_snapshot_version": "1.3.0",
+    "factory_state_at_review": {
+      "status": "ACTIVE_TEMPLATE",
+      "validation": "PASS",
+      "current_template": "01_TEMPLATE/COMPANY_TEMPLATE_V1",
+      "manifest_sha256_audit": "5be1639fdcb641de1dd58aeb917897f0345082a6fdeb81a9ae0e3efed09ec701",
+      "reviewed_at": "2026-09-10T20:29:51.447361+00:00"
+    },
+    "semantic_source_sha256": [
+      "45fd1f0a5d0ebd520e6efc1496c51074f6fc4eefab26d0ff57238d531858161d",
+      "4ae3d6c128ccd911787d957f1a7b0797935c525826ecf675276d620eb75014bf",
+      "531de494def2cf77f24960152d8cfe8c680c18ce8998d5fc4bb8b962ea5e134a",
+      "0ec1834ab096025b19473ecf2ff3bab8cd2dd86062af412eb3b5978c74e16862",
+      "d0ffcda47f00b89959a92cc7a045bb9159d6f7513c68e29ca7560a9589ac63bb",
+      "b1117a11484e2a015b7bcc9fdfb846a4c2399b80f0c62c338cc46be8a86ea39c",
+      "06857dd9368e42d00b30702736a4e9933858dd6c4c9bafc4448e213bd8ad4f14"
+    ],
+    "semantic_dependency_count": 7,
+    "semantic_dependency_rule": "Re-review when any semantic source hash changes or Factory version/template/status materially changes.",
+    "manifest_dependency_rule": "Manifest housekeeping, indexing or federation-validation metadata may change without invalidating this derivative when Factory version/current template remain compatible and all semantic source hashes are unchanged.",
+    "previous_manifest_sha256_audit": "9a207c2704bd89b40782e888c4c12a643e96d2caf8ca572fb1518fe5d44c751b",
+    "private_source_paths_exposed": false
+  },
+  "relation_to_ai_core_team": "Company AI Adoption defines the organizational integration scaffold. AI Core Team defines optional professional operating roles. Roles are instantiated only when supported by real company processes and authority.",
+  "public_content": "architecture_method_and_routing_only_no_company_private_data_no_factory_internals"
+}

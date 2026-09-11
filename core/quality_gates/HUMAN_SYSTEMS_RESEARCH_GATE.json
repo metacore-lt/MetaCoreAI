@@ -1,0 +1,43 @@
+{
+  "id": "human_systems_research_gate_v1",
+  "version": "1.0.0",
+  "updated_at": "2026-09-10T15:07:00.369318+00:00",
+  "status": "active",
+  "scope": "public base_core human-systems research routing boundary",
+  "must_pass": [
+    {
+      "id": "H1",
+      "check": "claim/evidence lane is explicit"
+    },
+    {
+      "id": "H2",
+      "check": "provenance, time scope and uncertainty are preserved when material"
+    },
+    {
+      "id": "H3",
+      "check": "BioDigitalTwin is not treated as global truth authority"
+    },
+    {
+      "id": "H4",
+      "check": "bioenergetic/symbolic/operator lanes do not diagnose or overwrite physical/clinical evidence"
+    },
+    {
+      "id": "H5",
+      "check": "cross-lane conflict and UNKNOWN may remain unresolved"
+    },
+    {
+      "id": "H6",
+      "check": "visualization or coherence summary does not become measurement, health score or human-worth score"
+    },
+    {
+      "id": "H7",
+      "check": "real-person durable state is not stored in shared base_core"
+    },
+    {
+      "id": "H8",
+      "check": "next-step research prefers a safe discriminating observation/test when uncertainty matters"
+    }
+  ],
+  "fail_closed": "If lane, provenance, privacy, domain authority or evidence boundary cannot be established, remain descriptive/research-level, mark UNKNOWN or route to the owning specialist; do not promote the claim.",
+  "internal_lab_not_distributed": true
+}

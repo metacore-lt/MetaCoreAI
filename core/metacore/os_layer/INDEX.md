@@ -1,0 +1,46 @@
+# MetaCore OS Index
+
+Status: **active_canonical** · runtime **2.6-adaptive-co-creator-runtime** · public extensions **1.3-company-ai-adoption**
+
+Canonical JSON: `INDEX.json` · active composition: `METACORE_OS_ACTIVE_LAYER.json`
+
+## Canonical read order
+
+1. `METACORE_OS_ACTIVE_LAYER.json`
+2. `METACORE_OS_RUNTIME_MANIFEST.json`
+3. `METACORE_OS_RUNTIME_ROUTE.json`
+4. `METACORE_RUNTIME_TOPOLOGY_L0_L5.json`
+5. `METACORE_OS_LIFE_DIGNITY_COHERENCE_CONSTITUTION.json`
+6. `METACORE_OS_AUTHORITY_MODEL.json`
+7. `METACORE_OS_ROLE_MANDATE_HUMANISM.json`
+8. `METACORE_OS_EPISTEMIC_POLICY.json`
+9. `METACORE_OS_METAPHYSICAL_ORIENTATION_PROTOCOL.json`
+10. `../../quality_gates/METACORE_OS_RUNTIME_GATE.json`
+11. `METACORE_OS_SESSION_SERVICE_BALANCE_PROTOCOL.json`
+12. `METACORE_OS_HUMAN_AI_CREATIVE_BALANCE_PROTOCOL.json`
+13. `METACORE_OS_ADAPTIVE_WORKBENCH_COMPACT.json`
+14. `METACORE_OS_ADAPTIVE_CO_CREATOR_RUNTIME.json`
+15. `METACORE_OS_QUIET_HUMAN_OBSERVER_GUARD_V1.json`
+16. `METACORE_OS_HUMAN_DEVELOPMENT_SYNC_PROTOCOL.json`
+17. `METACORE_OS_HUMAN_OBSERVATION_INTEGRITY_PROTOCOL.json`
+18. `METACORE_OS_RELATIONAL_NON_MANIPULATION_PROTOCOL.json`
+19. `METACORE_OS_HUMAN_REFLECTIVE_TOPOLOGY_PROTOCOL.json`
+20. `METACORE_OS_HUMAN_TOPOLOGY_RETENTION_POLICY.json`
+21. `METACORE_OS_HUMAN_TOPOLOGY_STATE_SCHEMA.json`
+22. `METACORE_OS_COLLECTIVE_COHERENCE_PROTOCOL.json`
+23. `METACORE_OS_KNOWLEDGE_TOPOLOGY.json`
+24. `METACORE_OS_FIRMWARE_ROUTER.json`
+25. `METACORE_OS_STATE_CONTRACT.json`
+26. `METACORE_OS_WRITEBACK_HANDOFF.json`
+27. `METACORE_OS_PUBLIC_SPECIALIST_FEDERATION.json`
+28. `domain_profiles/company_ai_adoption/INDEX.json`
+29. `domain_profiles/human_systems_research/INDEX.json`
+30. `METACORE_OS_STATEFUL_INTENT_COMPRESSION.json`
+
+## On-demand public routes
+
+- Metaphysical Orientation → `METACORE_OS_METAPHYSICAL_ORIENTATION_PROTOCOL.json`
+- BioDigitalTwin × Human Systems Research OS → `domain_profiles/human_systems_research/INDEX.json`
+- MetaCore Business / Company AI Adoption → `domain_profiles/company_ai_adoption/INDEX.json`
+
+Public profiles are routing contracts, not copies of private LABs or tenant state. JSON is canonical; if an MD twin disagrees, trust JSON.

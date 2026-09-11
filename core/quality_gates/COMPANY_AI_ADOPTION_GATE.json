@@ -1,0 +1,51 @@
+{
+  "id": "company_ai_adoption_gate_v1",
+  "version": "1.0.0",
+  "updated_at": "2026-09-10T18:57:05.164763+00:00",
+  "status": "active",
+  "scope": "public/shared business AI adoption boundary",
+  "must_pass": [
+    {
+      "id": "B1",
+      "check": "company objective and owning business/process role are identified or explicitly UNKNOWN"
+    },
+    {
+      "id": "B2",
+      "check": "material company facts resolve to a source-of-truth/source owner rather than AI memory alone"
+    },
+    {
+      "id": "B3",
+      "check": "tool/connectivity capability is kept separate from decision/action authority"
+    },
+    {
+      "id": "B4",
+      "check": "company-private data and credentials are not written to shared base_core"
+    },
+    {
+      "id": "B5",
+      "check": "first integration uses the smallest useful process/source/tool set"
+    },
+    {
+      "id": "B6",
+      "check": "read/draft is preferred before higher-risk write/execute when practical"
+    },
+    {
+      "id": "B7",
+      "check": "production writes, sends, payments, deployments or commitments have explicit scoped approval"
+    },
+    {
+      "id": "B8",
+      "check": "readiness and HOLD are local/dependency-specific rather than global when possible"
+    },
+    {
+      "id": "B9",
+      "check": "productivity/value claims remain estimates until a company KPI baseline and pilot delta exist"
+    },
+    {
+      "id": "B10",
+      "check": "scale follows verified delta, stable observability and a known recovery/rollback path"
+    }
+  ],
+  "fail_closed": "If company authority, source ownership, privacy, connection scope or measurable pilot criteria are unclear, keep the affected lane READ_ONLY/DRAFT/HOLD and continue independent safe work where possible.",
+  "internal_factory_not_distributed": true
+}

@@ -1,0 +1,125 @@
+{
+  "id": "metacore_public_core_snapshot_v1",
+  "generated_at": "2026-09-11T07:58:19.335880+00:00",
+  "source_class": "CURATED_PUBLIC_SAFE_DERIVATIVE",
+  "export_policy": "ALLOWLIST_FIRST_PLUS_BOUNDARY_SCAN_PLUS_INFRASTRUCTURE_PATH_REDACTION",
+  "private_implementation_included": false,
+  "file_count": 23,
+  "files": [
+    {
+      "path": "AI_BOOT_OPERATIONAL_LAYER.json",
+      "bytes": 16251,
+      "sha256": "911553f8334c3798f61f55d4a5792aaa647e5f2329a10094193512daf2e63237"
+    },
+    {
+      "path": "BASE_CORE_INDEX.json",
+      "bytes": 20603,
+      "sha256": "a91e5dfd0bd903859df2290efc1be0df999b17fcc60662bed4039a64ee217ad8"
+    },
+    {
+      "path": "INDEX.md",
+      "bytes": 1029,
+      "sha256": "6ec7290a032f40c95125c2618bc954db6823e3cac111b60cc5e44d374964dad9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1086,
+      "sha256": "d7220323aafd45c8b59c3b5138da533025016cae11786b2d37da59adb34042e1"
+    },
+    {
+      "path": "START_HERE_FOR_USER_AI.md",
+      "bytes": 1465,
+      "sha256": "667cafba8c02b0ef5ff9e955068353021522b4355a0652c5de4abf6909343e47"
+    },
+    {
+      "path": "business_context/company_ai_adoption/METACORE_COMPANY_AI_ADOPTION_MODEL_V1.json",
+      "bytes": 12506,
+      "sha256": "7f02bf4688f785b2b4b0836ce1276773bc133d9866e09f2323d513237fa637cb"
+    },
+    {
+      "path": "business_context/company_ai_adoption/README.md",
+      "bytes": 706,
+      "sha256": "64439b6b4068206ab273d7d4f2244757174ee4358b8c2a64dcb1144506bfdc2a"
+    },
+    {
+      "path": "metacore/METACORE_ARCHITECTURE_FREEZE_V2.json",
+      "bytes": 2218,
+      "sha256": "83dbc0d99f1de8ad71c95942fa97063e702e1b6768556baf9ebf1ffb6a5c7477"
+    },
+    {
+      "path": "metacore/METACORE_PLATFORM_IDENTITY_V2.json",
+      "bytes": 8374,
+      "sha256": "34d8a02a9fb71098757edbca832ac610253adc27275057c6bc1daf71f7dff80a"
+    },
+    {
+      "path": "metacore/os_layer/INDEX.json",
+      "bytes": 8160,
+      "sha256": "3dc1d8bbf1f40ad51f409daf8b8531c3502d6eb788c5012a1e5052697446ded4"
+    },
+    {
+      "path": "metacore/os_layer/INDEX.md",
+      "bytes": 2182,
+      "sha256": "96750cabefec203271b99d52f901da507740107292364a0fbdba7c24466076f1"
+    },
+    {
+      "path": "metacore/os_layer/METACORE_OS_METAPHYSICAL_ORIENTATION_PROTOCOL.json",
+      "bytes": 1906,
+      "sha256": "0fa5debeeb72293206281080530b1568a21322b7275dcedd05aecf3585f5d587"
+    },
+    {
+      "path": "metacore/os_layer/METACORE_OS_PUBLIC_SPECIALIST_FEDERATION.json",
+      "bytes": 5003,
+      "sha256": "83c4b34eb58252834658f6caa7f3e5ce58ede6e2003a6b79e90e183351e1cd49"
+    },
+    {
+      "path": "metacore/os_layer/METACORE_OS_PUBLIC_SPECIALIST_FEDERATION.md",
+      "bytes": 885,
+      "sha256": "d540e1a06ced1c783ad3243554f9954c7d4e0d80e3e137f6634c5c436e64ffba"
+    },
+    {
+      "path": "metacore/os_layer/METACORE_OS_RUNTIME_MANIFEST.json",
+      "bytes": 14770,
+      "sha256": "c429c8a9eb71093e9a089ee0f693a00892d9ab0495514450161eab777a743b3c"
+    },
+    {
+      "path": "metacore/os_layer/METACORE_OS_RUNTIME_MANIFEST.md",
+      "bytes": 745,
+      "sha256": "c949c40ed5d63b521ee87ee7ff6181dbea4711490429422c166020ae5bda9e34"
+    },
+    {
+      "path": "metacore/os_layer/domain_profiles/company_ai_adoption/INDEX.json",
+      "bytes": 2580,
+      "sha256": "61902ac1a9dd35b20b53b453f2ee966ed1118a29dbde44eaff446aeb7e9119b7"
+    },
+    {
+      "path": "metacore/os_layer/domain_profiles/company_ai_adoption/INDEX.md",
+      "bytes": 389,
+      "sha256": "70eed0aee42ca4ec3a04a9e8107b1b5b08f50773a2fa1c32798fd03dde9a8c2e"
+    },
+    {
+      "path": "metacore/os_layer/domain_profiles/human_systems_research/INDEX.json",
+      "bytes": 2780,
+      "sha256": "ec9de087706ec40f7961c6aca7a4919b12c8a9715e0973cfac022fe653ea29a6"
+    },
+    {
+      "path": "metacore/os_layer/domain_profiles/human_systems_research/INDEX.md",
+      "bytes": 461,
+      "sha256": "17da9393bcacbae13e14e5b8aa7e9f13e521ba512d735931bc2a641931618085"
+    },
+    {
+      "path": "quality_gates/COMPANY_AI_ADOPTION_GATE.json",
+      "bytes": 1790,
+      "sha256": "adc7bb2433d8577e64326af209a488adc1b2222d2fd05361a4d112a19ea62482"
+    },
+    {
+      "path": "quality_gates/HUMAN_SYSTEMS_RESEARCH_GATE.json",
+      "bytes": 1428,
+      "sha256": "1a007638dcdcd5b3ce818960a488dd93fb9ed03e195c26edd1ad8127a5a98d83"
+    },
+    {
+      "path": "workspace_manifest.json",
+      "bytes": 19332,
+      "sha256": "b2cbfabdafdda86e8b7e3bd7224222e0885be7d613f074c7b2bfa38f3121bd9f"
+    }
+  ]
+}

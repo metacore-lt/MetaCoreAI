@@ -1,0 +1,33 @@
+{
+  "id": "metacore_architecture_freeze_v2",
+  "version": "2.0-composable-platform-planes",
+  "status": "ACTIVE_CANONICAL_FREEZE",
+  "frozen_at": "2026-09-10T17:02:12.301329+00:00",
+  "supersedes": "METACORE_ARCHITECTURE_FREEZE_V1.json",
+  "architecture_authority": "METACORE_PLATFORM_IDENTITY_V2.json",
+  "change_reason": "Replace an overly linear platform-layer representation with composable platform planes while preserving MetaCore category, scoped authority, runtime 2.6 and evidence boundaries.",
+  "frozen_invariants": [
+    "MetaCore = Persistent AI Operating Platform.",
+    "MetaCore OS = Operating, Context & Control Core; Layer remains a public compatibility alias.",
+    "Products compose platform capabilities; products are not platform infrastructure planes.",
+    "Integration Fabric and Execution are distinct.",
+    "Security, Evidence and Economy are cross-cutting planes.",
+    "AI Persona and Agent remain distinct; fixed B1 concurrency counts require measured evidence.",
+    "Model providers are replaceable intelligence sources; MetaCore continuity is provider-neutral.",
+    "KR are internal service credits, not money/crypto/cash-out/automatic FX.",
+    "Unknown/hypothetical/metaphysical material may orient inquiry but cannot self-promote to verified fact or action authority.",
+    "Dignity is universal; authority is scoped.",
+    "Private Team LAB remains opaque from base_core; only reviewed minimal derivatives promote into base_core."
+  ],
+  "compatibility": {
+    "runtime": "2.6 adaptive co-creator runtime remains unchanged by this architecture-category patch.",
+    "v1_identity": "Retained as superseded lineage.",
+    "v1_freeze": "Retained as superseded lineage.",
+    "public_os_layer_word": "Allowed compatibility shorthand."
+  },
+  "change_control": {
+    "default": "NO_NEW_TOP_LEVEL_PLANE_OR_CANONICAL_RENAME_WITHOUT_EXPLICIT_REVIEW",
+    "allowed": "correctness, evidence, security, domain closure, runtime polish, documentation alignment that preserves V2 invariants",
+    "requires_architecture_v3": "new top-level platform plane, authority-basis change, product/infrastructure collapse, autonomous execution authority, weakening evidence or privacy boundaries"
+  }
+}
