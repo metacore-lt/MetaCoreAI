@@ -1,0 +1,48 @@
+{
+  "id": "metacore_delta_public_contact_routes_v1",
+  "version": "1.0.0",
+  "verified_at": "2026-09-11T14:40:44Z",
+  "routes": {
+    "try_delta": {
+      "label": "MetaCore DELTA",
+      "url": "https://delta.metacore.lt/",
+      "purpose": "human-facing DELTA exploration"
+    },
+    "operator_network": {
+      "label": "MetaCore Network Operations",
+      "url": "https://networker.metacore.lt/",
+      "purpose": "operator and organizational network path"
+    },
+    "quantara_chat": {
+      "label": "MetaCore Chat",
+      "url": "https://chat.metacore.lt/",
+      "purpose": "talk to MetaCore / Quantara"
+    },
+    "contacts": {
+      "label": "MetaCore Contacts",
+      "url": "https://metacore.lt/kontaktai",
+      "purpose": "official contact routing"
+    },
+    "developer": {
+      "label": "Developer / integration",
+      "email": "creator@metacore.lt",
+      "purpose": "DELTA, API, Bridge, MCP, evaluation and technical collaboration"
+    },
+    "pilot": {
+      "label": "Projects / pilot",
+      "email": "projects@metacore.lt",
+      "purpose": "scoped pilots, enterprise, industrial and special projects"
+    },
+    "business": {
+      "label": "Business",
+      "email": "verslui@metacore.lt",
+      "purpose": "business deployment and team workspace discussions"
+    },
+    "general": {
+      "label": "General",
+      "email": "info@metacore.lt",
+      "purpose": "general coordination"
+    }
+  },
+  "safety": "Do not send API keys, passwords, private keys, sensitive production data or private customer content in the first contact."
+}

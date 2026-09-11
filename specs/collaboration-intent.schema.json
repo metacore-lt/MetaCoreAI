@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/metacore-lt/MetaCoreAI/main/specs/collaboration-intent.schema.json",
+  "title": "MetaCore DELTA Collaboration Intent v1",
+  "type": "object",
+  "required": [
+    "interest",
+    "use_case_summary",
+    "no_secrets_confirmed"
+  ],
+  "properties": {
+    "interest": {
+      "enum": [
+        "report_failure",
+        "developer_integration",
+        "evaluation_source",
+        "private_lab_pilot",
+        "operator_network",
+        "business_deployment",
+        "research_collaboration"
+      ]
+    },
+    "receipt_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "challenge_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Z0-9-]{3,128}$"
+    },
+    "use_case_summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "current_environment_summary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "what_delta_should_prove": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "source_access_interest": {
+      "enum": [
+        "public_verification_only",
+        "evaluation_integration_source",
+        "private_lab_collaboration",
+        "managed_operating_core_discussion",
+        null
+      ]
+    },
+    "no_secrets_confirmed": {
+      "const": true
+    }
+  },
+  "additionalProperties": false
+}

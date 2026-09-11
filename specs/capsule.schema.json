@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-capsule-v1.schema.json",
+  "$id": "https://raw.githubusercontent.com/metacore-lt/MetaCoreAI/main/specs/capsule.schema.json",
   "title": "MetaCore DELTA Capsule v1",
   "type": "object",
   "required": [

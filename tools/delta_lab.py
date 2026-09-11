@@ -151,11 +151,201 @@ def cmd_hash(path,write=False):
         d['receipt_sha256']=h; p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(h)
 
+
+def challenge_registry():
+    return load(ROOT/'challenges/index.json')
+
+def contact_routes():
+    return load(ROOT/'engagement/CONTACT_ROUTES.json')['routes']
+
+def challenge_row(challenge_id):
+    for row in challenge_registry()['challenges']:
+        if row.get('id')==challenge_id:
+            return row
+    raise SystemExit('CHALLENGE_NOT_FOUND')
+
+def verify_challenges():
+    tests={r['id'] for r in test_index_rows()}
+    seen=set(); errs=[]
+    for ch in challenge_registry().get('challenges',[]):
+        cid=ch.get('id')
+        if not isinstance(cid,str) or not cid: errs.append('CHALLENGE_ID_INVALID'); continue
+        if cid in seen: errs.append('CHALLENGE_ID_DUPLICATE '+cid)
+        seen.add(cid)
+        caps=ch.get('capsules')
+        if not isinstance(caps,list) or not caps: errs.append('CHALLENGE_CAPSULES_INVALID '+cid); continue
+        for tid in caps:
+            if tid not in tests: errs.append(f'CHALLENGE_UNKNOWN_TEST {cid} {tid}')
+    if errs: raise SystemExit('\n'.join(errs))
+    return len(seen)
+
+def metric_delta_rows(receipt):
+    rows=[]
+    for mid,data in sorted((receipt.get('metrics') or {}).items()):
+        rows.append({
+          'metric_id':mid,
+          'baseline':data.get('baseline'),
+          'metacore':data.get('metacore'),
+          'method':data.get('method'),
+          'evaluator_type':data.get('evaluator_type'),
+          'confidence_milli':data.get('confidence_milli')
+        })
+    return rows
+
+def passport_markdown(receipt):
+    routes=contact_routes(); rows=metric_delta_rows(receipt)
+    lines=[
+      '# MetaCore DELTA Passport','',
+      f"- Run: `{receipt.get('run_id')}`",
+      f"- Capsule: `{receipt.get('test_id')}`",
+      f"- Experiment class: `{receipt.get('experiment_class')}`",
+      f"- Receipt: `{receipt.get('receipt_sha256')}`",
+      f"- Suite: `{receipt.get('suite_sha256')}`",
+      f"- Capsule hash: `{receipt.get('capsule_sha256')}`",
+      f"- Evaluation blinded: `{receipt.get('evaluation_blinded')}`",'',
+      '## Observable DELTA','',
+      '| Metric | Baseline | MetaCore | Method |','|---|---|---|---|'
+    ]
+    for row in rows:
+        lines.append(f"| `{row['metric_id']}` | {row['baseline']} | {row['metacore']} | {row['method']} |")
+    lines += ['', '## Limitations','']
+    for item in receipt.get('limitations',[]): lines.append('- '+str(item))
+    lines += [
+      '', '## Next path','',
+      f"- Found a failure / want evaluator integration: `{routes['developer']['email']}`",
+      f"- Want a scoped workflow pilot: `{routes['pilot']['email']}`",
+      f"- Operator / group path: {routes['operator_network']['url']}",
+      f"- Talk to MetaCore / Quantara: {routes['quantara_chat']['url']}",
+      '', '> This Passport summarizes a verified receipt. It is evidence about the stated run and conditions, not a universal product-quality claim.'
+    ]
+    return '\n'.join(lines)+'\n'
+
+def handoff_markdown(receipt,lane,goal):
+    routes=contact_routes()
+    route_map={'developer':'developer','pilot':'pilot','business':'business','general':'general','network':'operator_network'}
+    if lane not in route_map: raise SystemExit('INVALID_HANDOFF_LANE')
+    route=routes[route_map[lane]]
+    target=route.get('email') or route.get('url')
+    goal=goal.strip()
+    if not goal or len(goal)>1000 or '\x00' in goal: raise SystemExit('INVALID_HANDOFF_GOAL')
+    lines=[
+      '# MetaCore DELTA technical handoff','',
+      f"Route: {target}",
+      f"Goal: {goal}",'',
+      'Verified evidence:',
+      f"- test: `{receipt.get('test_id')}`",
+      f"- experiment: `{receipt.get('experiment_class')}`",
+      f"- receipt: `{receipt.get('receipt_sha256')}`",
+      f"- suite: `{receipt.get('suite_sha256')}`",'',
+      'What changed:'
+    ]
+    for row in metric_delta_rows(receipt):
+        lines.append(f"- `{row['metric_id']}`: {row['baseline']} → {row['metacore']} ({row['method']})")
+    lines += ['', 'Please do not attach credentials, private keys, production secrets or sensitive customer data to the first contact.']
+    return '\n'.join(lines)+'\n'
+
+
+def write_new_text(path,text,label):
+    p=pathlib.Path(path)
+    if p.exists() or p.is_symlink():
+        raise SystemExit('OUTPUT_EXISTS')
+    p.parent.mkdir(parents=True,exist_ok=True)
+    p.write_text(text,encoding='utf-8')
+    print(label,p)
+
+def collaboration_intent_from(receipt,lane,goal,challenge_id=None):
+    interest_map={
+      'developer':'developer_integration','pilot':'private_lab_pilot','business':'business_deployment',
+      'general':'research_collaboration','network':'operator_network'
+    }
+    source_map={
+      'developer':'evaluation_integration_source','pilot':'private_lab_collaboration','business':'managed_operating_core_discussion',
+      'general':'public_verification_only','network':'public_verification_only'
+    }
+    return {
+      'interest':interest_map[lane],
+      'receipt_sha256':receipt.get('receipt_sha256'),
+      'challenge_id':challenge_id,
+      'use_case_summary':goal,
+      'current_environment_summary':None,
+      'what_delta_should_prove':None,
+      'source_access_interest':source_map[lane],
+      'no_secrets_confirmed':True
+    }
+
+def write_challenge_kit(challenge_id,out_dir):
+    ch=challenge_row(challenge_id)
+    out=pathlib.Path(out_dir)
+    if out.is_symlink(): raise SystemExit('OUTPUT_DIR_SYMLINK_BLOCKED')
+    if out.exists() and not out.is_dir(): raise SystemExit('OUTPUT_PATH_NOT_DIRECTORY')
+    if out.exists() and any(out.iterdir()): raise SystemExit('OUTPUT_DIR_NOT_EMPTY')
+    out.mkdir(parents=True,exist_ok=True)
+    (out/'capsules').mkdir()
+    suite=build_suite_manifest(); registry=metric_registry(); by_metric={m['metric_id']:m for m in registry['metrics']}
+    used=set(); rows=[]
+    for tid in ch['capsules']:
+        cap=capsule_for(tid); used.update(cap['metrics'])
+        (out/'capsules'/f'{tid}.json').write_text(json.dumps(cap,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        rows.append({
+          'test_id':tid,'capsule_sha256':capsule_hash(tid),'metrics':cap['metrics'],
+          'baseline_output':None,'metacore_output':None,'evaluation_notes':None
+        })
+    metrics=[by_metric[m] for m in sorted(used)]
+    (out/'METRICS.json').write_text(json.dumps({'metrics':metrics},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    worksheet={
+      'challenge_id':ch['id'],'title':ch['title'],'suite_sha256':suite['suite_sha256'],
+      'experiment_note':'Fill outputs only from a declared run. If material conditions differ, treat the comparison as observational.',
+      'capsules':rows,
+      'share_warning':'Review outputs before sharing. Remove credentials, private customer data and unnecessary proprietary material.'
+    }
+    (out/'WORKSHEET.json').write_text(json.dumps(worksheet,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    manifest={
+      'id':'metacore_delta_challenge_kit_v1','challenge_id':ch['id'],'suite_sha256':suite['suite_sha256'],
+      'capsules':[{'id':tid,'sha256':capsule_hash(tid)} for tid in ch['capsules']],
+      'metric_registry_sha256':suite['metric_registry_sha256']
+    }
+    (out/'SOURCE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (out/'README.md').write_text(
+      f"# {ch['title']}\n\n{ch['question']}\n\n"
+      '1. Read each capsule before running it.\n'
+      '2. Keep materially matched conditions for a controlled comparison.\n'
+      '3. Record outputs in `WORKSHEET.json` or separate local files.\n'
+      '4. Evaluate only the included public metrics.\n'
+      '5. Preserve limitations and disagreement.\n'
+      '6. If the result is interesting, generate a verified DELTA Passport/Proof Bundle when a receipt is available.\n\n'
+      'This kit runs no model, opens no network connection and contains no private MetaCore implementation.\n',encoding='utf-8')
+    print('CHALLENGE_KIT_WRITTEN',out)
+
+def write_proof_bundle(receipt_path,lane,goal,out_dir,challenge_id=None):
+    verify_receipt(receipt_path,True)
+    receipt=load(receipt_path)
+    # Build/validate all text before creating files so a bad argument leaves no partial bundle.
+    passport=passport_markdown(receipt)
+    handoff=handoff_markdown(receipt,lane,goal)
+    intent=collaboration_intent_from(receipt,lane,goal.strip(),challenge_id)
+    out=pathlib.Path(out_dir)
+    if out.is_symlink():
+        raise SystemExit('OUTPUT_DIR_SYMLINK_BLOCKED')
+    if out.exists() and not out.is_dir():
+        raise SystemExit('OUTPUT_PATH_NOT_DIRECTORY')
+    if out.exists() and any(out.iterdir()):
+        raise SystemExit('OUTPUT_DIR_NOT_EMPTY')
+    out.mkdir(parents=True,exist_ok=True)
+    (out/'DELTA_RECEIPT.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (out/'DELTA_PASSPORT.md').write_text(passport,encoding='utf-8')
+    (out/'HANDOFF.md').write_text(handoff,encoding='utf-8')
+    (out/'COLLABORATION_INTENT.json').write_text(json.dumps(intent,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (out/'README.md').write_text(
+      '# MetaCore DELTA Proof Bundle\n\n'
+      'This local bundle contains the verified receipt, a Passport summary, a technical handoff and a no-secrets collaboration-intent template. '
+      'It was generated locally and was not transmitted by the tool. Review every file before sharing it.\n',encoding='utf-8')
+    print('PROOF_BUNDLE_WRITTEN',out)
+
 def check():
     required=[
-      'README.md','GROUNDING.md','SECURITY_MODEL.md','METHODOLOGY.md','CAPSULES.md','PROOF_MODEL.md','CONTRIBUTING_TESTS.md','delta_manifest.json',
+      'README.md','START_HERE.md','CHALLENGES.md','SOURCE_ACCESS.md','JOIN_THE_LAB.md','IP_BOUNDARY.md','GROUNDING.md','SECURITY_MODEL.md','METHODOLOGY.md','CAPSULES.md','PROOF_MODEL.md','CONTRIBUTING_TESTS.md','delta_manifest.json',
       'specs/request.schema.json','specs/result.schema.json','specs/metric.schema.json','specs/receipt.schema.json','specs/conditions.schema.json','specs/capsule.schema.json','specs/suite-manifest.schema.json',
-      'metrics/index.json','tests/index.json','suite/TEST_SUITE_MANIFEST.json'
+      'metrics/index.json','tests/index.json','suite/TEST_SUITE_MANIFEST.json','challenges/index.json','engagement/CONTACT_ROUTES.json','specs/collaboration-intent.schema.json'
     ]
     errs=[]
     for rel in required:
@@ -167,6 +357,8 @@ def check():
             except Exception as e: errs.append(f'JSON_INVALID {p.relative_to(ROOT)} {e}')
     try: verify_suite_manifest()
     except SystemExit as e: errs.append(str(e))
+    try: verify_challenges()
+    except SystemExit as e: errs.append(str(e))
     try: verify_receipt(ROOT/'examples/delta_receipt.example.json')
     except SystemExit as e: errs.append(str(e))
     if errs:
@@ -175,6 +367,7 @@ def check():
     print('DELTA_PUBLIC_CHECK_PASS')
     print('TESTS',len(suite['capsules']))
     print('METRICS',len(metric_ids()))
+    print('CHALLENGES',verify_challenges())
     print('SUITE',suite['suite_sha256'])
 
 def main():
@@ -188,6 +381,13 @@ def main():
     sub.add_parser('write-suite')
     s=sub.add_parser('hash-receipt'); s.add_argument('path'); s.add_argument('--write',action='store_true')
     s=sub.add_parser('verify-receipt'); s.add_argument('path'); s.add_argument('--hash-only',action='store_true')
+    sub.add_parser('challenge-list')
+    s=sub.add_parser('challenge-show'); s.add_argument('challenge_id')
+    s=sub.add_parser('challenge-kit'); s.add_argument('challenge_id'); s.add_argument('--output-dir',required=True)
+    s=sub.add_parser('passport'); s.add_argument('receipt'); s.add_argument('--output')
+    s=sub.add_parser('handoff'); s.add_argument('receipt'); s.add_argument('--lane',choices=['developer','pilot','business','general','network'],default='developer'); s.add_argument('--goal',required=True); s.add_argument('--output')
+    sub.add_parser('routes')
+    s=sub.add_parser('proof-bundle'); s.add_argument('receipt'); s.add_argument('--lane',choices=['developer','pilot','business','general','network'],default='developer'); s.add_argument('--goal',required=True); s.add_argument('--challenge-id'); s.add_argument('--output-dir',required=True)
     a=ap.parse_args()
     if a.cmd=='check': check()
     elif a.cmd=='list-tests':
@@ -198,4 +398,24 @@ def main():
     elif a.cmd=='write-suite': write_suite_manifest()
     elif a.cmd=='hash-receipt': cmd_hash(a.path,a.write)
     elif a.cmd=='verify-receipt': verify_receipt(a.path,not a.hash_only)
+    elif a.cmd=='challenge-list':
+        for ch in challenge_registry()['challenges']:
+            print(ch['id'],f"{ch.get('time_minutes')}m",ch.get('title'))
+    elif a.cmd=='challenge-show':
+        ch=challenge_row(a.challenge_id)
+        print(json.dumps({'challenge':ch,'capsules':[capsule_for(t) for t in ch['capsules']]},ensure_ascii=False,indent=2))
+    elif a.cmd=='challenge-kit': write_challenge_kit(a.challenge_id,a.output_dir)
+    elif a.cmd=='passport':
+        verify_receipt(a.receipt,True); d=load(a.receipt); text=passport_markdown(d)
+        if a.output: write_new_text(a.output,text,'PASSPORT_WRITTEN')
+        else: print(text,end='')
+    elif a.cmd=='handoff':
+        verify_receipt(a.receipt,True); d=load(a.receipt); text=handoff_markdown(d,a.lane,a.goal)
+        if a.output: write_new_text(a.output,text,'HANDOFF_WRITTEN')
+        else: print(text,end='')
+    elif a.cmd=='routes':
+        print(json.dumps(contact_routes(),ensure_ascii=False,indent=2))
+    elif a.cmd=='proof-bundle':
+        if a.challenge_id is not None: challenge_row(a.challenge_id)
+        write_proof_bundle(a.receipt,a.lane,a.goal,a.output_dir,a.challenge_id)
 if __name__=='__main__': main()

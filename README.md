@@ -2,6 +2,26 @@
 
 ## Bring your prompt. Measure the DELTA.
 
+
+## Try → verify → collaborate
+
+```text
+TRY A CHALLENGE
+      ↓
+INSPECT THE CAPSULE
+      ↓
+VERIFY THE RECEIPT
+      ↓
+GENERATE A DELTA PASSPORT
+      ↓
+BRING A REAL WORKFLOW / FAILURE / INTEGRATION QUESTION
+      ↓
+SCOPED COLLABORATION
+```
+
+Start with `START_HERE.md`. If the Lab reveals something useful, `JOIN_THE_LAB.md` routes a verified result into developer, pilot, business or operator-network conversations without exposing the private operating core.
+
+> **If it breaks, show us where. If it holds, bring us the workflow that matters.**
 MetaCore DELTA Lab is a public black-box verification surface for an AI operating layer. It publishes observable behavior tests, schemas, methodology, local validation tools and receipts — not the private operating implementation.
 
 > **Private architecture. Publicly testable behavior.**
@@ -38,3 +58,12 @@ python3 tools/delta_lab.py capsule-hash UNCERTAINTY-001
 ```
 
 Before treating a DELTA as evidence, read `VALIDITY_CONTROLS.md`: A/A null, label-swap and repeated-sample controls are part of the method.
+
+## Take the next step
+
+```bash
+python3 tools/delta_lab.py routes
+python3 tools/delta_lab.py proof-bundle examples/delta_receipt.example.json --lane developer --goal "Describe the workflow you want to test" --output-dir ./delta-proof-bundle
+```
+
+Public proof source is here. Evaluation/LAB source access is scoped to the work; see `SOURCE_ACCESS.md`.

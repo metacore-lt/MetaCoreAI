@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.2.0-delta-validity-controls",
+  "publisher_policy_version": "3.4.0-proof-collaboration-ip-boundary",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "406ad46c910d7f2564a1d809b32352e5ab0d877e1c9ead23e8afc2c4c526d2ff",
-  "release_id": "sha256:406ad46c910d7f2564a1d809b32352e5ab0d877e1c9ead23e8afc2c4c526d2ff",
-  "generated_at": "2026-09-11T13:17:15.001909+00:00",
-  "file_count": 33,
+  "content_set_sha256": "160b5d96960840e8294c73b359dbaf23b0c0667c76a314726b8c4042744784ad",
+  "release_id": "sha256:160b5d96960840e8294c73b359dbaf23b0c0667c76a314726b8c4042744784ad",
+  "generated_at": "2026-09-11T14:59:08.177050+00:00",
+  "file_count": 42,
   "files": [
     {
       "path": ".gitignore",
@@ -24,6 +24,11 @@
       "sha256": "5180a4aa1627f498454568e6a2f9f733af96d354428a105a820513ece9f1d494"
     },
     {
+      "path": "CHALLENGES.md",
+      "bytes": 1162,
+      "sha256": "1f431dcb406c2bf12631593ebd62813513bcf145e7c13fa165e7db3591d4bf76"
+    },
+    {
       "path": "CONTRIBUTING_TESTS.md",
       "bytes": 726,
       "sha256": "e1174d7f94dcce17288f178e51c0096e5ee29c7bde2cda034ee12083de316db1"
@@ -32,6 +37,16 @@
       "path": "GROUNDING.md",
       "bytes": 866,
       "sha256": "6d832051aa2106d5d1e026af89ca331cc6a680c84037aa5fc173223385252160"
+    },
+    {
+      "path": "IP_BOUNDARY.md",
+      "bytes": 709,
+      "sha256": "346a40669f64dd789640265311f9afe732221a5ea444e6fc8e185a59096fd92c"
+    },
+    {
+      "path": "JOIN_THE_LAB.md",
+      "bytes": 1296,
+      "sha256": "cefe0c111a1c8100134f0e900611f0f4d07e076ea0ae9d08d10e62a64eb3de59"
     },
     {
       "path": "METHODOLOGY.md",
@@ -50,13 +65,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 1620,
-      "sha256": "adfc511ad2eaf5768aa36469bca00fafd8ed4b0093734e787f94a5ab6276a58e"
+      "bytes": 2531,
+      "sha256": "9c434420a4105361c46c2c806a5e3fd612ce948ab830bc2892a6c9f97019cbc0"
     },
     {
       "path": "SECURITY_MODEL.md",
       "bytes": 1434,
       "sha256": "b06765c9b0bf2371a03eaaa72b067b7589e1bc289681712aed573c9a44fa90dd"
+    },
+    {
+      "path": "SOURCE_ACCESS.md",
+      "bytes": 1918,
+      "sha256": "f9be0d222865e154342365e439c7936a8848aa753f85b7512c79b205b8744f76"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1553,
+      "sha256": "b35e1a980406b8852eb3b27d095669ee18aa827ec8778024d388d089e1c02312"
     },
     {
       "path": "TRY_METACORE.md",
@@ -69,14 +94,29 @@
       "sha256": "4a958a7c7504f542915f9ceef9f6368d65ddf6da5de7b6aa76785bb49f8289cc"
     },
     {
+      "path": "challenges/index.json",
+      "bytes": 2135,
+      "sha256": "7df930cc29a6a164a56d71bb25307757d5b6dce9598d442235114298f9b151c3"
+    },
+    {
       "path": "delta_manifest.json",
-      "bytes": 1352,
-      "sha256": "a7ff68d02fe79c12b64e2a63741f6e26c04ced5f0532cdad090b555b61b46f20"
+      "bytes": 1686,
+      "sha256": "234521079066d95d17b2c4ac8af4a31df2a1f10d61f8801a337df431b2817ca7"
+    },
+    {
+      "path": "engagement/CONTACT_ROUTES.json",
+      "bytes": 1561,
+      "sha256": "638b801cff5b64794842bc1b15b5c8a826fec31cabda070f89865e94a6ee0bc0"
+    },
+    {
+      "path": "examples/collaboration_intent.example.json",
+      "bytes": 573,
+      "sha256": "9b2dd88351560cbf893e2199531e56e8b2cdfd5a67afbe38a3f84196850083e9"
     },
     {
       "path": "examples/delta_receipt.example.json",
       "bytes": 1841,
-      "sha256": "9ec375c1a08ad04a4aa057bcb656f81d3a383e2f86a9eb788e3b4c09de349f65"
+      "sha256": "7487a0bdece12f49362a12e162f5c6654f87f8b1233f52ce49616d3a78c31cae"
     },
     {
       "path": "metrics/index.json",
@@ -85,43 +125,48 @@
     },
     {
       "path": "specs/capsule.schema.json",
-      "bytes": 2647,
-      "sha256": "d80fc06c33dc9927d91c64b8158fbd82dec7acdcdf34bc524d009f606df26934"
+      "bytes": 2675,
+      "sha256": "b2ebbd37c38f4853b2f2cac6cb6aba31d17884322923526fd8b8205c42175804"
+    },
+    {
+      "path": "specs/collaboration-intent.schema.json",
+      "bytes": 1549,
+      "sha256": "df6da7f134f150f8794d7ba79b8263f1a06ff5bd0e7838bad6319ffe7fbcd96d"
     },
     {
       "path": "specs/conditions.schema.json",
-      "bytes": 1239,
-      "sha256": "a50935b05e78afc36ae3d9a3bbc70be343c64f838e97c180cc3c648cde625eb6"
+      "bytes": 1265,
+      "sha256": "504e5feb5fc5eb72eae4099258040f72b92aca0cefe0916180554b644fdfc12b"
     },
     {
       "path": "specs/metric.schema.json",
-      "bytes": 1477,
-      "sha256": "e500531b71f61b313013262b3d1295689488f1823c99fef292e258e6837080f3"
+      "bytes": 1503,
+      "sha256": "b63f91d0e908438a6adff80e13ff77525946984d97658b8aa6e961b228ba180d"
     },
     {
       "path": "specs/receipt.schema.json",
-      "bytes": 3327,
-      "sha256": "03422381845e305187b40582d996887dddb31d7403e5bb4f0425a6e9af7a1cdc"
+      "bytes": 3353,
+      "sha256": "74385a3b98c376c2773cc0b44a6b355ab4832311fc9d2a6b0afd331286fcf38b"
     },
     {
       "path": "specs/request.schema.json",
-      "bytes": 2045,
-      "sha256": "5b839a33b47b930d10d933716b1ee57ed5ff39cbd57df48be82bbbcdca3eec1f"
+      "bytes": 2071,
+      "sha256": "ae901c187fc1c1fc742255bb751edf34342f44fb8f278c040996b7d7bb39ca3b"
     },
     {
       "path": "specs/result.schema.json",
-      "bytes": 1276,
-      "sha256": "d28e0da15bfd32517a56417769bacb2720485ab633ff65877066271d89951fef"
+      "bytes": 1302,
+      "sha256": "9aa3689ee3bec5f8be8fa5a5dbc40b6e2e3651dc6a4e51540665b1ee86c081b7"
     },
     {
       "path": "specs/suite-manifest.schema.json",
-      "bytes": 1400,
-      "sha256": "0b88a5bdf6bbe3bb582087c3836442b6ed25de2641ea5157f84d54a30ac27162"
+      "bytes": 1428,
+      "sha256": "bc173322fb4a9377fe526302bb425ef109962aa534e6ad341239934ed508cba1"
     },
     {
       "path": "suite/TEST_SUITE_MANIFEST.json",
       "bytes": 1910,
-      "sha256": "e237652e038c289f07f4a03aa1dd92dc610a46df79acb424aac1d5a031e44955"
+      "sha256": "be7f58a81656e8dae9aaf929be97f4b6ca247d197a31c6e9c669838ab397ccf9"
     },
     {
       "path": "tests/authority/AUTHORITY_001.json",
@@ -170,8 +215,8 @@
     },
     {
       "path": "tools/delta_lab.py",
-      "bytes": 8905,
-      "sha256": "9ce9e4c4d0216f3da147aa645f2354844380bfdec6f0a9178a036951d4fc953a"
+      "bytes": 20617,
+      "sha256": "ac21fc8d52fa2cbc83286ee8d99cf7aea115739bc5cf83c5b06d063bc3b04333"
     }
   ]
 }

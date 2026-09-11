@@ -1,7 +1,7 @@
 {
-  "id": "metacore_delta_lab_v0_3",
-  "version": "0.3.1",
-  "status": "PUBLIC_CAPSULE_TOOLING_READY_GATEWAY_DISABLED",
+  "id": "metacore_delta_lab_v0_4",
+  "version": "0.4.1",
+  "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
   "principle": "PRIVATE_ARCHITECTURE_PUBLICLY_TESTABLE_BEHAVIOR",
@@ -36,5 +36,12 @@
   "suite_manifest": "suite/TEST_SUITE_MANIFEST.json",
   "proof_model": "PROOF_MODEL.md",
   "contributing": "CONTRIBUTING_TESTS.md",
-  "validity_controls": "VALIDITY_CONTROLS.md"
+  "validity_controls": "VALIDITY_CONTROLS.md",
+  "start_here": "START_HERE.md",
+  "challenge_packs": "challenges/index.json",
+  "source_access": "SOURCE_ACCESS.md",
+  "join_the_lab": "JOIN_THE_LAB.md",
+  "contact_routes": "engagement/CONTACT_ROUTES.json",
+  "collaboration_intent_schema": "specs/collaboration-intent.schema.json",
+  "ip_boundary": "IP_BOUNDARY.md"
 }

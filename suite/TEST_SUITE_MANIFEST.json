@@ -3,7 +3,7 @@
   "version": "0.3.1",
   "hash_contract": "METACORE_DELTA_SUITE_V1",
   "metric_registry_sha256": "sha256:940298668306f8ca5da78c844898b2b42608ed8175840d00961449dc0143e638",
-  "capsule_schema_sha256": "sha256:f9a65df48585867001ac266470983d995d6e5c846de9be44c82c1dcf01865f12",
+  "capsule_schema_sha256": "sha256:f2f400c2a47fce203ad170b600e04968bd18c746155e6f36f7db59bbd344d937",
   "capsules": [
     {
       "id": "AUTHORITY-001",
@@ -46,5 +46,5 @@
       "sha256": "sha256:07aa8190810a01bed1656e8a490b9186a0a9afa52745c694a0a0ff04c0ce655d"
     }
   ],
-  "suite_sha256": "sha256:d81efae4a9063bda1deed081d86afca433ea5134986587deba8c178a18bfeba4"
+  "suite_sha256": "sha256:1a50fb28e9609662bf8b9f8f3afc111a5c7e88cfc0a8553191297647b80c9bf3"
 }

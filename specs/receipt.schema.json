@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-receipt-v0.3.schema.json",
+  "$id": "https://raw.githubusercontent.com/metacore-lt/MetaCoreAI/main/specs/receipt.schema.json",
   "title": "MetaCore DELTA Receipt v0.3",
   "type": "object",
   "required": [
