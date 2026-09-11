@@ -1,7 +1,7 @@
 {
-  "id": "metacore_delta_lab_v0_1",
-  "version": "0.1.0",
-  "status": "PUBLIC_BENCHMARK_SKELETON",
+  "id": "metacore_delta_lab_v0_2",
+  "version": "0.2.0",
+  "status": "PUBLIC_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
   "principle": "PRIVATE_ARCHITECTURE_PUBLICLY_TESTABLE_BEHAVIOR",
@@ -11,17 +11,25 @@
     "CONTEXT_STRESS",
     "BRING_YOUR_AI"
   ],
+  "experiment_classes": [
+    "CONTROLLED_DELTA",
+    "OBSERVATIONAL_DELTA"
+  ],
   "gateway": {
-    "status": "NOT_YET_PUBLISHED",
-    "note": "The public runtime endpoint will be declared here only after gateway security and quotas are ready."
+    "status": "DISABLED_SECURITY_GATES_PENDING",
+    "note": "A public runtime endpoint is declared only after security, quota, isolation, sanitation, timeout and rollback gates pass."
   },
   "schemas": {
     "request": "specs/request.schema.json",
     "result": "specs/result.schema.json",
     "metric": "specs/metric.schema.json",
-    "receipt": "specs/receipt.schema.json"
+    "receipt": "specs/receipt.schema.json",
+    "conditions": "specs/conditions.schema.json"
   },
+  "metrics_index": "metrics/index.json",
   "tests_index": "tests/index.json",
   "methodology": "METHODOLOGY.md",
-  "security_model": "SECURITY_MODEL.md"
+  "security_model": "SECURITY_MODEL.md",
+  "grounding": "GROUNDING.md",
+  "local_tool": "tools/delta_lab.py"
 }

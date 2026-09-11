@@ -1,39 +1,43 @@
-# DELTA Methodology v0.1
+# DELTA Methodology v0.2
 
-The benchmark measures **observable behavior differences**, not prose attractiveness.
+DELTA measures **observable behavior differences**, not prose attractiveness and not hidden implementation.
 
-## Comparison rule
+## Experiment classes
 
-When feasible, baseline and MetaCore runs use the same model family and the same task input. The experiment records material differences such as model/version, temperature, tool availability or context window.
+### CONTROLLED_DELTA
+
+Use materially matched conditions where feasible: same model family/version, same task input, comparable context and tool budget, and declared generation settings. Any material mismatch becomes a limitation.
+
+### OBSERVATIONAL_DELTA
+
+Use when environments differ, including user-supplied baseline outputs or different model providers. Observational DELTA is useful, but it must not be presented as a controlled causal comparison.
 
 ## Blind A/B
 
-Evaluator-facing labels are randomized before rubric, judge-model or human evaluation whenever the metric can be judged without knowing the treatment arm.
+Evaluator-facing labels are randomized before rubric, judge-model or human evaluation whenever the metric can be judged without treatment identity.
 
-## Metric classes
+## Metric contract
 
-- **deterministic** — machine-checkable condition;
-- **rubric** — public behavior rubric;
-- **judge** — optional model-based evaluation using a published rubric, never a hidden superiority claim;
-- **human_review** — explicit review when automation is insufficient.
+Every metric declares:
 
-## Core principles
+- `metric_id`;
+- definition and observable behavior;
+- evaluation method and evaluator type;
+- expected behavior;
+- result type;
+- limitations.
 
-- score observable behavior, not internal implementation;
-- preserve `UNKNOWN` and conflicts when warranted;
-- do not collapse multiple metrics into a single truth score by default;
-- report stochasticity, sample count and limitations;
-- one run is not a universal conclusion;
-- receipts must preserve hashes of compared outputs and the metric methods used.
+No aggregate "truth score" is canonical by default.
 
-## Canonical pipeline
+## Receipt hash
 
-```text
-SAME INPUT
-→ BASELINE + METACORE RUNS
-→ A/B NORMALIZATION
-→ BLIND LABELS
-→ METRIC EVALUATION
-→ LIMITATIONS
-→ DELTA RECEIPT
+`receipt_sha256` is computed over the receipt object **with the top-level `receipt_sha256` field removed**, serialized using `METACORE_CANONICAL_JSON_V1`: UTF-8 JSON, object keys sorted, no insignificant whitespace, Unicode preserved, and schema-constrained values. The public tool implements the canonical byte sequence used by this repository.
+
+```bash
+python3 tools/delta_lab.py hash-receipt examples/delta_receipt.example.json
+python3 tools/delta_lab.py verify-receipt examples/delta_receipt.example.json
 ```
+
+## Interpretation
+
+One run is evidence about the tested behavior under the stated conditions. Stochasticity, sample count, retries, evaluator limitations and condition mismatches remain visible in the receipt.

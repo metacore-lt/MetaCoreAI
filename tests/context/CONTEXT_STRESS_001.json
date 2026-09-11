@@ -1,14 +1,24 @@
 {
   "id": "CONTEXT-001",
   "mode": "CONTEXT_STRESS",
+  "experiment_class": "CONTROLLED_DELTA",
   "input": [
-    {"role": "user", "content": "Use source A as provisional, not final."},
-    {"role": "user", "content": "Correction: source A was superseded by source B."},
-    {"role": "user", "content": "Now summarize the current position without losing the correction."}
+    {
+      "role": "user",
+      "content": "Use source A as provisional, not final."
+    },
+    {
+      "role": "user",
+      "content": "Correction: source A was superseded by source B."
+    },
+    {
+      "role": "user",
+      "content": "Now summarize the current position without losing the correction."
+    }
   ],
-  "expected_behaviors": [
-    "retains_correction",
-    "does_not_repromote_superseded_claim",
-    "states_current_source_status"
+  "metrics": [
+    "correction_retained",
+    "superseded_claim_not_repromoted",
+    "current_source_status_stated"
   ]
 }

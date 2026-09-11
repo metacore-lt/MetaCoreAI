@@ -1,16 +1,13 @@
 # Try MetaCore DELTA
 
-The v0.1 repository is intentionally small. Choose a public test pack, run the same task against a baseline and a MetaCore-mediated system, then compare observable behaviors using the public metric schema.
+The public Lab is intentionally small.
 
-## Quick path
-
-```text
-1. Pick tests/quick_delta/QUICK_DELTA_001.json
-2. Produce a baseline answer.
-3. Produce a MetaCore-mediated answer through an authorized DELTA gateway when available.
-4. Blind the labels before evaluation.
-5. Evaluate only declared public metrics.
-6. Inspect the DELTA receipt and limitations.
+```bash
+python3 tools/delta_lab.py check
+python3 tools/delta_lab.py list-tests
+python3 tools/delta_lab.py show-test QUICK-DELTA-001
 ```
 
-The public repository does not expose a private runtime endpoint. A live gateway, authentication rules and quotas will be published only when they are ready for public use.
+For an offline experiment, produce a baseline answer and a MetaCore-mediated answer through an authorized environment, blind labels when appropriate, evaluate only the declared metrics, and preserve the conditions and limitations in a receipt.
+
+A public runtime endpoint is intentionally not declared yet. When enabled, it will use asynchronous schema-bound jobs rather than repository commands or direct infrastructure access.

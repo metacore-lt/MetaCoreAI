@@ -1,20 +1,128 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-receipt-v0.1.schema.json",
-  "title": "MetaCore DELTA Receipt v0.1",
+  "$id": "https://metacore.example/specs/delta-receipt-v0.2.schema.json",
+  "title": "MetaCore DELTA Receipt v0.2",
   "type": "object",
-  "required": ["run_id", "test_id", "baseline_output_hash", "metacore_output_hash", "metrics", "limitations", "timestamp", "receipt_sha256"],
+  "required": [
+    "run_id",
+    "test_id",
+    "experiment_class",
+    "baseline_output_hash",
+    "metacore_output_hash",
+    "metrics",
+    "limitations",
+    "timestamp",
+    "receipt_hash_contract",
+    "receipt_sha256"
+  ],
   "properties": {
-    "run_id": {"type": "string"},
-    "test_id": {"type": "string"},
-    "model_family": {"type": "string"},
-    "baseline_output_hash": {"type": "string"},
-    "metacore_output_hash": {"type": "string"},
-    "blind_assignment": {"type": "string"},
-    "metrics": {"type": "object"},
-    "limitations": {"type": "array", "items": {"type": "string"}},
-    "timestamp": {"type": "string", "format": "date-time"},
-    "receipt_sha256": {"type": "string"}
+    "run_id": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 128
+    },
+    "test_id": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "experiment_class": {
+      "enum": [
+        "CONTROLLED_DELTA",
+        "OBSERVATIONAL_DELTA"
+      ]
+    },
+    "model_family": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "conditions": {
+      "type": "object"
+    },
+    "baseline_output_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "metacore_output_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "blind_assignment": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "baseline",
+          "metacore",
+          "method",
+          "evaluator_type"
+        ],
+        "properties": {
+          "baseline": {},
+          "metacore": {},
+          "method": {
+            "type": "string"
+          },
+          "evaluator_type": {
+            "type": "string"
+          },
+          "confidence_milli": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      },
+      "maxItems": 50
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "receipt_hash_contract": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "canonicalization",
+        "excluded_fields"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "SHA-256"
+        },
+        "canonicalization": {
+          "const": "METACORE_CANONICAL_JSON_V1"
+        },
+        "excluded_fields": {
+          "const": [
+            "receipt_sha256"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "receipt_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
   },
   "additionalProperties": false
 }

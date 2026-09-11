@@ -1,47 +1,31 @@
 # MetaCore DELTA Lab
 
-**Bring your prompt. Measure the DELTA.**
+## Bring your prompt. Measure the DELTA.
 
-MetaCore DELTA Lab is a public black-box verification surface for an AI operating layer.
-It publishes observable behavior tests, schemas, methodology and receipts — not the private operating core.
+MetaCore DELTA Lab is a public black-box verification surface for an AI operating layer. It publishes observable behavior tests, schemas, methodology, local validation tools and receipts — not the private operating implementation.
 
 > **Private architecture. Publicly testable behavior.**
 
-## What you can verify
+The point is not to ask you to trust a score. The point is to let you inspect what changed, how it was evaluated, and what the test does **not** prove.
 
-- uncertainty is preserved instead of silently invented away;
-- facts, inference and interpretation stay distinguishable;
-- authority and action boundaries are explicit;
-- contradictions and corrections survive context stress;
-- prompt injection and tool failure do not silently rewrite the mission;
-- recovery behavior is observable;
-- the same task can be compared baseline vs MetaCore-mediated behavior.
+### Start in 30 seconds
 
-## v0.1 modes
-
-1. **Quick DELTA** — one task, baseline vs MetaCore.
-2. **Break MetaCore** — contradiction, missing data, authority and injection challenges.
-3. **Context Stress** — multi-turn continuity, corrections and unresolved state.
-4. **Bring Your AI** — compare an external model/endpoint with a MetaCore-mediated run when the public gateway is enabled.
-
-## Measurement pipeline
-
-```text
-SAME INPUT
-   ├─ BASELINE RUN
-   └─ METACORE RUN
-          ↓
-   BLIND A/B NORMALIZATION
-          ↓
-   PUBLIC METRIC ENGINE
-   ├─ deterministic checks
-   ├─ rubric checks
-   ├─ optional judge model
-   └─ human review where needed
-          ↓
-      DELTA RECEIPT
+```bash
+python3 tools/delta_lab.py check
+python3 tools/delta_lab.py list-tests
 ```
 
-**Don't trust the score. Inspect the receipt.**
+Then open `TRY_METACORE.md`.
 
-Start with [`TRY_METACORE.md`](TRY_METACORE.md) or [`AI_QUICKSTART.md`](AI_QUICKSTART.md).
+### Four modes
+
+- **Quick DELTA** — one task, baseline vs MetaCore-mediated behavior.
+- **Break MetaCore** — contradiction, missing data, authority and injection challenges.
+- **Context Stress** — multi-turn continuity, corrections and unresolved state.
+- **Bring Your AI** — compare user-supplied baseline output with a MetaCore-mediated run when the public gateway is enabled.
+
+### What DELTA measures
+
+DELTA measures declared observable behaviors such as uncertainty preservation, correction retention, evidence separation, action boundaries and recovery behavior. It does not expose or infer private implementation details.
+
+> **Don't download MetaCore. Measure the DELTA.**

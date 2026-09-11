@@ -1,18 +1,66 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-result-v0.1.schema.json",
-  "title": "MetaCore DELTA Result v0.1",
+  "$id": "https://metacore.example/specs/delta-result-v0.2.schema.json",
+  "title": "MetaCore DELTA Result v0.2",
   "type": "object",
-  "required": ["run_id", "test_id", "status"],
+  "required": [
+    "run_id",
+    "test_id",
+    "status"
+  ],
   "properties": {
-    "run_id": {"type": "string"},
-    "test_id": {"type": "string"},
-    "status": {"enum": ["QUEUED", "RUNNING", "COMPLETE", "FAILED"]},
-    "baseline_output": {"type": "string"},
-    "metacore_output": {"type": "string"},
-    "what_changed": {"type": "array", "items": {"type": "string"}},
-    "receipt": {"type": "object"},
-    "public_error": {"enum": ["INVALID_REQUEST", "RATE_LIMITED", "RUN_FAILED_INTERNAL", "EVALUATION_FAILED", "UNAVAILABLE", null]}
+    "run_id": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 128
+    },
+    "test_id": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "status": {
+      "enum": [
+        "QUEUED",
+        "RUNNING",
+        "COMPLETE",
+        "FAILED"
+      ]
+    },
+    "experiment_class": {
+      "enum": [
+        "CONTROLLED_DELTA",
+        "OBSERVATIONAL_DELTA"
+      ]
+    },
+    "baseline_output": {
+      "type": "string",
+      "maxLength": 40000
+    },
+    "metacore_output": {
+      "type": "string",
+      "maxLength": 40000
+    },
+    "what_changed": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      }
+    },
+    "receipt": {
+      "type": "object"
+    },
+    "public_error": {
+      "enum": [
+        "INVALID_REQUEST",
+        "RATE_LIMITED",
+        "RUN_FAILED_INTERNAL",
+        "EVALUATION_FAILED",
+        "UNAVAILABLE",
+        null
+      ]
+    }
   },
   "additionalProperties": false
 }

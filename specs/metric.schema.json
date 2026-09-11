@@ -1,16 +1,76 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://metacore.example/specs/delta-metric-v0.1.schema.json",
-  "title": "MetaCore DELTA Metric v0.1",
+  "$id": "https://metacore.example/specs/delta-metric-v0.2.schema.json",
+  "title": "MetaCore DELTA Metric v0.2",
   "type": "object",
-  "required": ["metric_id", "observable_behavior", "method"],
+  "required": [
+    "metric_id",
+    "definition",
+    "observable_behavior",
+    "evaluation_method",
+    "evaluator_type",
+    "expected_behavior",
+    "result_type",
+    "limitations"
+  ],
   "properties": {
-    "metric_id": {"type": "string"},
-    "observable_behavior": {"type": "string"},
-    "method": {"enum": ["deterministic", "rubric", "judge", "human_review", "rule+rubric"]},
-    "result_type": {"enum": ["PASS_FAIL", "PASS_PARTIAL_FAIL", "COUNT", "NUMBER"]},
-    "higher_is_better": {"type": ["boolean", "null"]},
-    "notes": {"type": "string"}
+    "metric_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "definition": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "observable_behavior": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "evaluation_method": {
+      "enum": [
+        "deterministic",
+        "rubric",
+        "judge",
+        "human_review",
+        "rule+rubric"
+      ]
+    },
+    "evaluator_type": {
+      "enum": [
+        "machine",
+        "rubric_engine",
+        "judge_model",
+        "human",
+        "hybrid"
+      ]
+    },
+    "expected_behavior": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "result_type": {
+      "enum": [
+        "PASS_FAIL",
+        "PASS_PARTIAL_FAIL",
+        "COUNT",
+        "NUMBER"
+      ]
+    },
+    "higher_is_better": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      },
+      "maxItems": 20
+    }
   },
   "additionalProperties": false
 }

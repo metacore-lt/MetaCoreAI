@@ -1,38 +1,29 @@
 # Security Model
 
-MetaCore DELTA Lab follows a black-box publication boundary.
+MetaCore DELTA Lab is a black-box verification surface.
 
 ## Publicly allowed
 
-- test inputs;
-- public schemas and methodology;
-- sanitized baseline and MetaCore outputs when the run owner permits publication;
-- public metric results;
-- evidence-class labels intended for public output;
-- run metadata that does not identify private infrastructure;
-- limitations and a verifiable DELTA receipt.
+- bounded test inputs through a published gateway when enabled;
+- public schemas, methodology, test packs and local validation tools;
+- sanitized baseline and MetaCore outputs when policy permits;
+- public metric results and limitations;
+- opaque run metadata and verifiable DELTA receipts.
 
 ## Not published
 
 - system prompts or hidden evaluator prompts;
-- private routing traces or module names;
-- private source code or operating-core topology;
+- private routing traces or module inventories;
+- private operating-core source or topology;
 - internal hosts, filesystem paths, ports or service identifiers;
-- credentials, tokens or private keys;
+- credentials or private keys;
 - stack traces and verbose internal failures;
-- private corpus fragments;
-- private person, tenant or company state.
+- private corpus fragments or private user/tenant state.
 
 ## Directionality
 
-```text
-PRIVATE RUNTIME
-   │
-   │ curated export only
-   ▼
-PUBLIC REPOSITORY
-```
+Curated publication and live test requests are separate channels. Repository content is never treated as executable input for private systems. Public pull requests, issue text and repository code do not gain private command execution.
 
-The repository is not a write channel into the private runtime. Future DELTA requests use a separate request gateway with input sanitation, authentication/rate controls, queueing and output sanitation.
+A future live gateway accepts schema-bound asynchronous jobs only. It does not expose shell execution, filesystem browsing, arbitrary network callbacks, internal route selection or credential forwarding. Public errors are reduced to sanitized error classes.
 
-Internal failures are reduced to public error classes such as `RUN_FAILED_INTERNAL`; private traces are not returned.
+`BRING_YOUR_AI` initially accepts user-supplied baseline output. Arbitrary remote endpoints and user-provided service credentials are outside the first public gateway scope.

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metacore.example/specs/delta-conditions-v0.2.schema.json",
+  "title": "MetaCore DELTA Conditions v0.2",
+  "type": "object",
+  "properties": {
+    "model_family": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "model_version": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "temperature": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 2
+    },
+    "seed": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "max_output_tokens": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 200000
+    },
+    "tool_budget": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "context_budget": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "sample_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      },
+      "maxItems": 20
+    }
+  },
+  "additionalProperties": false
+}

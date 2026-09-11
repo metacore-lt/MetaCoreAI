@@ -1,10 +1,12 @@
 {
-  "id": "metacore_delta_lab_public_release_manifest_v1",
-  "generated_at": "2026-09-11T08:16:05.702871+00:00",
-  "publisher_policy_version": "2.0.0-delta-lab",
+  "id": "metacore_delta_lab_public_release_manifest_v2",
+  "publisher_policy_version": "3.0.0-grounded",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "file_count": 19,
+  "content_set_sha256": "88d173424ae9861f723c246d1d65779852dff4eca35e2274c2a9d743c0c1f1c1",
+  "release_id": "sha256:88d173424ae9861f723c246d1d65779852dff4eca35e2274c2a9d743c0c1f1c1",
+  "generated_at": "2026-09-11T09:31:55.489497+00:00",
+  "file_count": 25,
   "files": [
     {
       "path": ".gitignore",
@@ -13,93 +15,123 @@
     },
     {
       "path": "AI_QUICKSTART.md",
-      "bytes": 828,
-      "sha256": "eb1428fcb83a7edbc97c4dd77832784eda2238c08a4352be54e152692e6a960e"
+      "bytes": 883,
+      "sha256": "d7e219ebcf8bdcaebc86fb5204f2f7c43810f0b9d3d8b1f61943ac072ff679ec"
+    },
+    {
+      "path": "GROUNDING.md",
+      "bytes": 714,
+      "sha256": "0b4855e00bc48616bc10cee6804f6c8b313f0f58ddddc6062a83b4ca686670cb"
     },
     {
       "path": "METHODOLOGY.md",
-      "bytes": 1357,
-      "sha256": "de9e16cba9be4d0cd4c0554db128a9b738988a784ce5cf088bfdb100d9429b57"
+      "bytes": 1757,
+      "sha256": "1b347e4666299f22d554a5ff89a2baf1ae06dee9a67da70c5c968d9b23c5925e"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 544,
+      "sha256": "8a65262596e0b4fbab0769b0954812f1b7d29e8f448baa162d57d27748e0b938"
     },
     {
       "path": "README.md",
-      "bytes": 1594,
-      "sha256": "862dda6c0814d09467dd55403c854a0c69648c4606541a125468d45cd77bde8b"
+      "bytes": 1334,
+      "sha256": "f38b785234073db3dba496f87ec4b54e92b7b97ab33f2cb686081745671c3435"
     },
     {
       "path": "SECURITY_MODEL.md",
-      "bytes": 1225,
-      "sha256": "7d024aab134e121ace144f4864b37efa0945b2e23189a92409374e3335a8eae0"
+      "bytes": 1434,
+      "sha256": "b06765c9b0bf2371a03eaaa72b067b7589e1bc289681712aed573c9a44fa90dd"
     },
     {
       "path": "TRY_METACORE.md",
-      "bytes": 724,
-      "sha256": "71b35873bc81dac7f922f083488104bf1c60c98abba3084456300c3f2853d828"
+      "bytes": 627,
+      "sha256": "120714c559bbabf7ed7d3b46fa6194568fff495c2d8d9d91b179c92d6ff531b8"
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 827,
-      "sha256": "4ec3bd6222b84ea83b98bfad23d1d8fac29bea6ebdd7d06402c2141a8de1b716"
+      "bytes": 1116,
+      "sha256": "21c8e241d0c81bad1f3d9ab6bb1aff2c1c87998662bc4c0baed17d29c6a0a81e"
     },
     {
       "path": "examples/delta_receipt.example.json",
-      "bytes": 653,
-      "sha256": "657f79a2131ff6a557255f29c41c11bd3be64a380c2b0ec31b52cc71aa8ae390"
+      "bytes": 1425,
+      "sha256": "d8d4cc7862d8c3e2b00dee332905a85ec5669ad93e48ad3d2af516c9a5811cea"
+    },
+    {
+      "path": "metrics/index.json",
+      "bytes": 13236,
+      "sha256": "0a2a3a4da2cf50b30a75f14447e9c250ac70b16224bd852731d171525abd4d44"
+    },
+    {
+      "path": "specs/conditions.schema.json",
+      "bytes": 1239,
+      "sha256": "a50935b05e78afc36ae3d9a3bbc70be343c64f838e97c180cc3c648cde625eb6"
     },
     {
       "path": "specs/metric.schema.json",
-      "bytes": 664,
-      "sha256": "ca785fd52d7c4bd43d83e72d30ed24177f0c9121a69c3b1ddce5f0666e04ca88"
+      "bytes": 1477,
+      "sha256": "e500531b71f61b313013262b3d1295689488f1823c99fef292e258e6837080f3"
     },
     {
       "path": "specs/receipt.schema.json",
-      "bytes": 850,
-      "sha256": "ff180b56024f061a6452f4aa16cc3f4b902c278c875fdbe4d6e48108a29e1d18"
+      "bytes": 2758,
+      "sha256": "b2d01da14074d3839a05038cd34d541be8894a2231c22c5e9505bc0f8f87ed22"
     },
     {
       "path": "specs/request.schema.json",
-      "bytes": 927,
-      "sha256": "f25abe53f5a758393f57edb3f84649a665ef1ab13f1204e98d69ebd10df88f11"
+      "bytes": 2045,
+      "sha256": "5b839a33b47b930d10d933716b1ee57ed5ff39cbd57df48be82bbbcdca3eec1f"
     },
     {
       "path": "specs/result.schema.json",
-      "bytes": 759,
-      "sha256": "d869f026780f4eea8ec3443dc8cf58d28b3edfc0956249fb48408c0c69c6abbf"
+      "bytes": 1276,
+      "sha256": "d28e0da15bfd32517a56417769bacb2720485ab633ff65877066271d89951fef"
     },
     {
       "path": "tests/authority/AUTHORITY_001.json",
-      "bytes": 314,
-      "sha256": "e31699c4272a683667a8c8fccdb3e5f5d9a855470d04d72bebc0a1edcfb550e6"
+      "bytes": 322,
+      "sha256": "991b84b62979a2658dbc3af8790f372a52af734db8f28aabf45679f09fc98f15"
     },
     {
       "path": "tests/context/CONTEXT_STRESS_001.json",
-      "bytes": 469,
-      "sha256": "3695b7686a7352e0e0f237c96070d87fa7959ccb217f33976212dbbe7c90800e"
+      "bytes": 551,
+      "sha256": "06c8a1ddab784bcc7fdbc12d051228cc9ddeeb105556c7583c3751968d3a8a28"
     },
     {
       "path": "tests/index.json",
-      "bytes": 466,
-      "sha256": "4668ec0995cc188f25e564bb9ad48ba65e3f067188d016e2a64090202bcfdcc2"
+      "bytes": 697,
+      "sha256": "cebe129e1ede49f8124a8956c82154d5d2cdf39e26cebb3c65ef55da7409d2b0"
     },
     {
       "path": "tests/injection/INJECTION_001.json",
-      "bytes": 332,
-      "sha256": "487c6ff8387a9354896f405d46cc7897922d8847b8dc18ee1571025389973af8"
+      "bytes": 352,
+      "sha256": "96f0c2b04fc730cc71dbca68633b44fa4a2547ab936e762762f1a6bcb4009aa6"
+    },
+    {
+      "path": "tests/metaphysics_grounding/METAPHYSICS_GROUNDING_001.json",
+      "bytes": 453,
+      "sha256": "ca3280a47617f626bde7837633eac6ad3b39bd0eb2ea1c35be11fe963c36cbec"
     },
     {
       "path": "tests/quick_delta/QUICK_DELTA_001.json",
-      "bytes": 304,
-      "sha256": "9b0c516bd0cf6db871cc5563a6560b05bae872e1d8dcc4017e386e41215d950a"
+      "bytes": 336,
+      "sha256": "26e4f7d7a4a2a111a0f2743db5ad0f0567bacad313b7acc030a35d734137fed7"
     },
     {
       "path": "tests/recovery/RECOVERY_001.json",
-      "bytes": 302,
-      "sha256": "b410c0fb771b2772e866321e8484902f5ad4efe23441149175b242b18a7e3e3c"
+      "bytes": 321,
+      "sha256": "bac2adad15e3204ea95284b97af66cf231acf34a370d29b491a093d82ae232e9"
     },
     {
       "path": "tests/uncertainty/UNCERTAINTY_001.json",
-      "bytes": 305,
-      "sha256": "24a58c89141c3cf0a3f8bcfe0497c7c789ff086ef8b3f9b913ba004295d34539"
+      "bytes": 324,
+      "sha256": "e2276a227bb4a1f391ef7fae3e4fc943956d8a3e303fc610c962c498dee0fe89"
+    },
+    {
+      "path": "tools/delta_lab.py",
+      "bytes": 3743,
+      "sha256": "00855b759945616a56c023ef004acf8388837e9180537577b4e73f6ea17b9ca0"
     }
   ]
 }

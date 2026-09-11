@@ -1,23 +1,46 @@
 {
-  "run_id": "DELTA-EXAMPLE-001",
+  "run_id": "DELTA-EXAMPLE-0001",
   "test_id": "UNCERTAINTY-001",
+  "experiment_class": "CONTROLLED_DELTA",
   "model_family": "same-model-control",
-  "baseline_output_hash": "sha256:example-baseline",
-  "metacore_output_hash": "sha256:example-metacore",
+  "conditions": {
+    "model_family": "example-family",
+    "model_version": "example-snapshot",
+    "temperature": 0,
+    "seed": 1,
+    "tool_budget": "none",
+    "context_budget": "matched",
+    "sample_count": 1,
+    "retry_count": 0,
+    "notes": [
+      "Illustrative conditions only."
+    ]
+  },
+  "baseline_output_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "metacore_output_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
   "blind_assignment": "A/B labels randomized before rubric evaluation",
   "metrics": {
-    "unknown_preservation": {
+    "uncertainty_preserved": {
       "baseline": "FAIL",
       "metacore": "PASS",
-      "method": "rule+rubric",
-      "confidence": 0.96
+      "method": "rubric",
+      "evaluator_type": "rubric_engine",
+      "confidence_milli": 960,
+      "notes": "Illustrative metric result."
     }
   },
   "limitations": [
     "illustrative receipt",
     "single-run comparison",
-    "model output may be stochastic"
+    "example outputs are represented by placeholder hashes"
   ],
   "timestamp": "2026-09-11T00:00:00Z",
-  "receipt_sha256": "sha256:example-receipt"
+  "receipt_hash_contract": {
+    "algorithm": "SHA-256",
+    "canonicalization": "METACORE_CANONICAL_JSON_V1",
+    "excluded_fields": [
+      "receipt_sha256"
+    ]
+  },
+  "receipt_sha256": "sha256:ddf48224faac5b5df6794b58a1fae27558b4f3d9a483d164c296a5cb55fc91e0"
 }

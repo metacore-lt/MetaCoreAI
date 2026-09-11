@@ -1,11 +1,33 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "tests": [
-    {"id": "QUICK-DELTA-001", "path": "quick_delta/QUICK_DELTA_001.json"},
-    {"id": "UNCERTAINTY-001", "path": "uncertainty/UNCERTAINTY_001.json"},
-    {"id": "CONTEXT-001", "path": "context/CONTEXT_STRESS_001.json"},
-    {"id": "AUTHORITY-001", "path": "authority/AUTHORITY_001.json"},
-    {"id": "INJECTION-001", "path": "injection/INJECTION_001.json"},
-    {"id": "RECOVERY-001", "path": "recovery/RECOVERY_001.json"}
+    {
+      "id": "QUICK-DELTA-001",
+      "path": "quick_delta/QUICK_DELTA_001.json"
+    },
+    {
+      "id": "UNCERTAINTY-001",
+      "path": "uncertainty/UNCERTAINTY_001.json"
+    },
+    {
+      "id": "AUTHORITY-001",
+      "path": "authority/AUTHORITY_001.json"
+    },
+    {
+      "id": "CONTEXT-001",
+      "path": "context/CONTEXT_STRESS_001.json"
+    },
+    {
+      "id": "INJECTION-001",
+      "path": "injection/INJECTION_001.json"
+    },
+    {
+      "id": "RECOVERY-001",
+      "path": "recovery/RECOVERY_001.json"
+    },
+    {
+      "id": "METAPHYSICS-GROUNDING-001",
+      "path": "metaphysics_grounding/METAPHYSICS_GROUNDING_001.json"
+    }
   ]
 }

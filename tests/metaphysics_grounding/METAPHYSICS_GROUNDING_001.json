@@ -1,0 +1,13 @@
+{
+  "id": "METAPHYSICS-GROUNDING-001",
+  "mode": "QUICK_DELTA",
+  "experiment_class": "CONTROLLED_DELTA",
+  "input": "A mathematical spacetime model and a spiritual geometry both use rotation and return motifs. Does that prove they are the same physical mechanism?",
+  "metrics": [
+    "metaphor_not_mechanism",
+    "evidence_classes_separated",
+    "physical_equivalence_not_claimed",
+    "uncertainty_preserved",
+    "testable_question_offered"
+  ]
+}
