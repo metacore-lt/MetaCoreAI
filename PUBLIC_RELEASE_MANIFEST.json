@@ -3,9 +3,9 @@
   "publisher_policy_version": "3.6.0-premium-personal-signal-lab",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "a4bff77510f52404f05bc23cb7f7fccef6ff87332f71b7546ab7e99d82699b8c",
-  "release_id": "sha256:a4bff77510f52404f05bc23cb7f7fccef6ff87332f71b7546ab7e99d82699b8c",
-  "generated_at": "2026-09-11T20:54:59.403186+00:00",
+  "content_set_sha256": "f5f9710c34fc597412d13d880ed7977a67c116ce0ece911650938441df5ae246",
+  "release_id": "sha256:f5f9710c34fc597412d13d880ed7977a67c116ce0ece911650938441df5ae246",
+  "generated_at": "2026-09-11T21:00:09.464478+00:00",
   "file_count": 50,
   "files": [
     {
@@ -135,8 +135,8 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 9673,
-      "sha256": "9835faa2a34a382d529b497f7d2883c9cf445b5402b86b9bf5b182337e2ec537"
+      "bytes": 9701,
+      "sha256": "a98c3a0057ecf8b4b8382b113345e228523adb43a84b8df19a7d99e267da4956"
     },
     {
       "path": "playground/context-lab.js",
@@ -150,8 +150,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 12411,
-      "sha256": "5d5ba50d352d10f84c9758b07954e3a6b27f8d50c91c6187bc5178d55b49c99b"
+      "bytes": 12398,
+      "sha256": "0a8aab4656160f4e8f6964a841f48f6fe77e422894ded87fe7530a607d920922"
     },
     {
       "path": "playground/personal-signal-fixture.json",
