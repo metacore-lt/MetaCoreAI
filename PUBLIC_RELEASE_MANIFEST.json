@@ -3,9 +3,9 @@
   "publisher_policy_version": "3.4.0-proof-collaboration-ip-boundary",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "160b5d96960840e8294c73b359dbaf23b0c0667c76a314726b8c4042744784ad",
-  "release_id": "sha256:160b5d96960840e8294c73b359dbaf23b0c0667c76a314726b8c4042744784ad",
-  "generated_at": "2026-09-11T14:59:08.177050+00:00",
+  "content_set_sha256": "ee16fffdce25627d04eb2d4fc5ebbf5c0ae29320e646b3d13257b6d472d68c76",
+  "release_id": "sha256:ee16fffdce25627d04eb2d4fc5ebbf5c0ae29320e646b3d13257b6d472d68c76",
+  "generated_at": "2026-09-11T15:07:21.432839+00:00",
   "file_count": 42,
   "files": [
     {
@@ -65,8 +65,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2531,
-      "sha256": "9c434420a4105361c46c2c806a5e3fd612ce948ab830bc2892a6c9f97019cbc0"
+      "bytes": 3713,
+      "sha256": "4b27b38888cf2c7a353a5eae8cfe03d7636f967a2053f0167beb27c9f344cbd7"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -100,8 +100,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 1686,
-      "sha256": "234521079066d95d17b2c4ac8af4a31df2a1f10d61f8801a337df431b2817ca7"
+      "bytes": 1761,
+      "sha256": "f443e818e4ea470c6b91c29afb1c81dbaab51c813cac3f64d91fd9a885f88dcc"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -215,8 +215,8 @@
     },
     {
       "path": "tools/delta_lab.py",
-      "bytes": 20617,
-      "sha256": "ac21fc8d52fa2cbc83286ee8d99cf7aea115739bc5cf83c5b06d063bc3b04333"
+      "bytes": 22625,
+      "sha256": "827daf13d26f086f0b03283f090e2ff17f2a2f6ed5c930ba450d26ae315402f6"
     }
   ]
 }

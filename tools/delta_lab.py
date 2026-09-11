@@ -341,6 +341,36 @@ def write_proof_bundle(receipt_path,lane,goal,out_dir,challenge_id=None):
       'It was generated locally and was not transmitted by the tool. Review every file before sharing it.\n',encoding='utf-8')
     print('PROOF_BUNDLE_WRITTEN',out)
 
+def start_profile(profile):
+    profiles={
+      'developer':('TRUST-GAUNTLET','Probe uncertainty, authority boundaries and prompt injection.','developer'),
+      'agent-builder':('CONTEXT-GAUNTLET','Probe correction retention, failure recovery and source freshness.','developer'),
+      'operator':('CONTEXT-GAUNTLET','Probe operational continuity and failure truthfulness.','pilot'),
+      'human-ai':('HUMAN-GAUNTLET','Probe agency, non-manipulation and human-context boundaries.','pilot'),
+      'researcher':('GROUNDING-GAUNTLET','Probe evidence classes, uncertainty and analogy-vs-mechanism grounding.','developer'),
+      'integrator':('TRUST-GAUNTLET','Start with trust boundaries, then move to source/integration scope.','developer'),
+    }
+    if profile not in profiles: raise SystemExit('INVALID_START_PROFILE')
+    challenge_id,why,lane=profiles[profile]
+    routes=contact_routes(); route_key={'developer':'developer','pilot':'pilot'}[lane]
+    target=routes[route_key].get('email') or routes[route_key].get('url')
+    lines=[
+      f'METACORE DELTA START :: {profile}',
+      f'RECOMMENDED_CHALLENGE={challenge_id}',
+      f'WHY={why}',
+      '',
+      '1) Inspect:',
+      f'   python3 tools/delta_lab.py challenge-show {challenge_id}',
+      '2) Create a local challenge kit:',
+      f'   python3 tools/delta_lab.py challenge-kit {challenge_id} --output-dir ./{challenge_id.lower()}-kit',
+      '3) When you have a verified receipt, generate a Passport / Proof Bundle.',
+      f'4) If the result matters, route the technical conversation to {target}.',
+      '5) For source/integration depth, read SOURCE_ACCESS.md.',
+      '',
+      'No private MetaCore source, credentials or live runtime access are required to start.'
+    ]
+    return '\n'.join(lines)+'\n'
+
 def check():
     required=[
       'README.md','START_HERE.md','CHALLENGES.md','SOURCE_ACCESS.md','JOIN_THE_LAB.md','IP_BOUNDARY.md','GROUNDING.md','SECURITY_MODEL.md','METHODOLOGY.md','CAPSULES.md','PROOF_MODEL.md','CONTRIBUTING_TESTS.md','delta_manifest.json',
@@ -381,6 +411,7 @@ def main():
     sub.add_parser('write-suite')
     s=sub.add_parser('hash-receipt'); s.add_argument('path'); s.add_argument('--write',action='store_true')
     s=sub.add_parser('verify-receipt'); s.add_argument('path'); s.add_argument('--hash-only',action='store_true')
+    s=sub.add_parser('start'); s.add_argument('--profile',choices=['developer','agent-builder','operator','human-ai','researcher','integrator'],default='developer')
     sub.add_parser('challenge-list')
     s=sub.add_parser('challenge-show'); s.add_argument('challenge_id')
     s=sub.add_parser('challenge-kit'); s.add_argument('challenge_id'); s.add_argument('--output-dir',required=True)
@@ -398,6 +429,7 @@ def main():
     elif a.cmd=='write-suite': write_suite_manifest()
     elif a.cmd=='hash-receipt': cmd_hash(a.path,a.write)
     elif a.cmd=='verify-receipt': verify_receipt(a.path,not a.hash_only)
+    elif a.cmd=='start': print(start_profile(a.profile),end='')
     elif a.cmd=='challenge-list':
         for ch in challenge_registry()['challenges']:
             print(ch['id'],f"{ch.get('time_minutes')}m",ch.get('title'))

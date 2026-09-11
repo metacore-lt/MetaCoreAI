@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -43,5 +43,6 @@
   "join_the_lab": "JOIN_THE_LAB.md",
   "contact_routes": "engagement/CONTACT_ROUTES.json",
   "collaboration_intent_schema": "specs/collaboration-intent.schema.json",
-  "ip_boundary": "IP_BOUNDARY.md"
+  "ip_boundary": "IP_BOUNDARY.md",
+  "entry_command": "python3 tools/delta_lab.py start --profile developer"
 }
