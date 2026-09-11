@@ -3,9 +3,9 @@
   "publisher_policy_version": "3.6.0-premium-personal-signal-lab",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "4eaec428a4ef68df2e722630768e35902d8b34d15f14880de5fff14bd1b43c57",
-  "release_id": "sha256:4eaec428a4ef68df2e722630768e35902d8b34d15f14880de5fff14bd1b43c57",
-  "generated_at": "2026-09-11T20:45:07.017373+00:00",
+  "content_set_sha256": "a4bff77510f52404f05bc23cb7f7fccef6ff87332f71b7546ab7e99d82699b8c",
+  "release_id": "sha256:a4bff77510f52404f05bc23cb7f7fccef6ff87332f71b7546ab7e99d82699b8c",
+  "generated_at": "2026-09-11T20:54:59.403186+00:00",
   "file_count": 50,
   "files": [
     {
@@ -75,8 +75,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4476,
-      "sha256": "6d3119da3a6f540ce99706368f43954ccbd26b74aa02a16d051c0e3b66b78119"
+      "bytes": 4567,
+      "sha256": "0ae4b9f197aae3e637dd21f0789c74c78d33741c15f24c178b1abbe09699704f"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -110,8 +110,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 2212,
-      "sha256": "d4dda55d73b9543d5d160e39cc4fd1e7d5aa1941a0210ada0be2b4b223cefc5c"
+      "bytes": 2281,
+      "sha256": "fd68dd662c5481d2048fa4adb017a094f573bb38e86582ce844bb5c66540c08d"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -145,8 +145,8 @@
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 2673,
-      "sha256": "5c3dcd9840912c34e33511c82e5dc5ea09b2e08e27934df82e6d79fb5021b19b"
+      "bytes": 2736,
+      "sha256": "3bb7d31712034e9be44d4132e1165a54437fa8ef8575a13968add21381be6a29"
     },
     {
       "path": "playground/index.html",

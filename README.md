@@ -31,7 +31,7 @@ The challenge kit is local, text-only and opens no network connection.
 
 ## Premium Context Lab — anonymous, zero server cost
 
-Want to click before you integrate? Open `playground/index.html`.
+Want to click before you integrate? Open the live browser demo: `https://delta.metacore.lt/context-lab/` — or inspect/run `playground/index.html` locally.
 
 Choose **Personal Signal Mode** (birth date + city → provenance → symbolic matrix → precision gate) or **Technical Mode** (Context Compiler, State DELTA, Epistemic Router, Authority Gate). All seven instruments run entirely in the browser: no B1 job, no database, no cookie/local-storage persistence and no network call.
 

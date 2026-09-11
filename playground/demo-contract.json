@@ -70,5 +70,6 @@
     "local_storage": false
   },
   "symbolic_boundary": "Psychomatrix preview is symbolic/numerological and is not a psychometric assessment, diagnosis, fate claim or empirical personality measurement.",
-  "time_precision_boundary": "When birth time is unknown, 12:00 is an explicit demo assumption and time-sensitive astrology claims are withheld."
+  "time_precision_boundary": "When birth time is unknown, 12:00 is an explicit demo assumption and time-sensitive astrology claims are withheld.",
+  "live_mirror_url": "https://delta.metacore.lt/context-lab/"
 }
