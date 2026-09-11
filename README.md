@@ -29,9 +29,13 @@ python3 tools/delta_lab.py challenge-kit TRUST-GAUNTLET --output-dir ./trust-gau
 The challenge kit is local, text-only and opens no network connection.
 
 
-## Zero-cost Context Lab
+## Premium Context Lab — anonymous, zero server cost
 
-Want to click before you integrate? Open `playground/index.html`. Four API-shaped instruments — Context Compiler, State DELTA, Epistemic Router and Authority Gate — run entirely in the browser: no B1, no database and no network calls.
+Want to click before you integrate? Open `playground/index.html`.
+
+Choose **Personal Signal Mode** (birth date + city → provenance → symbolic matrix → precision gate) or **Technical Mode** (Context Compiler, State DELTA, Epistemic Router, Authority Gate). All seven instruments run entirely in the browser: no B1 job, no database, no cookie/local-storage persistence and no network call.
+
+Unknown birth time becomes an explicit `12:00 ASSUMED_NOON` — not a fake fact. The symbolic psychomatrix preview is reflection, not psychometric assessment. See `PERSONAL_SIGNAL_METHOD.md`.
 
 This is the anonymous playground. The future live MetaCore treatment remains a separate verified-developer boundary.
 

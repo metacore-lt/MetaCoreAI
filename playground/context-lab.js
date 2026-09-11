@@ -47,10 +47,71 @@ function authorityCheck(){const req={operation:'authority_check',actor_type:$('#
  if(!reasons.length)reasons.push('Authenticated actor, mandate/scope and approval boundary are satisfied for the selected demo case.');
  const res={status:'OK_DEMO',decision,reasons,principle:'Dignity is universal; authority is scoped.',automatic_execution:false};$('#ag-req').textContent=pretty(req);$('#ag-res').textContent=pretty(res)}
 
+
+const symbolicThemes={1:'initiative / self-direction',2:'relation / sensitivity',3:'expression / creation',4:'structure / method',5:'change / adaptation',6:'responsibility / care',7:'inquiry / reflection',8:'stewardship / material organization',9:'integration / wider perspective'};
+function digitSum(n){return String(Math.abs(Number(n)||0)).split('').reduce((a,c)=>a+(Number(c)||0),0)}
+function reduceNumber(n){let x=Math.abs(Number(n)||0);while(x>9&&![11,22,33].includes(x))x=digitSum(x);return x}
+function parseBirthDate(v){
+ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v||''); if(!m)return null;
+ const y=Number(m[1]),mo=Number(m[2]),d=Number(m[3]); const x=new Date(y,mo-1,d);
+ if(x.getFullYear()!==y||x.getMonth()!==mo-1||x.getDate()!==d)return null;
+ const today=new Date(); today.setHours(23,59,59,999); if(x>today||y<1900)return null;
+ return {y,mo,d,iso:v};
+}
+function psychomatrixPreview(date){
+ const raw=`${String(date.y).padStart(4,'0')}${String(date.mo).padStart(2,'0')}${String(date.d).padStart(2,'0')}`;
+ const dateDigits=raw.split('').map(Number); const A=dateDigits.reduce((a,b)=>a+b,0); const B=digitSum(A);
+ const dayDigits=String(date.d).padStart(2,'0').split('').map(Number); const firstDayDigit=dayDigits.find(n=>n!==0)||0;
+ const C=A-(2*firstDayDigit); const D=digitSum(C);
+ const all=[...dateDigits,...String(A).split('').map(Number),...String(B).split('').map(Number),...String(C).split('').map(Number),...String(D).split('').map(Number)].filter(n=>n>=1&&n<=9);
+ const counts={}; for(let i=1;i<=9;i++)counts[i]=0; for(const n of all)counts[n]++;
+ const active=Object.keys(counts).filter(k=>counts[k]>0).map(Number); const missing=Object.keys(counts).filter(k=>counts[k]===0).map(Number);
+ const max=Math.max(...Object.values(counts)); const dominant=max?Object.keys(counts).filter(k=>counts[k]===max).map(Number):[];
+ const repetition=Object.values(counts).reduce((a,c)=>a+Math.max(0,c-1),0);
+ return {algorithm:'PUBLIC_PYTHAGOREAN_STYLE_PSYCHOMATRIX_PREVIEW_V1',working_numbers:{A,B,C,D},main_number:reduceNumber(A),counts,active_numbers:active,missing_numbers:missing,dominant_digits:dominant,repetition_score:repetition,matrix_density:+(active.length/9).toFixed(3),boundary:'Symbolic/numerological reflection only; not psychometric assessment, diagnosis or personality measurement.'};
+}
+function renderMatrix(matrix){
+ const host=$('#ps-matrix'); host.textContent=''; const order=[1,4,7,2,5,8,3,6,9];
+ for(const n of order){const cell=document.createElement('div');cell.className='num-cell '+(matrix.counts[n]?'active':'missing');const digit=document.createElement('span');digit.className='digit';digit.textContent=String(n);const reps=document.createElement('span');reps.className='reps';reps.textContent=matrix.counts[n]?String(n).repeat(Math.min(matrix.counts[n],5)):'—'; if(matrix.counts[n]>5)reps.textContent=String(n).repeat(5)+` ×${matrix.counts[n]}`;cell.append(digit,reps);host.appendChild(cell)}
+}
+function personalReflection(matrix){
+ const dom=matrix.dominant_digits.slice(0,3); const miss=matrix.missing_numbers.slice(0,3);
+ const foreground=dom.length?dom.map(n=>symbolicThemes[n]).join(', '):'no single repeated theme';
+ const open=miss.length?miss.map(n=>symbolicThemes[n]).join(', '):'no empty matrix positions';
+ return {title:dom.length?`Symbolic emphasis: ${dom.join(' · ')}`:'Balanced symbolic spread',text:`This public symbolic model foregrounds ${foreground}. Open positions can be used as reflection questions around ${open}. Treat this as a prompt for inquiry, not a statement about who you are.`};
+}
+function showPersonalError(msg){
+ let e=$('#ps-error'); if(!e){e=document.createElement('div');e.id='ps-error';e.className='personal-error';$('.personal-input').appendChild(e)} e.textContent=msg;
+}
+function clearPersonalError(){const e=$('#ps-error');if(e)e.remove()}
+function buildPersonalSeed(){
+ clearPersonalError(); const date=parseBirthDate($('#ps-date').value); const city=$('#ps-city').value.trim(); const timeKnown=$('#ps-time-known').checked; const time=timeKnown?$('#ps-time').value:'12:00';
+ if(!date){showPersonalError('Enter a valid birth date between 1900 and today.');return}
+ if(!city||city.length<2||city.length>100){showPersonalError('Enter a birth city (2–100 characters).');return}
+ if(timeKnown&&!/^([01]\d|2[0-3]):[0-5]\d$/.test(time)){showPersonalError('Enter a valid birth time.');return}
+ const matrix=psychomatrixPreview(date); const reflection=personalReflection(matrix); const precision=timeKnown?'USER_PROVIDED_TIME':'ASSUMED_NOON';
+ const request={operation:'personal_seed',birth_date:date.iso,birth_city:city,birth_time:time,birth_time_class:precision};
+ const gate=timeKnown?{state:'ELIGIBLE_FOR_LIVE_CALCULATION',withheld_in_this_demo:['city geocoding','timezone resolution','astronomical positions','natal angles/houses'],note:'Time was user-provided, but this anonymous page still performs no live astronomical calculation.'}:{state:'TIME_SENSITIVE_ASTRO_BLOCKED',withheld:['exact Ascendant','exact houses','time-sensitive Moon/angle precision'],note:'12:00 is a demo assumption, not a verified birth time. MetaCore keeps that uncertainty visible.'};
+ const result={status:'OK_DEMO',provenance:{birth_date:'USER_PROVIDED',birth_city:'USER_PROVIDED_UNVERIFIED_TEXT',birth_time:precision,location_resolution:'DEFERRED_NOT_GEOCODED',symbolic_matrix:'SYMBOLIC_DERIVED',personality:'UNKNOWN_NOT_INFERRED'},symbolic_matrix:matrix,reflection,precision_gate:gate,privacy:{network_transmission:false,persistence:false,cookies:false,local_storage:false},next_layer:{available_after_separate_gate:['city/timezone resolution','astronomical calculation','temporal cycles','context profile','live AI treatment'],called_now:false}};
+ $('#ps-empty').hidden=true; $('#ps-results').hidden=false; renderMatrix(matrix);
+ $('#ps-main').textContent=matrix.main_number; $('#ps-density').textContent=Math.round(matrix.matrix_density*100)+'%'; $('#ps-repeat').textContent=matrix.repetition_score; $('#ps-precision').textContent=precision;
+ $('#ps-active').textContent=matrix.active_numbers.join(' · ')||'—'; $('#ps-missing').textContent=matrix.missing_numbers.join(' · ')||'none'; $('#ps-dominant').textContent=matrix.dominant_digits.join(' · ')||'none';
+ $('#ps-reflection-title').textContent=reflection.title; $('#ps-reflection').textContent=reflection.text; $('#ps-gate').textContent=gate.state; $('#ps-gate-note').textContent=gate.note;
+ $('#ps-prov-date').textContent=date.iso; $('#ps-prov-city').textContent=city; $('#ps-prov-time').textContent=time; $('#ps-time-class').textContent=timeKnown?'USER':'ASSUMED';
+ $('#ps-req').textContent=pretty(request); $('#ps-res').textContent=pretty(result);
+}
+function togglePersonalTime(){const known=$('#ps-time-known').checked;const input=$('#ps-time');input.disabled=!known;if(!known)input.value='12:00';$('#ps-time-label').textContent=known?'USER PROVIDED':'12:00 · DEMO DEFAULT';$('#ps-time-label').className=known?'':'assumption'}
+function samplePersonal(){const now=new Date();$('#ps-date').value='1990-01-01';$('#ps-city').value='Vilnius';$('#ps-time-known').checked=false;togglePersonalTime();buildPersonalSeed()}
+function clearPersonal(){clearPersonalError();$('#ps-date').value='';$('#ps-city').value='';$('#ps-time-known').checked=false;togglePersonalTime();$('#ps-empty').hidden=false;$('#ps-results').hidden=true;$('#ps-prov-date').textContent='birth date';$('#ps-prov-city').textContent='city';$('#ps-prov-time').textContent='12:00';$('#ps-time-class').textContent='ASSUMED';$('#ps-req').textContent=pretty({status:'WAITING_FOR_LOCAL_INPUT'});$('#ps-res').textContent=pretty({network_transmission:false,persistence:false})}
+function bindPersonal(){
+ const date=$('#ps-date'); if(date){const t=new Date(),pad=n=>String(n).padStart(2,'0');date.max=`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`}
+ $('#ps-time-known').onchange=togglePersonalTime; $('#ps-run').onclick=buildPersonalSeed; $('#ps-sample').onclick=samplePersonal; $('#ps-clear').onclick=clearPersonal; togglePersonalTime();
+}
+
 function bind(){
  $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
  document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
- contextCompile();stateDelta();epistemicRoute();authorityCheck();
+ bindPersonal(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
 }
 document.addEventListener('DOMContentLoaded',bind);
 })();

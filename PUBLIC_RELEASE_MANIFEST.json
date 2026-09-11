@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.5.0-browser-local-context-lab",
+  "publisher_policy_version": "3.6.0-premium-personal-signal-lab",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "de567bbf0a71321e0d89385ac9db74e184cf24f47290a7cc7f8878777662507c",
-  "release_id": "sha256:de567bbf0a71321e0d89385ac9db74e184cf24f47290a7cc7f8878777662507c",
-  "generated_at": "2026-09-11T20:13:40.115590+00:00",
-  "file_count": 47,
+  "content_set_sha256": "4eaec428a4ef68df2e722630768e35902d8b34d15f14880de5fff14bd1b43c57",
+  "release_id": "sha256:4eaec428a4ef68df2e722630768e35902d8b34d15f14880de5fff14bd1b43c57",
+  "generated_at": "2026-09-11T20:45:07.017373+00:00",
+  "file_count": 50,
   "files": [
     {
       "path": ".gitignore",
@@ -35,8 +35,8 @@
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 1914,
-      "sha256": "b6dca44dd7033d0d955171e938b79d8e40dc0ff74908cc0b926a51fcc45761e6"
+      "bytes": 2687,
+      "sha256": "f132462a7a3b994c7addf5449824df723e8436ea5c87843d3efb38cdcbeb8dee"
     },
     {
       "path": "GROUNDING.md",
@@ -64,14 +64,19 @@
       "sha256": "8a65262596e0b4fbab0769b0954812f1b7d29e8f448baa162d57d27748e0b938"
     },
     {
+      "path": "PERSONAL_SIGNAL_METHOD.md",
+      "bytes": 1954,
+      "sha256": "ffbad2995abccd4506c86d306378953008c906733e57e19719058359b55a1fc1"
+    },
+    {
       "path": "PROOF_MODEL.md",
       "bytes": 843,
       "sha256": "71370b59528acf3a379a85cca04e9969a49bf0aa1124c9fc4f21f0b14f0662bb"
     },
     {
       "path": "README.md",
-      "bytes": 4098,
-      "sha256": "6df74ba5f8bdb83078e14db08b22f28eb6fde0dcd7fcd24485c41a14623164a1"
+      "bytes": 4476,
+      "sha256": "6d3119da3a6f540ce99706368f43954ccbd26b74aa02a16d051c0e3b66b78119"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -105,8 +110,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 1931,
-      "sha256": "d2eed971eaa3f8659a9e5dc9d33d189e9061c1f2d1a6a5c02581c95ebcdb4f08"
+      "bytes": 2212,
+      "sha256": "d4dda55d73b9543d5d160e39cc4fd1e7d5aa1941a0210ada0be2b4b223cefc5c"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -130,23 +135,28 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 2757,
-      "sha256": "500ab31f3533d71ea7084ebef2954da3baa22076a0fa3912852b67a8b99d18c5"
+      "bytes": 9673,
+      "sha256": "9835faa2a34a382d529b497f7d2883c9cf445b5402b86b9bf5b182337e2ec537"
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 6558,
-      "sha256": "14314bfaa036d568b6789a9fd9be43c524c1306b0cbdd5326218904219b2504c"
+      "bytes": 14614,
+      "sha256": "f5b598050988fc43a69f3f9f963cdc4dfb4f073896c266022b44a66c946155d2"
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 1384,
-      "sha256": "f80fbe52f71f874aeb946a0d9e6792a1ab3ae8ff7399cee890f0db1700f5ae4c"
+      "bytes": 2673,
+      "sha256": "5c3dcd9840912c34e33511c82e5dc5ea09b2e08e27934df82e6d79fb5021b19b"
     },
     {
       "path": "playground/index.html",
-      "bytes": 7480,
-      "sha256": "448e7f7658490a39606274468aeef5bad1ac326cc4dc47183a2cea47d9a14caa"
+      "bytes": 12411,
+      "sha256": "5d5ba50d352d10f84c9758b07954e3a6b27f8d50c91c6187bc5178d55b49c99b"
+    },
+    {
+      "path": "playground/personal-signal-fixture.json",
+      "bytes": 553,
+      "sha256": "22e7adac34d4c4bb702f3812a1a7483544317965507d9306736f5b5eb80398cf"
     },
     {
       "path": "specs/capsule.schema.json",
@@ -242,6 +252,11 @@
       "path": "tools/delta_lab.py",
       "bytes": 22625,
       "sha256": "827daf13d26f086f0b03283f090e2ff17f2a2f6ed5c930ba450d26ae315402f6"
+    },
+    {
+      "path": "tools/personal_signal_demo.py",
+      "bytes": 4302,
+      "sha256": "958ff6926d50d50ac60201c53cab74b223208e3fb6c763d564e55a863c65c06a"
     }
   ]
 }

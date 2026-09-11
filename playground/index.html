@@ -1,5 +1,37 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MetaCore Context Lab — browser-local API-shaped demo of context, state, epistemic and authority logic."><title>MetaCore Context Lab · Zero-Cost API Demo</title><link rel="stylesheet" href="context-lab.css"></head><body><main>
-<div class="eyebrow">MetaCore DELTA Lab · Developer Playground</div><h1>Touch the operating logic.<br>Not the private engine.</h1><p class="lead">Four API-shaped instruments run entirely in your browser. Change the inputs, inspect the JSON and see how a persistent AI operating layer can reason about context, state, evidence and scoped authority <strong>before any LLM is called.</strong></p><span class="badge">● Browser-local · no B1 · no DB · no network calls</span>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta name="description" content="MetaCore Context Lab — premium browser-local personal signal and developer demo of context, state, evidence and authority logic."><title>MetaCore Context Lab · Premium Personal + Developer Demo</title><link rel="stylesheet" href="context-lab.css"></head><body><main>
+<div class="eyebrow">MetaCore DELTA Lab · Premium Context Playground</div><h1>Start with a signal.<br>Watch context take shape.</h1><p class="lead">Choose a personal or technical entry. Everything on this page runs in your browser: no account, no B1 job, no database write. The point is to show <strong>how MetaCore keeps data, assumptions, symbolic models and authority boundaries separate</strong> before any private AI treatment is allowed.</p><span class="badge">● Browser-local · personal data stays on this page · server cost 0</span>
+<div class="mode-doors"><a href="#personal" class="mode-door mode-door--personal"><small>PERSONAL SIGNAL MODE</small><strong>Build your context seed</strong><span>Birth date + city → provenance → symbolic matrix → precision gates.</span></a><a href="#technical" class="mode-door"><small>TECHNICAL MODE</small><strong>Touch the operating logic</strong><span>Context · state · evidence · scoped authority.</span></a></div>
+<section class="personal-shell" id="personal">
+  <div class="personal-head"><div><span class="section-kicker">PERSONAL SIGNAL MODE · OPTIONAL</span><h2>Your first context seed.</h2><p>Enter only what you want to test. Birth date and city stay in this browser. If birth time is unknown, MetaCore marks <b>12:00 as an assumption</b> instead of pretending it is a fact.</p></div><div class="privacy-seal"><b>LOCAL ONLY</b><span>no fetch</span><span>no storage</span><span>no cookies</span></div></div>
+  <div class="personal-grid">
+    <div class="personal-input card">
+      <div class="control"><label>Birth date</label><input id="ps-date" type="date" min="1900-01-01" autocomplete="off"></div>
+      <div class="control"><label>Birth city</label><input id="ps-city" type="text" maxlength="100" placeholder="Vilnius" autocomplete="off"></div>
+      <label class="checkline"><input id="ps-time-known" type="checkbox"> I know the birth time</label>
+      <div class="control"><label>Birth time <span id="ps-time-label" class="assumption">12:00 · DEMO DEFAULT</span></label><input id="ps-time" type="time" value="12:00" disabled></div>
+      <div class="actions"><button id="ps-run" class="primary">Build personal signal seed</button><button id="ps-sample">Use sample data</button><button id="ps-clear">Clear</button></div>
+      <div class="tiny">This demo does not geocode the city and does not calculate a live natal chart. Exact houses / Ascendant stay blocked when time is assumed.</div>
+    </div>
+    <div class="personal-output card">
+      <div class="signal-rail"><span><i>USER</i><b id="ps-prov-date">birth date</b></span><span><i>USER</i><b id="ps-prov-city">city</b></span><span><i id="ps-time-class">ASSUMED</i><b id="ps-prov-time">12:00</b></span><span><i>SYMBOLIC</i><b>number matrix</b></span><span><i>UNKNOWN</i><b>personality ≠ inferred</b></span></div>
+      <div id="ps-empty" class="personal-empty"><div class="orb">Δ</div><strong>Give the Lab two signals.</strong><span>We will show what is known, assumed, calculated symbolically — and what remains unknown.</span></div>
+      <div id="ps-results" class="personal-results" hidden>
+        <div class="metric-strip"><div><small>MAIN NUMBER</small><b id="ps-main">–</b></div><div><small>MATRIX DENSITY</small><b id="ps-density">–</b></div><div><small>REPETITION</small><b id="ps-repeat">–</b></div><div><small>TIME PRECISION</small><b id="ps-precision">–</b></div></div>
+        <div class="matrix-wrap"><div><small class="matrix-title">SYMBOLIC NUMBER MATRIX</small><div id="ps-matrix" class="num-matrix"></div></div><div class="matrix-side"><p><small>ACTIVE</small><b id="ps-active">–</b></p><p><small>OPEN / MISSING</small><b id="ps-missing">–</b></p><p><small>DOMINANT</small><b id="ps-dominant">–</b></p></div></div>
+        <div class="reflection-box"><small>REFLECTION, NOT DIAGNOSIS</small><h3 id="ps-reflection-title">Pattern prompt</h3><p id="ps-reflection"></p></div>
+        <div class="precision-box"><div><small>PRECISION GATE</small><b id="ps-gate">–</b></div><p id="ps-gate-note"></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="api personal-api"><div class="api-head"><span class="method">POST /demo/v1/personal/seed + symbolic-matrix · LOCAL</span></div><div class="row"><pre id="ps-req">{
+  "status": "WAITING_FOR_LOCAL_INPUT"
+}</pre><pre id="ps-res" class="result">{
+  "network_transmission": false,
+  "persistence": false
+}</pre></div></div>
+  <div class="personal-next"><div><small>NEXT LAYER · NOT CALLED YET</small><strong>What could MetaCore add after this?</strong><span>City/timezone resolution · astronomical positions · temporal cycles · a richer context profile · live AI treatment.</span></div><a href="https://github.com/metacore-lt/MetaCoreAI/blob/main/SOURCE_ACCESS.md" target="_blank" rel="noopener noreferrer">How deeper access works →</a></div>
+</section>
+<div id="technical" class="technical-head"><span class="section-kicker">TECHNICAL MODE</span><h2>Four operating instruments.</h2><p>Same page, zero private runtime. Change inputs and inspect the API-shaped JSON.</p></div>
 <div class="grid">
 <section class="card"><h2>Context Compiler</h2><div class="sub">Public demo of the Profile Context principle: Signal × Relevance × Confidence × Timing × Human Context.</div>
 <div class="row"><div class="control"><label>Signal 1 theme</label><select id="cc-theme1"><option>decision</option><option>work</option><option>risk</option><option>relationship</option></select></div><div class="control"><label>Signal 2 theme</label><select id="cc-theme2"><option>risk</option><option>decision</option><option>work</option><option>timing</option></select></div></div>
