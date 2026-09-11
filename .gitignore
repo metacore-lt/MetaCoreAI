@@ -1,19 +1,7 @@
-# Secrets / credentials
-*.pem
-*.key
-*.p12
-*.pfx
+.DS_Store
+*.log
+*.tmp
 .env
 .env.*
-id_rsa*
-id_ed25519*
-
-# Local sync state
-.sync/
-state/
-logs/
-
-# Generated caches
+node_modules/
 __pycache__/
-*.pyc
-.DS_Store

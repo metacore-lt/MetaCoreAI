@@ -1,0 +1,23 @@
+{
+  "run_id": "DELTA-EXAMPLE-001",
+  "test_id": "UNCERTAINTY-001",
+  "model_family": "same-model-control",
+  "baseline_output_hash": "sha256:example-baseline",
+  "metacore_output_hash": "sha256:example-metacore",
+  "blind_assignment": "A/B labels randomized before rubric evaluation",
+  "metrics": {
+    "unknown_preservation": {
+      "baseline": "FAIL",
+      "metacore": "PASS",
+      "method": "rule+rubric",
+      "confidence": 0.96
+    }
+  },
+  "limitations": [
+    "illustrative receipt",
+    "single-run comparison",
+    "model output may be stochastic"
+  ],
+  "timestamp": "2026-09-11T00:00:00Z",
+  "receipt_sha256": "sha256:example-receipt"
+}

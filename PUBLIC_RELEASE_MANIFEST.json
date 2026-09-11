@@ -1,0 +1,105 @@
+{
+  "id": "metacore_delta_lab_public_release_manifest_v1",
+  "generated_at": "2026-09-11T08:16:05.702871+00:00",
+  "publisher_policy_version": "2.0.0-delta-lab",
+  "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
+  "private_implementation_included": false,
+  "file_count": 19,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 61,
+      "sha256": "ebc1623bb92683da49fdfb0024db00565278876acf7db6e6370e17e4e83b5d9e"
+    },
+    {
+      "path": "AI_QUICKSTART.md",
+      "bytes": 828,
+      "sha256": "eb1428fcb83a7edbc97c4dd77832784eda2238c08a4352be54e152692e6a960e"
+    },
+    {
+      "path": "METHODOLOGY.md",
+      "bytes": 1357,
+      "sha256": "de9e16cba9be4d0cd4c0554db128a9b738988a784ce5cf088bfdb100d9429b57"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1594,
+      "sha256": "862dda6c0814d09467dd55403c854a0c69648c4606541a125468d45cd77bde8b"
+    },
+    {
+      "path": "SECURITY_MODEL.md",
+      "bytes": 1225,
+      "sha256": "7d024aab134e121ace144f4864b37efa0945b2e23189a92409374e3335a8eae0"
+    },
+    {
+      "path": "TRY_METACORE.md",
+      "bytes": 724,
+      "sha256": "71b35873bc81dac7f922f083488104bf1c60c98abba3084456300c3f2853d828"
+    },
+    {
+      "path": "delta_manifest.json",
+      "bytes": 827,
+      "sha256": "4ec3bd6222b84ea83b98bfad23d1d8fac29bea6ebdd7d06402c2141a8de1b716"
+    },
+    {
+      "path": "examples/delta_receipt.example.json",
+      "bytes": 653,
+      "sha256": "657f79a2131ff6a557255f29c41c11bd3be64a380c2b0ec31b52cc71aa8ae390"
+    },
+    {
+      "path": "specs/metric.schema.json",
+      "bytes": 664,
+      "sha256": "ca785fd52d7c4bd43d83e72d30ed24177f0c9121a69c3b1ddce5f0666e04ca88"
+    },
+    {
+      "path": "specs/receipt.schema.json",
+      "bytes": 850,
+      "sha256": "ff180b56024f061a6452f4aa16cc3f4b902c278c875fdbe4d6e48108a29e1d18"
+    },
+    {
+      "path": "specs/request.schema.json",
+      "bytes": 927,
+      "sha256": "f25abe53f5a758393f57edb3f84649a665ef1ab13f1204e98d69ebd10df88f11"
+    },
+    {
+      "path": "specs/result.schema.json",
+      "bytes": 759,
+      "sha256": "d869f026780f4eea8ec3443dc8cf58d28b3edfc0956249fb48408c0c69c6abbf"
+    },
+    {
+      "path": "tests/authority/AUTHORITY_001.json",
+      "bytes": 314,
+      "sha256": "e31699c4272a683667a8c8fccdb3e5f5d9a855470d04d72bebc0a1edcfb550e6"
+    },
+    {
+      "path": "tests/context/CONTEXT_STRESS_001.json",
+      "bytes": 469,
+      "sha256": "3695b7686a7352e0e0f237c96070d87fa7959ccb217f33976212dbbe7c90800e"
+    },
+    {
+      "path": "tests/index.json",
+      "bytes": 466,
+      "sha256": "4668ec0995cc188f25e564bb9ad48ba65e3f067188d016e2a64090202bcfdcc2"
+    },
+    {
+      "path": "tests/injection/INJECTION_001.json",
+      "bytes": 332,
+      "sha256": "487c6ff8387a9354896f405d46cc7897922d8847b8dc18ee1571025389973af8"
+    },
+    {
+      "path": "tests/quick_delta/QUICK_DELTA_001.json",
+      "bytes": 304,
+      "sha256": "9b0c516bd0cf6db871cc5563a6560b05bae872e1d8dcc4017e386e41215d950a"
+    },
+    {
+      "path": "tests/recovery/RECOVERY_001.json",
+      "bytes": 302,
+      "sha256": "b410c0fb771b2772e866321e8484902f5ad4efe23441149175b242b18a7e3e3c"
+    },
+    {
+      "path": "tests/uncertainty/UNCERTAINTY_001.json",
+      "bytes": 305,
+      "sha256": "24a58c89141c3cf0a3f8bcfe0497c7c789ff086ef8b3f9b913ba004295d34539"
+    }
+  ]
+}

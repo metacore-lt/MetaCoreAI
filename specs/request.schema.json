@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metacore.example/specs/delta-request-v0.1.schema.json",
+  "title": "MetaCore DELTA Request v0.1",
+  "type": "object",
+  "required": ["test_id", "mode", "input"],
+  "properties": {
+    "test_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "mode": {"enum": ["QUICK_DELTA", "BREAK_METACORE", "CONTEXT_STRESS", "BRING_YOUR_AI"]},
+    "input": {
+      "oneOf": [
+        {"type": "string", "maxLength": 20000},
+        {"type": "array", "items": {"type": "object"}, "maxItems": 32}
+      ]
+    },
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "model_family": {"type": "string"},
+        "output": {"type": "string"},
+        "output_hash": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "publish_result": {"type": "boolean", "default": false}
+  },
+  "additionalProperties": false
+}

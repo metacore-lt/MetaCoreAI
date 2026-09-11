@@ -1,0 +1,27 @@
+{
+  "id": "metacore_delta_lab_v0_1",
+  "version": "0.1.0",
+  "status": "PUBLIC_BENCHMARK_SKELETON",
+  "name": "MetaCore DELTA Lab",
+  "tagline": "Bring your prompt. Measure the DELTA.",
+  "principle": "PRIVATE_ARCHITECTURE_PUBLICLY_TESTABLE_BEHAVIOR",
+  "modes": [
+    "QUICK_DELTA",
+    "BREAK_METACORE",
+    "CONTEXT_STRESS",
+    "BRING_YOUR_AI"
+  ],
+  "gateway": {
+    "status": "NOT_YET_PUBLISHED",
+    "note": "The public runtime endpoint will be declared here only after gateway security and quotas are ready."
+  },
+  "schemas": {
+    "request": "specs/request.schema.json",
+    "result": "specs/result.schema.json",
+    "metric": "specs/metric.schema.json",
+    "receipt": "specs/receipt.schema.json"
+  },
+  "tests_index": "tests/index.json",
+  "methodology": "METHODOLOGY.md",
+  "security_model": "SECURITY_MODEL.md"
+}
