@@ -1,0 +1,40 @@
+{
+  "id": "metacore_context_lab_demo_contract_v1",
+  "version": "1.0.0",
+  "status": "PUBLIC_BROWSER_LOCAL",
+  "execution": {
+    "location": "browser",
+    "network_calls": false,
+    "B1_calls": false,
+    "database_writes": false,
+    "private_runtime": false
+  },
+  "operations": {
+    "context_compile": {
+      "method": "POST",
+      "path": "/demo/v1/context/compile",
+      "input": "bounded public signal objects",
+      "output": "theme weights + confidence bands + unknowns + prompts"
+    },
+    "state_delta": {
+      "method": "POST",
+      "path": "/demo/v1/state/delta",
+      "input": "before and after JSON objects",
+      "output": "added/removed/changed/unchanged key paths"
+    },
+    "epistemic_route": {
+      "method": "POST",
+      "path": "/demo/v1/epistemic/route",
+      "input": "claim provenance/freshness/support flags",
+      "output": "public epistemic class + explanation"
+    },
+    "authority_check": {
+      "method": "POST",
+      "path": "/demo/v1/authority/check",
+      "input": "actor/auth/mandate/scope/impact/approval policy",
+      "output": "ALLOW / NEEDS_APPROVAL / BLOCK + reasons"
+    }
+  },
+  "boundary": "Demo behavior is public and inspectable. Private prompts, routes, bridges, operating-core code and credentials are not present.",
+  "live_upgrade": "Separate verified developer boundary; not implemented by this browser demo."
+}

@@ -28,6 +28,13 @@ python3 tools/delta_lab.py challenge-kit TRUST-GAUNTLET --output-dir ./trust-gau
 
 The challenge kit is local, text-only and opens no network connection.
 
+
+## Zero-cost Context Lab
+
+Want to click before you integrate? Open `playground/index.html`. Four API-shaped instruments — Context Compiler, State DELTA, Epistemic Router and Authority Gate — run entirely in the browser: no B1, no database and no network calls.
+
+This is the anonymous playground. The future live MetaCore treatment remains a separate verified-developer boundary.
+
 ## Try → verify → collaborate
 
 ```text
