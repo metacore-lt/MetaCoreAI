@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.6.0-premium-personal-signal-lab",
+  "publisher_policy_version": "3.7.0-human-team-signal-lab",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "f5f9710c34fc597412d13d880ed7977a67c116ce0ece911650938441df5ae246",
-  "release_id": "sha256:f5f9710c34fc597412d13d880ed7977a67c116ce0ece911650938441df5ae246",
-  "generated_at": "2026-09-11T21:00:09.464478+00:00",
-  "file_count": 50,
+  "content_set_sha256": "e5db802e3a96ad5a2e9dbd892522778b1acecb629780fb04ba106a217c33a12d",
+  "release_id": "sha256:e5db802e3a96ad5a2e9dbd892522778b1acecb629780fb04ba106a217c33a12d",
+  "generated_at": "2026-09-12T12:37:19.567182+00:00",
+  "file_count": 53,
   "files": [
     {
       "path": ".gitignore",
@@ -35,13 +35,18 @@
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 2687,
-      "sha256": "f132462a7a3b994c7addf5449824df723e8436ea5c87843d3efb38cdcbeb8dee"
+      "bytes": 3596,
+      "sha256": "2c3b2ee3fa623a7f9e30f97acc91a73930baffdf631325cba65faf0b0bb2a18c"
     },
     {
       "path": "GROUNDING.md",
       "bytes": 866,
       "sha256": "6d832051aa2106d5d1e026af89ca331cc6a680c84037aa5fc173223385252160"
+    },
+    {
+      "path": "HUMAN_TEAM_SIGNAL_METHOD.md",
+      "bytes": 2253,
+      "sha256": "9223f10cf74ebb8739175b8b77b48714d2e5fa62a2df63f36d74bdb895273178"
     },
     {
       "path": "IP_BOUNDARY.md",
@@ -75,8 +80,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4567,
-      "sha256": "0ae4b9f197aae3e637dd21f0789c74c78d33741c15f24c178b1abbe09699704f"
+      "bytes": 4662,
+      "sha256": "e6386f82336f979b3144370b60dbbb9b3f9739eb2aa8eadd1de57bb56f82d045"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -110,8 +115,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 2281,
-      "sha256": "fd68dd662c5481d2048fa4adb017a094f573bb38e86582ce844bb5c66540c08d"
+      "bytes": 2380,
+      "sha256": "bb6379728c8004eab005d97f93fcd72b190be9ce2f71316b04584bd9e17560cd"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -135,23 +140,28 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 9701,
-      "sha256": "a98c3a0057ecf8b4b8382b113345e228523adb43a84b8df19a7d99e267da4956"
+      "bytes": 12535,
+      "sha256": "e97fe0c0993902a844e267e73a300823dda8cb98691a2099de486cc22f172b49"
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 14614,
-      "sha256": "f5b598050988fc43a69f3f9f963cdc4dfb4f073896c266022b44a66c946155d2"
+      "bytes": 22332,
+      "sha256": "599eedac6ba6fbd5f2ffa92c9bb2e3934910d9cc72f49ed5ec7bf64187f2b892"
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 2736,
-      "sha256": "3bb7d31712034e9be44d4132e1165a54437fa8ef8575a13968add21381be6a29"
+      "bytes": 3621,
+      "sha256": "cee0494e5f9eaf7a6b1008366313fe8f4b30a3f02eea0dca77589c658c47d995"
+    },
+    {
+      "path": "playground/human-team-fixtures.json",
+      "bytes": 1419,
+      "sha256": "ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091"
     },
     {
       "path": "playground/index.html",
-      "bytes": 12398,
-      "sha256": "0a8aab4656160f4e8f6964a841f48f6fe77e422894ded87fe7530a607d920922"
+      "bytes": 18421,
+      "sha256": "bc8347cff3228679f0a651856d4a6ca750fd43630a1e5e058f4f5724f7096ce3"
     },
     {
       "path": "playground/personal-signal-fixture.json",
@@ -252,6 +262,11 @@
       "path": "tools/delta_lab.py",
       "bytes": 22625,
       "sha256": "827daf13d26f086f0b03283f090e2ff17f2a2f6ed5c930ba450d26ae315402f6"
+    },
+    {
+      "path": "tools/human_team_signal_demo.py",
+      "bytes": 5054,
+      "sha256": "74b076fc721a8c55afe45cc00167402d81eb9ef870dff7916ef8e02a7b06a3b1"
     },
     {
       "path": "tools/personal_signal_demo.py",

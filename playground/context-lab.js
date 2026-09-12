@@ -108,10 +108,49 @@ function bindPersonal(){
  $('#ps-time-known').onchange=togglePersonalTime; $('#ps-run').onclick=buildPersonalSeed; $('#ps-sample').onclick=samplePersonal; $('#ps-clear').onclick=clearPersonal; togglePersonalTime();
 }
 
+
+const safetyWords=['violence','violent','threat','threaten','unsafe','coercion','coerce','harassment','bullying','self-harm','suicide','smurt','grasin','nesaug','prievart','savižud','patyč','priekabi','угроз','насил','небезопас','домог','травл'];
+function hasSafetySignal(text){const t=String(text||'').toLowerCase();return safetyWords.some(w=>t.includes(w))}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n}
+function renderHumanLoopResult(res){const host=$('#hl-result');host.textContent='';
+ if(res.status==='SAFETY_STOP'){host.append(el('strong','signal-stop-title','Safety boundary'));host.append(el('span','signal-stop-copy','This demo stops ordinary pattern analysis here. If there is immediate danger, use local emergency services or a trusted responsible human.'));host.className='signal-result-placeholder signal-stop';return}
+ const flow=el('div','loop-flow'); for(const [k,v] of [['TRIGGER',res.map.trigger],['TOUCHES',res.map.touched_need],['REACTION',res.map.reaction],['BREAKER',res.map.breaker||'not provided'],['NEXT STEP',res.map.next_step||'not provided']]){const item=el('div','loop-node');item.append(el('small','',k),el('b','',v));flow.append(item)}host.append(flow);host.append(el('p','signal-next-question',res.next_question));host.className='signal-result-placeholder active'}
+function runHumanLoop(){
+ const req={operation:'human_loop',trigger:$('#hl-trigger').value.trim(),touched_need:$('#hl-need').value,reaction:$('#hl-reaction').value,breaker:$('#hl-breaker').value.trim(),next_step:$('#hl-step').value.trim()};
+ if(!req.trigger){const out={status:'INVALID_INPUT',error:'Describe one concrete trigger moment.'};$('#hl-json').textContent=pretty(out);return}
+ const safety=hasSafetySignal(Object.values(req).join(' '));
+ const res=safety?{status:'SAFETY_STOP',analysis_performed:false,boundary:'Human safety overrides routine pattern optimization.'}:{status:'OK_DEMO',provenance:'SELF_REPORT',map:{trigger:req.trigger,touched_need:req.touched_need,reaction:req.reaction,breaker:req.breaker,next_step:req.next_step},next_question:!req.breaker?'What has interrupted this loop even once, however briefly?':!req.next_step?'What is one small action you control that does not require the other person to change first?':'After the next occurrence, what observable sign would tell you the loop changed?',boundary:'Structural self-report map only; not diagnosis, attachment classification or relationship prognosis.'};
+ renderHumanLoopResult(res);$('#hl-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}})
+}
+function clearHumanLoop(){for(const id of ['#hl-trigger','#hl-breaker','#hl-step'])$(id).value='';$('#hl-need').selectedIndex=0;$('#hl-reaction').selectedIndex=0;const host=$('#hl-result');host.className='signal-result-placeholder';host.textContent='';host.append(el('strong','', 'No label. No diagnosis.'),el('span','', 'Only a structural map of the self-reported loop.'));$('#hl-json').textContent=pretty({status:'WAITING_FOR_LOCAL_INPUT'})}
+
+const teamMeta={
+ decision:{label:'decision clarity',mechanism:'Decisions stall when it is unclear who has the final word or when a decision counts as closed.',action:'Define decision gates: who initiates, approves, executes and closes.',question:'Who can say “decision made”, and what observable event closes it?'},
+ ownership:{label:'ownership clarity',mechanism:'Ownership friction rises when roles overlap but no one clearly owns the next action.',action:'Use one explicit owner per active issue and separate owner from observers.',question:'Which one responsibility needs one owner instead of several partial owners?'},
+ communication:{label:'communication friction',mechanism:'Information gets lost when channel, timing, handoff or acknowledgement is unclear.',action:'Define a communication protocol: channel, response time, handoff and loop-back.',question:'Which handoff most often disappears without confirmation?'},
+ rhythm:{label:'work rhythm',mechanism:'Problems surface late when there is no stable review/escalation/closure rhythm.',action:'Introduce a short recurring bottleneck review with explicit escalation and closure.',question:'Which recurring rhythm is missing so issues appear only in crisis?'}
+};
+function renderTeamResult(res){const host=$('#tf-result');host.textContent='';
+ if(res.status==='SAFETY_STOP'){host.append(el('strong','signal-stop-title','Human review required'));host.append(el('span','signal-stop-copy','Threat, harassment, bullying or safety language should not be reduced to team-optimization scoring. Route to a responsible manager, HR, mediator, legal/safety function or emergency support as appropriate.'));host.className='signal-result-placeholder signal-stop';return}
+ const head=el('div','team-snapshot-head');head.append(el('small','',`FRICTION ${res.score}/36 · ${res.band}`),el('strong','',`Bottleneck: ${res.bottleneck.label}`));host.append(head);host.append(el('p','',res.bottleneck.mechanism));const q=el('div','team-question');q.append(el('small','', 'NEXT QUESTION'),el('b','',res.bottleneck.question));host.append(q);const a=el('div','team-action');a.append(el('small','', 'OPERATOR ACTION'),el('b','',res.bottleneck.action));host.append(a);host.className='signal-result-placeholder active'}
+function runTeamFriction(){
+ const req={operation:'team_friction',team_type:$('#tf-type').value,stuck:$('#tf-stuck').value.trim(),decision:+$('#tf-decision').value,ownership:+$('#tf-ownership').value,communication:+$('#tf-communication').value,rhythm:+$('#tf-rhythm').value,next_improvement:$('#tf-step').value.trim()};
+ if(!req.stuck){const out={status:'INVALID_INPUT',error:'Describe one concrete operational bottleneck.'};$('#tf-json').textContent=pretty(out);return}
+ if(hasSafetySignal(req.stuck+' '+req.next_improvement)){const res={status:'SAFETY_STOP',analysis_performed:false,boundary:'Not HR assessment. Safety/harassment signals require responsible human review.'};renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}});return}
+ const score=req.decision+req.ownership+req.communication+req.rhythm;const band=score>=29?'HIGH FRICTION':score>=21?'MEDIUM FRICTION':'LOW FRICTION';
+ const dims=['decision','ownership','communication','rhythm'].map(k=>({key:k,value:req[k],...teamMeta[k]})).sort((a,b)=>b.value-a.value);const top=dims[0];
+ const res={status:'OK_DEMO',score,range:'12..36',band,bottleneck:{key:top.key,label:top.label,value:top.value,mechanism:top.mechanism,action:top.action,question:top.question},secondary_signal:{key:dims[1].key,label:dims[1].label,value:dims[1].value},next_improvement:req.next_improvement||'not provided',boundary:'Operational team snapshot only; not HR assessment, employee profiling or performance rating.'};
+ renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}})
+}
+function clearTeamFriction(){for(const id of ['#tf-stuck','#tf-step'])$(id).value='';for(const id of ['#tf-type','#tf-decision','#tf-ownership','#tf-communication','#tf-rhythm'])$(id).selectedIndex=0;const host=$('#tf-result');host.className='signal-result-placeholder';host.textContent='';host.append(el('strong','', 'Operations before psychology.'),el('span','', 'Decision · ownership · communication · rhythm.'));$('#tf-json').textContent=pretty({status:'WAITING_FOR_LOCAL_INPUT'})}
+function bindHumanTeam(){
+ $('#hl-run').onclick=runHumanLoop;$('#hl-clear').onclick=clearHumanLoop;$('#tf-run').onclick=runTeamFriction;$('#tf-clear').onclick=clearTeamFriction;
+}
+
 function bind(){
  $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
  document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
- bindPersonal(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
+ bindPersonal(); bindHumanTeam(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
 }
 document.addEventListener('DOMContentLoaded',bind);
 })();

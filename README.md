@@ -33,9 +33,9 @@ The challenge kit is local, text-only and opens no network connection.
 
 Want to click before you integrate? Open the live browser demo: `https://delta.metacore.lt/context-lab/` — or inspect/run `playground/index.html` locally.
 
-Choose **Personal Signal Mode** (birth date + city → provenance → symbolic matrix → precision gate) or **Technical Mode** (Context Compiler, State DELTA, Epistemic Router, Authority Gate). All seven instruments run entirely in the browser: no B1 job, no database, no cookie/local-storage persistence and no network call.
+Choose **Personal Signal**, **Human Context**, **Team Context** or **Technical Mode**. The Lab now exposes nine browser-local instruments: symbolic/provenance mapping, a non-diagnostic human loop map, a non-HR team friction snapshot, plus Context Compiler, State DELTA, Epistemic Router and Authority Gate. No B1 job, no database, no cookie/local-storage persistence and no network call.
 
-Unknown birth time becomes an explicit `12:00 ASSUMED_NOON` — not a fake fact. The symbolic psychomatrix preview is reflection, not psychometric assessment. See `PERSONAL_SIGNAL_METHOD.md`.
+Unknown birth time becomes an explicit `12:00 ASSUMED_NOON` — not a fake fact. The symbolic psychomatrix preview is reflection, not psychometric assessment. See `PERSONAL_SIGNAL_METHOD.md` and `HUMAN_TEAM_SIGNAL_METHOD.md`.
 
 This is the anonymous playground. The future live MetaCore treatment remains a separate verified-developer boundary.
 

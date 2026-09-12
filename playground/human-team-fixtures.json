@@ -1,0 +1,52 @@
+{
+  "human": {
+    "input": {
+      "trigger": "A message is left unanswered for hours.",
+      "need": "being seen / heard",
+      "reaction": "withdraw / go quiet",
+      "breaker": "Ask directly what happened without assuming intent.",
+      "step": "Name the feeling and ask one concrete question."
+    },
+    "expected": {
+      "status": "OK_DEMO",
+      "provenance": "SELF_REPORT",
+      "next_question": "After the next occurrence, what observable sign would tell you the loop changed?"
+    }
+  },
+  "human_safety": {
+    "input": {
+      "trigger": "There is a threat of violence.",
+      "need": "safety / predictability",
+      "reaction": "leave the situation"
+    },
+    "expected_status": "SAFETY_STOP"
+  },
+  "team": {
+    "input": {
+      "team_type": "project",
+      "stuck": "Decisions bounce between several owners and do not close.",
+      "decision": 9,
+      "ownership": 6,
+      "communication": 3,
+      "rhythm": 6,
+      "step": "One owner and one closure rule per active decision."
+    },
+    "expected": {
+      "status": "OK_DEMO",
+      "score": 24,
+      "band": "MEDIUM FRICTION",
+      "bottleneck_key": "decision"
+    }
+  },
+  "team_safety": {
+    "input": {
+      "team_type": "project",
+      "stuck": "Bullying and harassment are reported.",
+      "decision": 6,
+      "ownership": 6,
+      "communication": 9,
+      "rhythm": 6
+    },
+    "expected_status": "SAFETY_STOP"
+  }
+}

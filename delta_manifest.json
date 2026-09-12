@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -54,5 +54,7 @@
   "anonymous_personal_input_network_transmission": false,
   "anonymous_personal_input_persistence": false,
   "birth_time_default_if_unknown": "12:00 ASSUMED_NOON",
-  "live_browser_demo_url": "https://delta.metacore.lt/context-lab/"
+  "live_browser_demo_url": "https://delta.metacore.lt/context-lab/",
+  "human_team_signal_method": "HUMAN_TEAM_SIGNAL_METHOD.md",
+  "browser_local_demo_operations": 9
 }
