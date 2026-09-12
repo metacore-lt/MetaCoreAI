@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -62,5 +62,8 @@
   "knowledge_route_operation": "/demo/v1/knowledge/route",
   "knowledge_topology_source_sha256": "sha256:50f8cbbf79d74469633596f736b90df096985e599a429d208e3dda4f6bfdc677",
   "knowledge_topology_projection_sha256": "sha256:5c95efe674fe515b4c01facd8696939f66ac72cb86bf367a866fdb9fcba690a1",
-  "accessibility": "VISIBLE_LABELS_KEYBOARD_FOCUS_SKIP_LINK_LIVE_REGIONS"
+  "accessibility": "VISIBLE_LABELS_KEYBOARD_FOCUS_SKIP_LINK_LIVE_REGIONS",
+  "experiment_gallery": "EXPERIMENT_GALLERY.md",
+  "experiment_manifest_url": "https://delta.metacore.lt/context-lab/experiments.json",
+  "guided_experiments": 6
 }

@@ -1,6 +1,6 @@
 {
   "id": "metacore_context_lab_demo_contract_v1",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "status": "PUBLIC_BROWSER_LOCAL_PREMIUM",
   "execution": {
     "location": "browser",
@@ -93,7 +93,14 @@
   "human_team_boundary": "Human Loop is self-report reflection, not diagnosis. Team Friction is operational context, not HR assessment or employee profiling.",
   "safety_boundary": "Violence, threat, harassment, coercion, self-harm or immediate-safety signals stop ordinary optimization and route to a responsible human boundary.",
   "static_endpoints": {
-    "knowledge_topology": "GET /context-lab/knowledge-topology.json"
+    "knowledge_topology": "GET /context-lab/knowledge-topology.json",
+    "experiments": "GET /context-lab/experiments.json"
   },
-  "knowledge_boundary": "Topology suggests where to look; it is not factual proof, a source browser or a private specialist API."
+  "knowledge_boundary": "Topology suggests where to look; it is not factual proof, a source browser or a private specialist API.",
+  "experiment_gallery": {
+    "count": 6,
+    "manifest": "experiments.json",
+    "runner": "browser-local presets only",
+    "shareable_query_parameter": "exp"
+  }
 }

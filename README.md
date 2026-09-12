@@ -6,7 +6,18 @@
 
 [**Live Lab ↗**](https://delta.metacore.lt/context-lab/) · [Static Knowledge JSON ↗](https://delta.metacore.lt/context-lab/knowledge-topology.json) · [Inspect playground source](playground/) · [Security model](SECURITY_MODEL.md)
 
-**No account · no token · no B1 job · no database write.** The anonymous Lab currently exposes **10 browser-local instruments**. Click first; inspect the JSON second; read architecture only if you want to go deeper.
+**No account · no token · no B1 job · no database write.** The anonymous Lab currently exposes **10 browser-local instruments** and **6 guided experiments**. Click first; inspect the JSON second; read architecture only if you want to go deeper.
+
+### Six 60-second experiments
+
+- [Can the system admit it does not know?](https://delta.metacore.lt/context-lab/?exp=unknown)
+- [Can AI keep an authority boundary?](https://delta.metacore.lt/context-lab/?exp=authority)
+- [Where does this question live?](https://delta.metacore.lt/context-lab/?exp=knowledge)
+- [What actually changed?](https://delta.metacore.lt/context-lab/?exp=state)
+- [Where is the team friction?](https://delta.metacore.lt/context-lab/?exp=team)
+- [What is signal vs assumption?](https://delta.metacore.lt/context-lab/?exp=signal)
+
+Public experiment manifest: `GET https://delta.metacore.lt/context-lab/experiments.json` — see `EXPERIMENT_GALLERY.md`.
 
 | Instrument | API-shaped operation | What it demonstrates |
 |---|---|---|

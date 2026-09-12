@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.8.1-jewel-polish",
+  "publisher_policy_version": "3.9.0-experiment-gallery",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "57ddb69badb54a8c6921850c87b2d7c4ca8bb33309b5de04d1cf833cf44e6bda",
-  "release_id": "sha256:57ddb69badb54a8c6921850c87b2d7c4ca8bb33309b5de04d1cf833cf44e6bda",
-  "generated_at": "2026-09-12T19:32:19.394145+00:00",
-  "file_count": 58,
+  "content_set_sha256": "7a18ebb93bab73f56cc3b3fc9c0d7b50cfcc9fbe05fe7d727c8bd589a8ba29f1",
+  "release_id": "sha256:7a18ebb93bab73f56cc3b3fc9c0d7b50cfcc9fbe05fe7d727c8bd589a8ba29f1",
+  "generated_at": "2026-09-12T21:09:26.953372+00:00",
+  "file_count": 61,
   "files": [
     {
       "path": ".gitignore",
@@ -35,8 +35,13 @@
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 3957,
-      "sha256": "71f7f7a72609cad6329099c1a42d811cc6afc4ca45c65158b7fd93f482660991"
+      "bytes": 4313,
+      "sha256": "6fdb67b2f9f1648c287f96d60aaa28beb220d2657b97c93d8f75c0a249e2ac6a"
+    },
+    {
+      "path": "EXPERIMENT_GALLERY.md",
+      "bytes": 1394,
+      "sha256": "5092c5653a8a6d93ece8e27c189d3db47851b140f35be3e899570c2ee0e32e3b"
     },
     {
       "path": "GROUNDING.md",
@@ -85,8 +90,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5229,
-      "sha256": "f99dc36c738fb26c3bb947b6221a22fe59ed0858301b91ffc9d12411db086371"
+      "bytes": 5933,
+      "sha256": "864c1f4d1e4766567aabcebe642081030051e11250161061a8eb9ddb21becc7d"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -120,8 +125,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 2909,
-      "sha256": "884960e71c32fd71eb376ee0fdf2c9d32deb3a6255a9814720b3af53c2e43d7d"
+      "bytes": 3072,
+      "sha256": "a6120ba2e412ba5beb1fcedf826fd8703cb797c879eb430e04ea784e5fccae50"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -145,18 +150,28 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 16013,
-      "sha256": "4a166fec8188507d044edb8dce1f77c0f3e830790caee42976427408b440a8d5"
+      "bytes": 18165,
+      "sha256": "5d9dea4ea4561de6f322990e1a3c87ff6ed6880222fb0c3233853f2c80095d96"
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 26766,
-      "sha256": "05d73a8b97bbb841c1ac33b6a5b521bf8825494e0db6a31e18f8c47fd852bea3"
+      "bytes": 30216,
+      "sha256": "a68645b77577488c1ff2d342a89c1cfcea640887fa7aaa9d48c4783129b0c161"
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 4090,
-      "sha256": "c22d7153c8779eeff9275142d1e299142102df1c2451b1e8f51b06c85c6d3544"
+      "bytes": 4312,
+      "sha256": "972571049ba5978d59393dbc7d3df2060564b70b0b5a66bbcd37108b302895dc"
+    },
+    {
+      "path": "playground/experiments-data.js",
+      "bytes": 3718,
+      "sha256": "929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d"
+    },
+    {
+      "path": "playground/experiments.json",
+      "bytes": 5016,
+      "sha256": "5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5"
     },
     {
       "path": "playground/human-team-fixtures.json",
@@ -165,8 +180,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 22238,
-      "sha256": "b59905aab93f1337359ad3a237862301ad832db6cce86d6acab41120f0d2d6df"
+      "bytes": 23305,
+      "sha256": "7d5e73c1d76c45e42c153f6e1f434c0c16b89bfdc43362fb4a23106428a27415"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",

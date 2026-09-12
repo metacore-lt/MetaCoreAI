@@ -54,6 +54,17 @@ GET https://delta.metacore.lt/context-lab/knowledge-topology.json
 
 These are public demo algorithms, **not a clone of the private MetaCore operating implementation**.
 
+
+## Guided experiment gallery
+
+Six shareable `?exp=` presets preload existing local instruments. They are not new model capabilities.
+
+```text
+GET https://delta.metacore.lt/context-lab/experiments.json
+```
+
+The experiment manifest exposes the preset input, expected deterministic demo behavior and boundary for each scenario. See `EXPERIMENT_GALLERY.md`.
+
 ## Cost / bot model
 
 All ten instruments run in the visitor's browser. Repeated clicks create no B1 inference jobs and no application-database writes. The browser demo performs no `fetch`, XHR, WebSocket, beacon, cookie or local-storage operation.

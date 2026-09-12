@@ -178,10 +178,47 @@ function bindKnowledgeRoute(){
  $('#kt-run').onclick=runKnowledgeRoute;$('#kt-query').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runKnowledgeRoute()}});document.querySelectorAll('[data-kt]').forEach(b=>b.onclick=()=>{$('#kt-query').value=b.dataset.kt;runKnowledgeRoute()});runKnowledgeRoute();
 }
 
+
+function experimentRows(){return (window.MCExperiments&&Array.isArray(window.MCExperiments.experiments))?window.MCExperiments.experiments:[]}
+function experimentById(id){return experimentRows().find(x=>x.id===id)||null}
+function renderExperimentGallery(activeId){
+ const host=$('#experiment-grid'); if(!host)return; host.textContent='';
+ const rows=experimentRows(); if(!rows.length){host.append(el('div','experiment-loading','Experiment manifest unavailable.'));return}
+ for(const x of rows){const a=el('a','experiment-card'+(x.id===activeId?' active':''));a.href=`?exp=${encodeURIComponent(x.id)}#${x.target}`;a.dataset.experiment=x.id;a.append(el('small','',x.category),el('strong','',x.title),el('span','',x.short),el('em','',`Try → ${x.instrument}`));host.append(a)}
+}
+function setSelect(id,value){const n=$(id);if(!n)return; n.value=String(value)}
+function focusExperimentTarget(id){
+ const target=document.getElementById(id);if(!target)return;target.classList.remove('experiment-focus');void target.offsetWidth;target.classList.add('experiment-focus');setTimeout(()=>target.classList.remove('experiment-focus'),1300)
+}
+function applyExperiment(id,{scroll=false}={}){
+ const x=experimentById(id); if(!x)return false; const p=x.preset||{};
+ if(id==='unknown'){
+   setSelect('#er-source',p.source_type);setSelect('#er-fresh',p.freshness);setSelect('#er-direct',p.directly_supported);setSelect('#er-missing',p.material_missing);epistemicRoute();
+ }else if(id==='authority'){
+   setSelect('#ag-actor',p.actor_type);setSelect('#ag-auth',p.authenticated);setSelect('#ag-mandate',p.delegated_mandate);setSelect('#ag-scope',p.scope_match);setSelect('#ag-impact',p.impact);setSelect('#ag-approval',p.approval_policy);authorityCheck();
+ }else if(id==='knowledge'){
+   $('#kt-query').value=p.query||'';runKnowledgeRoute();
+ }else if(id==='state'){
+   $('#sd-before').value=pretty(p.before||{});$('#sd-after').value=pretty(p.after||{});stateDelta();
+ }else if(id==='team'){
+   setSelect('#tf-type',p.team_type);$('#tf-stuck').value=p.stuck||'';setSelect('#tf-decision',p.decision);setSelect('#tf-ownership',p.ownership);setSelect('#tf-communication',p.communication);setSelect('#tf-rhythm',p.rhythm);$('#tf-step').value=p.next_improvement||'';runTeamFriction();
+ }else if(id==='signal'){
+   $('#ps-date').value=p.birth_date||'';$('#ps-city').value=p.birth_city||'';$('#ps-time-known').checked=Boolean(p.birth_time);$('#ps-time').value=p.birth_time||'12:00';togglePersonalTime();buildPersonalSeed();
+ }else return false;
+ renderExperimentGallery(id); const status=$('#experiment-status');if(status)status.textContent=`Loaded: ${x.title} · ${x.short}`;focusExperimentTarget(x.target);
+ if(scroll){const target=document.getElementById(x.target);if(target)target.scrollIntoView({behavior:'smooth',block:'start'})}
+ return true;
+}
+function bindExperimentGallery(){
+ const params=new URLSearchParams(window.location.search); const id=params.get('exp'); renderExperimentGallery(id);
+ const host=$('#experiment-grid');if(host)host.addEventListener('click',e=>{const a=e.target.closest('[data-experiment]');if(!a)return;e.preventDefault();const exp=a.dataset.experiment;if(!applyExperiment(exp,{scroll:true}))return;const url=new URL(window.location.href);url.searchParams.set('exp',exp);url.hash=experimentById(exp).target;history.replaceState(null,'',url.pathname+url.search+url.hash)});
+ if(id)applyExperiment(id,{scroll:false});
+}
+
 function bind(){
  $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
  document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
- bindPersonal(); bindHumanTeam(); bindKnowledgeRoute(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
+ bindPersonal(); bindHumanTeam(); bindKnowledgeRoute(); contextCompile();stateDelta();epistemicRoute();authorityCheck(); bindExperimentGallery();
 }
 document.addEventListener('DOMContentLoaded',bind);
 })();
