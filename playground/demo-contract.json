@@ -1,6 +1,6 @@
 {
   "id": "metacore_context_lab_demo_contract_v1",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "status": "PUBLIC_BROWSER_LOCAL_PREMIUM",
   "execution": {
     "location": "browser",
@@ -63,6 +63,12 @@
       "path": "/demo/v1/team/friction",
       "input": "team type + decision/ownership/communication/rhythm + bottleneck text + next improvement",
       "output": "operational friction snapshot + bottleneck + operator question/action or safety stop"
+    },
+    "knowledge_route": {
+      "method": "POST",
+      "path": "/demo/v1/knowledge/route",
+      "input": "short public question",
+      "output": "matching knowledge regions + epistemic classes + conceptual hops + route confidence"
     }
   },
   "boundary": "Demo behavior is public and inspectable. Private prompts, routes, bridges, operating-core code and credentials are not present.",
@@ -85,5 +91,9 @@
   "time_precision_boundary": "When birth time is unknown, 12:00 is an explicit demo assumption and time-sensitive astrology claims are withheld.",
   "live_mirror_url": "https://delta.metacore.lt/context-lab/",
   "human_team_boundary": "Human Loop is self-report reflection, not diagnosis. Team Friction is operational context, not HR assessment or employee profiling.",
-  "safety_boundary": "Violence, threat, harassment, coercion, self-harm or immediate-safety signals stop ordinary optimization and route to a responsible human boundary."
+  "safety_boundary": "Violence, threat, harassment, coercion, self-harm or immediate-safety signals stop ordinary optimization and route to a responsible human boundary.",
+  "static_endpoints": {
+    "knowledge_topology": "GET /context-lab/knowledge-topology.json"
+  },
+  "knowledge_boundary": "Topology suggests where to look; it is not factual proof, a source browser or a private specialist API."
 }

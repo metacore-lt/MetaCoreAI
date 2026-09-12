@@ -147,10 +147,41 @@ function bindHumanTeam(){
  $('#hl-run').onclick=runHumanLoop;$('#hl-clear').onclick=clearHumanLoop;$('#tf-run').onclick=runTeamFriction;$('#tf-clear').onclick=clearTeamFriction;
 }
 
+
+const ktStop=new Set(['the','and','for','with','from','into','what','which','when','where','how','why','are','is','of','to','or','a','an','in','on','about','claim','model']);
+function ktTokens(text){return String(text||'').toLowerCase().match(/[a-z0-9]+/g)?.filter(x=>x.length>=2&&!ktStop.has(x))||[]}
+function ktSimilar(a,b){return a===b||(a.length>=4&&b.length>=4&&(a.startsWith(b)||b.startsWith(a)))}
+function ktMakeResult(query,mode,confidence,ids,topology,reason){
+ const by=Object.fromEntries(topology.regions.map(r=>[r.id,r])); const route=ids.filter(id=>by[id]).map(id=>({id,label:by[id].label,epistemic_class:by[id].epistemic_class,summary:by[id].summary})); const chosen=new Set(route.map(x=>x.id));
+ const relations=topology.relations.filter(r=>chosen.has(r.from)&&chosen.has(r.to)).map(r=>({from:r.from,to:r.to,relation:r.relation,why:r.why}));
+ return {status:'OK_DEMO',query,match_mode:mode,confidence,route,relations,reason,boundary:'Topology is orientation, not factual proof. Source-specific claims still require source evidence; symbolic/interpretive regions are not promoted to empirical fact.',runtime:{model_called:false,private_api_called:false,token_required:false}};
+}
+function knowledgeRoute(query){
+ const topology=window.MCKnowledgeTopology; const q=String(query||'').trim().replace(/\s+/g,' '); if(!topology)return {status:'DEMO_DATA_UNAVAILABLE'}; if(!q||q.length>500)return {status:'INVALID_INPUT',error:'Question must contain 1..500 characters.'};
+ const qtok=ktTokens(q),qnorm=(q.toLowerCase().match(/[a-z0-9]+/g)||[]).join(' ');
+ for(const ex of topology.example_routes||[]){const pnorm=(ex.question_pattern.toLowerCase().match(/[a-z0-9]+/g)||[]).join(' '),ptok=ktTokens(ex.question_pattern);const hit=qnorm.includes(pnorm)||(ptok.length&&ptok.every(p=>qtok.some(qx=>ktSimilar(p,qx))));if(hit)return ktMakeResult(q,'EXAMPLE_ROUTE','HIGH',ex.route,topology,ex.reason)}
+ const scored=[];
+ for(const r of topology.regions){const label=ktTokens(r.label),topics=(r.topics||[]).flatMap(ktTokens),summary=ktTokens(r.summary);let score=0,hits=[];for(const qt of qtok){let part=0;if(label.some(x=>ktSimilar(qt,x)))part=Math.max(part,4);if(topics.some(x=>ktSimilar(qt,x)))part=Math.max(part,3);if(summary.some(x=>ktSimilar(qt,x)))part=Math.max(part,1);if(part){score+=part;hits.push(qt)}}if(score)scored.push({score,hitcount:new Set(hits).size,id:r.id})}
+ scored.sort((a,b)=>b.score-a.score||b.hitcount-a.hitcount||a.id.localeCompare(b.id));
+ if(!scored.length)return {status:'NO_CONFIDENT_ROUTE',query:q,match_mode:'NONE',confidence:'LOW',route:[],relations:[],unknowns:['No public topology region matched strongly enough.'],boundary:'Topology suggests where to look; it does not answer or prove the question.'};
+ const selected=[];for(const row of scored){if(!selected.includes(row.id))selected.push(row.id);if(selected.length>=3)break}
+ if(selected.length===1){const rid=selected[0];for(const rel of topology.relations){const other=rel.from===rid?rel.to:rel.to===rid?rel.from:null;if(other&&!selected.includes(other)){selected.push(other);break}}}
+ const confidence=scored[0].score>=8?'HIGH':scored[0].score>=4?'MEDIUM':'LOW';return ktMakeResult(q,'TOKEN_ROUTE',confidence,selected,topology,'Matched public region labels/topics; adjacent regions are added only as conceptual hops.');
+}
+function renderKnowledgeRoute(res){
+ const host=$('#kt-route');host.textContent='';
+ if(res.status!=='OK_DEMO'){const e=el('div','knowledge-empty',res.status==='NO_CONFIDENT_ROUTE'?'No confident public route. Try a more specific concept.':(res.error||'Knowledge map unavailable.'));host.append(e);return}
+ res.route.forEach((r,i)=>{if(i){host.append(el('div','knowledge-arrow','→'))}const node=el('div','knowledge-node');node.append(el('small','',r.epistemic_class),el('strong','',r.label),el('span','',r.summary));host.append(node)});
+}
+function runKnowledgeRoute(){const q=$('#kt-query').value;const req={operation:'knowledge_route',query:q};const res=knowledgeRoute(q);$('#kt-req').textContent=pretty(req);$('#kt-res').textContent=pretty(res);renderKnowledgeRoute(res)}
+function bindKnowledgeRoute(){
+ $('#kt-run').onclick=runKnowledgeRoute;$('#kt-query').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runKnowledgeRoute()}});document.querySelectorAll('[data-kt]').forEach(b=>b.onclick=()=>{$('#kt-query').value=b.dataset.kt;runKnowledgeRoute()});runKnowledgeRoute();
+}
+
 function bind(){
  $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
  document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
- bindPersonal(); bindHumanTeam(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
+ bindPersonal(); bindHumanTeam(); bindKnowledgeRoute(); contextCompile();stateDelta();epistemicRoute();authorityCheck();
 }
 document.addEventListener('DOMContentLoaded',bind);
 })();

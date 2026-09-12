@@ -1,43 +1,43 @@
 # MetaCore DELTA Lab
 
-## Bring your prompt. Measure the DELTA.
-
 > **Private architecture. Publicly testable behavior.**
 
-Do **not** read the whole repository first. Pick your lane and run one command:
+## ▶ Start here: [Open the live Context Lab](https://delta.metacore.lt/context-lab/)
+
+**No account · no token · no B1 job · no database write.** The anonymous Lab currently exposes **10 browser-local instruments**. Click first; inspect the JSON second; read architecture only if you want to go deeper.
+
+| Instrument | API-shaped operation | What it demonstrates |
+|---|---|---|
+| Personal Seed | `POST /demo/v1/personal/seed` | user input vs assumption vs unknown |
+| Symbolic Matrix | `POST /demo/v1/personal/symbolic-matrix` | transparent symbolic calculation, not psychometrics |
+| Personal Reflection | `POST /demo/v1/personal/reflection` | reflective prompt without diagnosis/fate claims |
+| Human Loop Map | `POST /demo/v1/human/loop-map` | trigger → need → reaction → breaker → next step |
+| Team Friction | `POST /demo/v1/team/friction` | decision · ownership · communication · rhythm |
+| **Knowledge Topology** | `POST /demo/v1/knowledge/route` | question → knowledge regions → epistemic classes |
+| Context Compiler | `POST /demo/v1/context/compile` | signal weighting + confidence + unknowns |
+| State DELTA | `POST /demo/v1/state/delta` | explicit before/after state |
+| Epistemic Router | `POST /demo/v1/epistemic/route` | fact / source / inference / hypothesis / symbolic |
+| Authority Gate | `POST /demo/v1/authority/check` | actor → mandate → scope → approval |
+
+The Knowledge Topology also has a real, static, token-free endpoint:
+
+```text
+GET https://delta.metacore.lt/context-lab/knowledge-topology.json
+```
+
+It is a **library map, not a hidden expert API**. It can suggest where to look; it cannot prove a claim. See `KNOWLEDGE_TOPOLOGY_DEMO.md`.
+
+### Prefer the benchmark / CLI path?
 
 ```bash
 python3 tools/delta_lab.py start --profile developer
-```
-
-Profiles: `developer` · `agent-builder` · `operator` · `human-ai` · `researcher` · `integrator`
-
-### Four doors
-
-| You are | Start with | What you are trying to break |
-|---|---|---|
-| Developer / security-minded evaluator | `TRUST-GAUNTLET` | uncertainty, authority, prompt injection |
-| Agent builder / operator | `CONTEXT-GAUNTLET` | correction retention, failure recovery, stale state |
-| Human-AI product / safety team | `HUMAN-GAUNTLET` | agency, non-manipulation, private-context pressure |
-| Research / interdisciplinary team | `GROUNDING-GAUNTLET` | evidence classes, hypothesis, analogy vs mechanism |
-
-```bash
 python3 tools/delta_lab.py challenge-list
 python3 tools/delta_lab.py challenge-kit TRUST-GAUNTLET --output-dir ./trust-gauntlet-kit
 ```
 
-The challenge kit is local, text-only and opens no network connection.
+Profiles: `developer` · `agent-builder` · `operator` · `human-ai` · `researcher` · `integrator`
 
-
-## Premium Context Lab — anonymous, zero server cost
-
-Want to click before you integrate? Open the live browser demo: `https://delta.metacore.lt/context-lab/` — or inspect/run `playground/index.html` locally.
-
-Choose **Personal Signal**, **Human Context**, **Team Context** or **Technical Mode**. The Lab now exposes nine browser-local instruments: symbolic/provenance mapping, a non-diagnostic human loop map, a non-HR team friction snapshot, plus Context Compiler, State DELTA, Epistemic Router and Authority Gate. No B1 job, no database, no cookie/local-storage persistence and no network call.
-
-Unknown birth time becomes an explicit `12:00 ASSUMED_NOON` — not a fake fact. The symbolic psychomatrix preview is reflection, not psychometric assessment. See `PERSONAL_SIGNAL_METHOD.md` and `HUMAN_TEAM_SIGNAL_METHOD.md`.
-
-This is the anonymous playground. The future live MetaCore treatment remains a separate verified-developer boundary.
+The browser source is in `playground/`. Everything there is inspectable; the private operating implementation is not published.
 
 ## Try → verify → collaborate
 

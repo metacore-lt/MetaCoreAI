@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "query": "robot sensor reliability",
+      "expected_route": [
+        "robotics_engineering",
+        "science_research"
+      ],
+      "expected_mode": "EXAMPLE_ROUTE"
+    },
+    {
+      "query": "mineral healing claim",
+      "expected_route": [
+        "minerals_materials",
+        "metaphysics_symbolic",
+        "health_clinical",
+        "science_research"
+      ],
+      "expected_mode": "EXAMPLE_ROUTE"
+    },
+    {
+      "query": "AI robot liability",
+      "expected_route": [
+        "robotics_engineering",
+        "law_rights",
+        "science_research"
+      ],
+      "expected_mode": "EXAMPLE_ROUTE"
+    },
+    {
+      "query": "consciousness or metaphysical model",
+      "expected_route": [
+        "metaphysics_symbolic",
+        "science_research"
+      ],
+      "expected_mode": "EXAMPLE_ROUTE"
+    }
+  ],
+  "unknown": {
+    "query": "banana recipe plating",
+    "expected_status": "NO_CONFIDENT_ROUTE"
+  }
+}

@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.7.0-human-team-signal-lab",
+  "publisher_policy_version": "3.8.0-knowledge-topology-demo",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "e5db802e3a96ad5a2e9dbd892522778b1acecb629780fb04ba106a217c33a12d",
-  "release_id": "sha256:e5db802e3a96ad5a2e9dbd892522778b1acecb629780fb04ba106a217c33a12d",
-  "generated_at": "2026-09-12T12:37:19.567182+00:00",
-  "file_count": 53,
+  "content_set_sha256": "580205b5933b85a2344fedfee22b21c61db5cc2e16b73226551458941b81010f",
+  "release_id": "sha256:580205b5933b85a2344fedfee22b21c61db5cc2e16b73226551458941b81010f",
+  "generated_at": "2026-09-12T15:19:42.371166+00:00",
+  "file_count": 58,
   "files": [
     {
       "path": ".gitignore",
@@ -35,8 +35,8 @@
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 3596,
-      "sha256": "2c3b2ee3fa623a7f9e30f97acc91a73930baffdf631325cba65faf0b0bb2a18c"
+      "bytes": 3957,
+      "sha256": "71f7f7a72609cad6329099c1a42d811cc6afc4ca45c65158b7fd93f482660991"
     },
     {
       "path": "GROUNDING.md",
@@ -57,6 +57,11 @@
       "path": "JOIN_THE_LAB.md",
       "bytes": 1296,
       "sha256": "cefe0c111a1c8100134f0e900611f0f4d07e076ea0ae9d08d10e62a64eb3de59"
+    },
+    {
+      "path": "KNOWLEDGE_TOPOLOGY_DEMO.md",
+      "bytes": 1888,
+      "sha256": "4a16351bc382e3da4531fdddc958833a2101884665cb14da88d41752c95e6343"
     },
     {
       "path": "METHODOLOGY.md",
@@ -80,8 +85,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4662,
-      "sha256": "e6386f82336f979b3144370b60dbbb9b3f9739eb2aa8eadd1de57bb56f82d045"
+      "bytes": 4850,
+      "sha256": "3a85ac59cb19c11a130ae563e5c5f2758c7acff8445be580b63a0f35f33854f7"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -115,8 +120,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 2380,
-      "sha256": "bb6379728c8004eab005d97f93fcd72b190be9ce2f71316b04584bd9e17560cd"
+      "bytes": 2604,
+      "sha256": "8b5999de7f965047551bdf38b7040750cafaf0f078426a500b4b699177b7644c"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -140,18 +145,18 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 12535,
-      "sha256": "e97fe0c0993902a844e267e73a300823dda8cb98691a2099de486cc22f172b49"
+      "bytes": 14609,
+      "sha256": "7829bfb56ecbb687bc4c3bc3ee71cbf54729b22c90b99d77dc95325a29c15687"
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 22332,
-      "sha256": "599eedac6ba6fbd5f2ffa92c9bb2e3934910d9cc72f49ed5ec7bf64187f2b892"
+      "bytes": 26766,
+      "sha256": "05d73a8b97bbb841c1ac33b6a5b521bf8825494e0db6a31e18f8c47fd852bea3"
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 3621,
-      "sha256": "cee0494e5f9eaf7a6b1008366313fe8f4b30a3f02eea0dca77589c658c47d995"
+      "bytes": 4090,
+      "sha256": "c22d7153c8779eeff9275142d1e299142102df1c2451b1e8f51b06c85c6d3544"
     },
     {
       "path": "playground/human-team-fixtures.json",
@@ -160,8 +165,23 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 18421,
-      "sha256": "bc8347cff3228679f0a651856d4a6ca750fd43630a1e5e058f4f5724f7096ce3"
+      "bytes": 19844,
+      "sha256": "1097c88a571eeb4e321cb199e57c24ebe30b417221bed12f1e35f1a365284dd9"
+    },
+    {
+      "path": "playground/knowledge-route-fixtures.json",
+      "bytes": 959,
+      "sha256": "97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede"
+    },
+    {
+      "path": "playground/knowledge-topology-data.js",
+      "bytes": 7269,
+      "sha256": "eed88b8743b3cfa0e6b976e60a2651b44b6d274056db2e1270832bade142dd7a"
+    },
+    {
+      "path": "playground/knowledge-topology.json",
+      "bytes": 9246,
+      "sha256": "b987e174d3de01afdea198edd321f106754747ca0eae316ad643631d1dd4c512"
     },
     {
       "path": "playground/personal-signal-fixture.json",
@@ -267,6 +287,11 @@
       "path": "tools/human_team_signal_demo.py",
       "bytes": 5054,
       "sha256": "74b076fc721a8c55afe45cc00167402d81eb9ef870dff7916ef8e02a7b06a3b1"
+    },
+    {
+      "path": "tools/knowledge_topology_demo.py",
+      "bytes": 4475,
+      "sha256": "e108ad2d67f6a72b090bf059ad72f77aa1d3d23e55a8b06d2a119f89ce28626e"
     },
     {
       "path": "tools/personal_signal_demo.py",

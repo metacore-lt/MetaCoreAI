@@ -38,6 +38,7 @@ The score is an operational friction index, not an HR or employee assessment. Sa
 
 | Instrument | API-shaped operation | Demonstrates |
 |---|---|---|
+| Knowledge Topology Navigator | `POST /demo/v1/knowledge/route` | question → knowledge regions → epistemic classes; orientation, not proof |
 | Context Compiler | `POST /demo/v1/context/compile` | signal weighting, theme aggregation, confidence and unknowns |
 | State DELTA | `POST /demo/v1/state/delta` | explicit before/after state, writeback discipline |
 | Epistemic Router | `POST /demo/v1/epistemic/route` | fact / source / inference / hypothesis / symbolic separation |
@@ -45,11 +46,17 @@ The score is an operational friction index, not an HR or employee assessment. Sa
 
 The Authority Gate also carries the leadership pattern: decisions and permissions are scoped to role, mandate, impact and approval rather than inferred from personality.
 
+The same public library map is also available as a static endpoint:
+
+```text
+GET https://delta.metacore.lt/context-lab/knowledge-topology.json
+```
+
 These are public demo algorithms, **not a clone of the private MetaCore operating implementation**.
 
 ## Cost / bot model
 
-All nine instruments run in the visitor's browser. Repeated clicks create no B1 inference jobs and no application-database writes. The browser demo performs no `fetch`, XHR, WebSocket, beacon, cookie or local-storage operation.
+All ten instruments run in the visitor's browser. Repeated clicks create no B1 inference jobs and no application-database writes. The browser demo performs no `fetch`, XHR, WebSocket, beacon, cookie or local-storage operation.
 
 A future **Live MetaCore** layer is a separate trust boundary: verified identity, scoped Developer Pass, hard quota, global queue and kill switch before any private treatment runtime.
 
@@ -68,4 +75,5 @@ python3 tools/personal_signal_demo.py --date 1990-01-01 --city Vilnius
 python3 tools/human_team_signal_demo.py team \
   --stuck "Decisions bounce between owners" \
   --decision 9 --ownership 6 --communication 3 --rhythm 6
+python3 tools/knowledge_topology_demo.py "robot sensor reliability"
 ```
