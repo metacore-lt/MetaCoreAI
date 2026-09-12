@@ -1,11 +1,11 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.8.0-knowledge-topology-demo",
+  "publisher_policy_version": "3.8.1-jewel-polish",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "580205b5933b85a2344fedfee22b21c61db5cc2e16b73226551458941b81010f",
-  "release_id": "sha256:580205b5933b85a2344fedfee22b21c61db5cc2e16b73226551458941b81010f",
-  "generated_at": "2026-09-12T15:19:42.371166+00:00",
+  "content_set_sha256": "57ddb69badb54a8c6921850c87b2d7c4ca8bb33309b5de04d1cf833cf44e6bda",
+  "release_id": "sha256:57ddb69badb54a8c6921850c87b2d7c4ca8bb33309b5de04d1cf833cf44e6bda",
+  "generated_at": "2026-09-12T19:32:19.394145+00:00",
   "file_count": 58,
   "files": [
     {
@@ -60,8 +60,8 @@
     },
     {
       "path": "KNOWLEDGE_TOPOLOGY_DEMO.md",
-      "bytes": 1888,
-      "sha256": "4a16351bc382e3da4531fdddc958833a2101884665cb14da88d41752c95e6343"
+      "bytes": 2266,
+      "sha256": "d7799d0755988d4b012950083a9c2aefbe85b8189479878c3cda7dad788539c3"
     },
     {
       "path": "METHODOLOGY.md",
@@ -85,8 +85,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4850,
-      "sha256": "3a85ac59cb19c11a130ae563e5c5f2758c7acff8445be580b63a0f35f33854f7"
+      "bytes": 5229,
+      "sha256": "f99dc36c738fb26c3bb947b6221a22fe59ed0858301b91ffc9d12411db086371"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -120,8 +120,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 2604,
-      "sha256": "8b5999de7f965047551bdf38b7040750cafaf0f078426a500b4b699177b7644c"
+      "bytes": 2909,
+      "sha256": "884960e71c32fd71eb376ee0fdf2c9d32deb3a6255a9814720b3af53c2e43d7d"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -145,8 +145,8 @@
     },
     {
       "path": "playground/context-lab.css",
-      "bytes": 14609,
-      "sha256": "7829bfb56ecbb687bc4c3bc3ee71cbf54729b22c90b99d77dc95325a29c15687"
+      "bytes": 16013,
+      "sha256": "4a166fec8188507d044edb8dce1f77c0f3e830790caee42976427408b440a8d5"
     },
     {
       "path": "playground/context-lab.js",
@@ -165,8 +165,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 19844,
-      "sha256": "1097c88a571eeb4e321cb199e57c24ebe30b417221bed12f1e35f1a365284dd9"
+      "bytes": 22238,
+      "sha256": "b59905aab93f1337359ad3a237862301ad832db6cce86d6acab41120f0d2d6df"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",
@@ -175,13 +175,13 @@
     },
     {
       "path": "playground/knowledge-topology-data.js",
-      "bytes": 7269,
-      "sha256": "eed88b8743b3cfa0e6b976e60a2651b44b6d274056db2e1270832bade142dd7a"
+      "bytes": 7363,
+      "sha256": "f3582770bef0567b48f0a5d2ae3583f796b231521a2f06e9dad89e192f72592c"
     },
     {
       "path": "playground/knowledge-topology.json",
-      "bytes": 9246,
-      "sha256": "b987e174d3de01afdea198edd321f106754747ca0eae316ad643631d1dd4c512"
+      "bytes": 9344,
+      "sha256": "4f974c6699df269026b986d0a05ed6864e0496ad6542eb7818058cd10e54acf3"
     },
     {
       "path": "playground/personal-signal-fixture.json",

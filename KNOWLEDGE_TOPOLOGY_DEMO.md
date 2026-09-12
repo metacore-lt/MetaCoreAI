@@ -12,6 +12,13 @@ GET https://delta.metacore.lt/context-lab/knowledge-topology.json
 
 This JSON file is public, cacheable and requires no token. It contains seven conceptual regions, their public relations and example routes. It contains no private runtime route, private source corpus or specialist-module name.
 
+It carries two provenance hashes:
+
+- `source_map_sha256` — hash of the current canonical topology document;
+- `projection_sha256` — hash of the normalized public-safe conceptual projection.
+
+That distinction is intentional: canonical metadata may change while the public conceptual map remains identical. The verifier checks both source freshness and projection integrity.
+
 ## Browser-local route operation
 
 ```text

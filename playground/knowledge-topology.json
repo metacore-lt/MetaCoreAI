@@ -1,9 +1,10 @@
 {
   "id": "metacore_public_knowledge_topology_v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "PUBLIC_SAFE_LIBRARY_MAP",
   "source_map_id": "metacore_knowledge_topology_v1",
-  "source_map_sha256": "sha256:f33d7eb223cde00053a049e6435869ad7443c8246971fbb48bec574eabf617dd",
+  "source_map_sha256": "sha256:50f8cbbf79d74469633596f736b90df096985e599a429d208e3dda4f6bfdc677",
+  "projection_sha256": "sha256:5c95efe674fe515b4c01facd8696939f66ac72cb86bf367a866fdb9fcba690a1",
   "purpose": "A public conceptual map for navigating neighboring knowledge regions and epistemic classes. It is orientation, not factual proof and not a source browser.",
   "rules": {
     "runtime_api_required": false,

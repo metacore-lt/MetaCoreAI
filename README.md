@@ -4,6 +4,8 @@
 
 ## ▶ Start here: [Open the live Context Lab](https://delta.metacore.lt/context-lab/)
 
+[**Live Lab ↗**](https://delta.metacore.lt/context-lab/) · [Static Knowledge JSON ↗](https://delta.metacore.lt/context-lab/knowledge-topology.json) · [Inspect playground source](playground/) · [Security model](SECURITY_MODEL.md)
+
 **No account · no token · no B1 job · no database write.** The anonymous Lab currently exposes **10 browser-local instruments**. Click first; inspect the JSON second; read architecture only if you want to go deeper.
 
 | Instrument | API-shaped operation | What it demonstrates |
@@ -26,6 +28,12 @@ GET https://delta.metacore.lt/context-lab/knowledge-topology.json
 ```
 
 It is a **library map, not a hidden expert API**. It can suggest where to look; it cannot prove a claim. See `KNOWLEDGE_TOPOLOGY_DEMO.md`.
+
+Three-second API check:
+
+```bash
+curl -s https://delta.metacore.lt/context-lab/knowledge-topology.json | python3 -m json.tool | head -60
+```
 
 ### Prefer the benchmark / CLI path?
 
