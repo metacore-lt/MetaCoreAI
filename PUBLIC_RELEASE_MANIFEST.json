@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.9.0-experiment-gallery",
+  "publisher_policy_version": "3.10.0-catalog-receipt-handoff",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "d20889c59cf272ccd2696ef7368de62a7edc7becfb9004cefb0cf93f3bd375e3",
-  "release_id": "sha256:d20889c59cf272ccd2696ef7368de62a7edc7becfb9004cefb0cf93f3bd375e3",
-  "generated_at": "2026-09-15T14:25:20.195483+00:00",
-  "file_count": 61,
+  "content_set_sha256": "0e07f4d9e3bd2ffde5503171ae411c690754f18484b982175f1135a3a5b03869",
+  "release_id": "sha256:0e07f4d9e3bd2ffde5503171ae411c690754f18484b982175f1135a3a5b03869",
+  "generated_at": "2026-09-15T14:44:30.022699+00:00",
+  "file_count": 66,
   "files": [
     {
       "path": ".gitignore",
@@ -29,14 +29,19 @@
       "sha256": "1f431dcb406c2bf12631593ebd62813513bcf145e7c13fa165e7db3591d4bf76"
     },
     {
+      "path": "CONTEXT_LAB_RECEIPT.md",
+      "bytes": 1496,
+      "sha256": "11cf6f870134a395539e3139b321f6383e04ac503831773d1e373037b9cd1a82"
+    },
+    {
       "path": "CONTRIBUTING_TESTS.md",
       "bytes": 726,
       "sha256": "e1174d7f94dcce17288f178e51c0096e5ee29c7bde2cda034ee12083de316db1"
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 4313,
-      "sha256": "6fdb67b2f9f1648c287f96d60aaa28beb220d2657b97c93d8f75c0a249e2ac6a"
+      "bytes": 5323,
+      "sha256": "2ca60e38d60d552fbfdef7469781be9b5f75fc02b402c918d4a8243cde01a81e"
     },
     {
       "path": "EXPERIMENT_GALLERY.md",
@@ -90,8 +95,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5933,
-      "sha256": "864c1f4d1e4766567aabcebe642081030051e11250161061a8eb9ddb21becc7d"
+      "bytes": 6341,
+      "sha256": "3e50bed194be7ec4c20f42d34035d7f189dbc9bc1b3121487b223bc010525dff"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -125,8 +130,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 3174,
-      "sha256": "d03d11065f400f53800bb915379e4b3400c27309c4dd33de0512db768fe222da"
+      "bytes": 3439,
+      "sha256": "b9890aa457c117e23db5c551c3610cb31c7f5c5e2c4933eab013b03c26f73803"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -149,19 +154,24 @@
       "sha256": "cd4a70484311678a011b92dd37ae7e3b52a6f35b43fb5ca2e7205840a9fa683c"
     },
     {
+      "path": "playground/catalog.json",
+      "bytes": 7112,
+      "sha256": "68897e9d87eecf20f5a0595d097c9bdd65d26438e564c7cab7bd533e5f3a0875"
+    },
+    {
       "path": "playground/context-lab.css",
-      "bytes": 18165,
-      "sha256": "5d9dea4ea4561de6f322990e1a3c87ff6ed6880222fb0c3233853f2c80095d96"
+      "bytes": 19847,
+      "sha256": "a6b4c2194d9e01cb614c352b90eac13889ba1488ce8952a59a9a895ab5bbc68c"
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 30216,
-      "sha256": "a68645b77577488c1ff2d342a89c1cfcea640887fa7aaa9d48c4783129b0c161"
+      "bytes": 30651,
+      "sha256": "7f156ebc8599712a8a06fc42ef7198903ea098102bf3acdb36d4aa9b234fcde4"
     },
     {
       "path": "playground/demo-contract.json",
-      "bytes": 4312,
-      "sha256": "972571049ba5978d59393dbc7d3df2060564b70b0b5a66bbcd37108b302895dc"
+      "bytes": 4680,
+      "sha256": "6d84281687feb32e3e0a6e4997a08e36a97f30eaf204165a54774ba18a5ac68f"
     },
     {
       "path": "playground/experiments-data.js",
@@ -180,8 +190,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 23305,
-      "sha256": "7d5e73c1d76c45e42c153f6e1f434c0c16b89bfdc43362fb4a23106428a27415"
+      "bytes": 26770,
+      "sha256": "7afa5ced7976621eacbc5cef03e5c49c2901e92f7cef75b75c328cc258249ae9"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",
@@ -202,6 +212,16 @@
       "path": "playground/personal-signal-fixture.json",
       "bytes": 553,
       "sha256": "22e7adac34d4c4bb702f3812a1a7483544317965507d9306736f5b5eb80398cf"
+    },
+    {
+      "path": "playground/proof-handoff.js",
+      "bytes": 7317,
+      "sha256": "4ed197d2de1b6bec0174da655f615ef9c44283999627ef1900af640cf17106ab"
+    },
+    {
+      "path": "playground/receipt-handoff-fixture.json",
+      "bytes": 1948,
+      "sha256": "7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
     },
     {
       "path": "specs/capsule.schema.json",
@@ -292,6 +312,11 @@
       "path": "tests/uncertainty/UNCERTAINTY_001.json",
       "bytes": 949,
       "sha256": "91a1a221ec7a11e889cc8cc56f660671dc342e1c21e859a0105fe42553676e93"
+    },
+    {
+      "path": "tools/context_lab_artifact_demo.py",
+      "bytes": 2685,
+      "sha256": "89e1bd04b6309459eae14a2bfc22867980dfacea5b145f9ceb4e4249f5bee59c"
     },
     {
       "path": "tools/delta_lab.py",

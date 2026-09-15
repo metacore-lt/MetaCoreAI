@@ -1,0 +1,186 @@
+{
+  "id": "metacore_context_lab_catalog_v1",
+  "version": "1.0.0",
+  "status": "PUBLIC_STATIC_CATALOG",
+  "name": "MetaCore DELTA Context Lab",
+  "live_url": "https://delta.metacore.lt/context-lab/",
+  "delta_version": "0.10.0",
+  "summary": "Machine-readable index of the anonymous public Context Lab. It catalogs public instruments, guided presets, static endpoints, proof/handoff artifacts and boundaries; it grants no private runtime authority.",
+  "counts": {
+    "instruments": 10,
+    "guided_experiments": 6,
+    "knowledge_regions": 8,
+    "knowledge_relations": 15,
+    "knowledge_example_routes": 10
+  },
+  "execution": {
+    "location": "browser",
+    "network_calls": false,
+    "B1_calls": false,
+    "database_writes": false,
+    "private_runtime": false
+  },
+  "instruments": [
+    {
+      "id": "context_compile",
+      "method": "POST",
+      "path": "/demo/v1/context/compile",
+      "input": "bounded public signal objects",
+      "output": "theme weights + confidence bands + unknowns + prompts"
+    },
+    {
+      "id": "state_delta",
+      "method": "POST",
+      "path": "/demo/v1/state/delta",
+      "input": "before and after JSON objects",
+      "output": "added/removed/changed/unchanged key paths"
+    },
+    {
+      "id": "epistemic_route",
+      "method": "POST",
+      "path": "/demo/v1/epistemic/route",
+      "input": "claim provenance/freshness/support flags",
+      "output": "public epistemic class + explanation"
+    },
+    {
+      "id": "authority_check",
+      "method": "POST",
+      "path": "/demo/v1/authority/check",
+      "input": "actor/auth/mandate/scope/impact/approval policy",
+      "output": "ALLOW / NEEDS_APPROVAL / BLOCK + reasons"
+    },
+    {
+      "id": "personal_seed",
+      "method": "POST",
+      "path": "/demo/v1/personal/seed",
+      "input": "birth date + city + optional birth time",
+      "output": "provenance envelope + precision gate"
+    },
+    {
+      "id": "symbolic_matrix",
+      "method": "POST",
+      "path": "/demo/v1/personal/symbolic-matrix",
+      "input": "birth date",
+      "output": "transparent Pythagorean-style symbolic matrix preview"
+    },
+    {
+      "id": "personal_reflection",
+      "method": "POST",
+      "path": "/demo/v1/personal/reflection",
+      "input": "symbolic matrix summary",
+      "output": "non-diagnostic symbolic reflection prompts"
+    },
+    {
+      "id": "human_loop",
+      "method": "POST",
+      "path": "/demo/v1/human/loop-map",
+      "input": "self-reported trigger + touched need + reaction + breaker + next step",
+      "output": "structural loop map + next question or safety stop"
+    },
+    {
+      "id": "team_friction",
+      "method": "POST",
+      "path": "/demo/v1/team/friction",
+      "input": "team type + decision/ownership/communication/rhythm + bottleneck text + next improvement",
+      "output": "operational friction snapshot + bottleneck + operator question/action or safety stop"
+    },
+    {
+      "id": "knowledge_route",
+      "method": "POST",
+      "path": "/demo/v1/knowledge/route",
+      "input": "short public question",
+      "output": "matching knowledge regions + epistemic classes + conceptual hops + route confidence"
+    }
+  ],
+  "guided_experiments": [
+    {
+      "id": "unknown",
+      "title": "Can the system admit it does not know?",
+      "instrument": "epistemic_route",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=unknown",
+      "boundary": "The demo classifies evidence state; it does not generate or verify the missing fact."
+    },
+    {
+      "id": "authority",
+      "title": "Can AI keep an authority boundary?",
+      "instrument": "authority_check",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=authority",
+      "boundary": "The demo evaluates declared scope/mandate fields; it does not execute any action."
+    },
+    {
+      "id": "knowledge",
+      "title": "Where does this question live?",
+      "instrument": "knowledge_route",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=knowledge",
+      "boundary": "Topology is orientation, not proof; source-specific claims still need evidence."
+    },
+    {
+      "id": "state",
+      "title": "What actually changed?",
+      "instrument": "state_delta",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=state",
+      "boundary": "The demo reports DELTA and never writes the new state back."
+    },
+    {
+      "id": "team",
+      "title": "Where is the team friction?",
+      "instrument": "team_friction",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=team",
+      "boundary": "Operational context only; not HR assessment, employee profiling or performance rating."
+    },
+    {
+      "id": "signal",
+      "title": "What is signal vs assumption?",
+      "instrument": "personal_seed",
+      "deeplink": "https://delta.metacore.lt/context-lab/?exp=signal",
+      "boundary": "Birth time remains an explicit assumption and the symbolic matrix is not psychometric assessment."
+    }
+  ],
+  "static_endpoints": {
+    "catalog": "https://delta.metacore.lt/context-lab/catalog.json",
+    "knowledge_topology": "https://delta.metacore.lt/context-lab/knowledge-topology.json",
+    "experiments": "https://delta.metacore.lt/context-lab/experiments.json"
+  },
+  "local_artifacts": {
+    "experiment_receipt": {
+      "id": "metacore_context_lab_receipt_v1",
+      "checksum": "SHA-256 over canonical receipt object without receipt_sha256",
+      "attestation": "LOCAL_SELF_CHECKSUM_ONLY_NOT_SERVER_SIGNED",
+      "network_submission": false
+    },
+    "technical_handoff": {
+      "id": "metacore_context_lab_handoff_v1",
+      "purpose": "local no-secrets collaboration draft",
+      "network_submission": false,
+      "automatic_email": false
+    }
+  },
+  "knowledge_topology": {
+    "source_map_sha256": "sha256:cea2782581a44b168c95cbfa077143d3d149e50cc516a2283c3785e1ced77ff0",
+    "projection_sha256": "sha256:da75c6a5a759032c376196db97c360951ba75b89cd41d260822c23b9af3e6b49",
+    "boundary": "ORIENTATION_NOT_PROOF"
+  },
+  "docs": {
+    "readme": "https://github.com/metacore-lt/MetaCoreAI",
+    "demo_api": "https://github.com/metacore-lt/MetaCoreAI/blob/main/DEMO_API.md",
+    "security": "https://github.com/metacore-lt/MetaCoreAI/blob/main/SECURITY_MODEL.md",
+    "source_access": "https://github.com/metacore-lt/MetaCoreAI/blob/main/SOURCE_ACCESS.md",
+    "receipt_handoff": "https://github.com/metacore-lt/MetaCoreAI/blob/main/CONTEXT_LAB_RECEIPT.md"
+  },
+  "collaboration": {
+    "developer": "creator@metacore.lt",
+    "pilot": "projects@metacore.lt",
+    "operator_network": "https://networker.metacore.lt/",
+    "chat": "https://chat.metacore.lt/",
+    "safety": "Do not send API keys, passwords, private keys, sensitive production data or private customer content in the first contact."
+  },
+  "boundaries": {
+    "anonymous_private_runtime": false,
+    "anonymous_database_write": false,
+    "anonymous_analytics": false,
+    "anonymous_persistence": false,
+    "receipt_server_attestation": false,
+    "source_access_automatic": false,
+    "live_gateway": "DISABLED_SECURITY_GATES_PENDING"
+  }
+}

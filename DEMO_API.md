@@ -65,6 +65,21 @@ GET https://delta.metacore.lt/context-lab/experiments.json
 
 The experiment manifest exposes the preset input, expected deterministic demo behavior and boundary for each scenario. See `EXPERIMENT_GALLERY.md`.
 
+
+## Public catalog endpoint
+
+```text
+GET https://delta.metacore.lt/context-lab/catalog.json
+```
+
+The catalog is the machine-readable front door: instrument definitions, guided experiment links, static endpoints, topology hashes, local artifact types, public collaboration routes and hard anonymous-runtime boundaries.
+
+## Local receipt → technical handoff
+
+A guided experiment may emit a browser-local `metacore_context_lab_receipt_v1`. The receipt stores input/output hashes and only the minimal observed result needed to compare with the preset's declared expected behavior. It is SHA-256 checksummed locally and explicitly marked `LOCAL_SELF_CHECKSUM_ONLY_NOT_SERVER_SIGNED`.
+
+The visitor may then create a `metacore_context_lab_handoff_v1` draft with a real workflow goal, environment, desired next step and constraints. The page does not submit or email it. Credential-like material is blocked by a narrow local guard and the visitor must confirm the no-secrets boundary. See `CONTEXT_LAB_RECEIPT.md`.
+
 ## Cost / bot model
 
 All ten instruments run in the visitor's browser. Repeated clicks create no B1 inference jobs and no application-database writes. The browser demo performs no `fetch`, XHR, WebSocket, beacon, cookie or local-storage operation.

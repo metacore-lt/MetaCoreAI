@@ -23,11 +23,11 @@ function contextCompile(){
 }
 
 function flatten(obj,prefix='',out={}){if(obj&&typeof obj==='object'&&!Array.isArray(obj)){for(const k of Object.keys(obj).sort())flatten(obj[k],prefix?`${prefix}.${k}`:k,out)}else out[prefix]=obj;return out}
-function stateDelta(){let before,after; try{before=JSON.parse($('#sd-before').value);after=JSON.parse($('#sd-after').value)}catch(e){$('#sd-res').textContent=pretty({status:'INVALID_JSON',error:'Parse the before/after fields as JSON.'});return}
+function stateDelta(){let before,after; try{before=JSON.parse($('#sd-before').value);after=JSON.parse($('#sd-after').value)}catch(e){const error={status:'INVALID_JSON',error:'Parse the before/after fields as JSON.'};$('#sd-res').textContent=pretty(error);return {request:null,result:error}}
  const a=flatten(before),b=flatten(after),keys=[...new Set([...Object.keys(a),...Object.keys(b)])].sort(); const added=[],removed=[],changed=[],unchanged=[];
  for(const k of keys){if(!(k in a))added.push({path:k,value:b[k]});else if(!(k in b))removed.push({path:k,previous:a[k]});else if(JSON.stringify(a[k])!==JSON.stringify(b[k]))changed.push({path:k,before:a[k],after:b[k]});else unchanged.push(k)}
  const req={operation:'state_delta',before,after}; const res={status:'OK_DEMO',added,removed,changed,unchanged_count:unchanged.length,writeback_proposal:{apply:false,reason:'Demo reports DELTA; it never mutates source state.'}};
- $('#sd-req').textContent=pretty(req);$('#sd-res').textContent=pretty(res)}
+ $('#sd-req').textContent=pretty(req);$('#sd-res').textContent=pretty(res);return {request:req,result:res}}
 
 function epistemicRoute(){const req={operation:'epistemic_route',source_type:$('#er-source').value,freshness:$('#er-fresh').value,directly_supported:$('#er-direct').value==='yes',material_missing:$('#er-missing').value==='yes'};let cls,why;
  if(req.material_missing){cls='MISSING_DATA';why='Material information needed for the claim is missing.'}
@@ -37,7 +37,7 @@ function epistemicRoute(){const req={operation:'epistemic_route',source_type:$('
  else if(['external_source','user_report'].includes(req.source_type)&&req.directly_supported){cls='SOURCE_DERIVED';why='The statement is attributed to a source rather than promoted to universal fact.'}
  else if(req.source_type==='model_inference'&&req.directly_supported){cls='INFERENCE';why='The statement is reasoned from evidence but not directly observed.'}
  else {cls='HYPOTHESIS';why='Support is indirect, stale, unknown or insufficient for a stronger class.'}
- const res={status:'OK_DEMO',epistemic_class:cls,why,language_hint:cls==='HYPOTHESIS'?'Present as a testable possibility, not a fact.':cls==='SYMBOLIC_REFLECTION'?'Present as a reflective lens, not physical proof.':'Keep provenance visible.'};$('#er-req').textContent=pretty(req);$('#er-res').textContent=pretty(res)}
+ const res={status:'OK_DEMO',epistemic_class:cls,why,language_hint:cls==='HYPOTHESIS'?'Present as a testable possibility, not a fact.':cls==='SYMBOLIC_REFLECTION'?'Present as a reflective lens, not physical proof.':'Keep provenance visible.'};$('#er-req').textContent=pretty(req);$('#er-res').textContent=pretty(res);return {request:req,result:res}}
 
 function authorityCheck(){const req={operation:'authority_check',actor_type:$('#ag-actor').value,authenticated:$('#ag-auth').value==='yes',delegated_mandate:$('#ag-mandate').value==='yes',scope_match:$('#ag-scope').value==='yes',impact:$('#ag-impact').value,approval_policy:$('#ag-approval').value};const reasons=[];let decision='ALLOW';
  if(!req.authenticated){decision='BLOCK';reasons.push('Actor is not authenticated.')}
@@ -45,7 +45,7 @@ function authorityCheck(){const req={operation:'authority_check',actor_type:$('#
  if(decision!=='BLOCK'&&!req.scope_match){decision='BLOCK';reasons.push('Requested action is outside scoped authority.')}
  if(decision!=='BLOCK'&&(req.impact==='high_consequence'||(req.impact==='external_effect'&&req.approval_policy==='required'))){decision='NEEDS_APPROVAL';reasons.push('Policy requires approval before this impact class.')}
  if(!reasons.length)reasons.push('Authenticated actor, mandate/scope and approval boundary are satisfied for the selected demo case.');
- const res={status:'OK_DEMO',decision,reasons,principle:'Dignity is universal; authority is scoped.',automatic_execution:false};$('#ag-req').textContent=pretty(req);$('#ag-res').textContent=pretty(res)}
+ const res={status:'OK_DEMO',decision,reasons,principle:'Dignity is universal; authority is scoped.',automatic_execution:false};$('#ag-req').textContent=pretty(req);$('#ag-res').textContent=pretty(res);return {request:req,result:res}}
 
 
 const symbolicThemes={1:'initiative / self-direction',2:'relation / sensitivity',3:'expression / creation',4:'structure / method',5:'change / adaptation',6:'responsibility / care',7:'inquiry / reflection',8:'stewardship / material organization',9:'integration / wider perspective'};
@@ -98,7 +98,7 @@ function buildPersonalSeed(){
  $('#ps-active').textContent=matrix.active_numbers.join(' · ')||'—'; $('#ps-missing').textContent=matrix.missing_numbers.join(' · ')||'none'; $('#ps-dominant').textContent=matrix.dominant_digits.join(' · ')||'none';
  $('#ps-reflection-title').textContent=reflection.title; $('#ps-reflection').textContent=reflection.text; $('#ps-gate').textContent=gate.state; $('#ps-gate-note').textContent=gate.note;
  $('#ps-prov-date').textContent=date.iso; $('#ps-prov-city').textContent=city; $('#ps-prov-time').textContent=time; $('#ps-time-class').textContent=timeKnown?'USER':'ASSUMED';
- $('#ps-req').textContent=pretty(request); $('#ps-res').textContent=pretty(result);
+ $('#ps-req').textContent=pretty(request); $('#ps-res').textContent=pretty(result); return {request,result};
 }
 function togglePersonalTime(){const known=$('#ps-time-known').checked;const input=$('#ps-time');input.disabled=!known;if(!known)input.value='12:00';$('#ps-time-label').textContent=known?'USER PROVIDED':'12:00 · DEMO DEFAULT';$('#ps-time-label').className=known?'':'assumption'}
 function samplePersonal(){const now=new Date();$('#ps-date').value='1990-01-01';$('#ps-city').value='Vilnius';$('#ps-time-known').checked=false;togglePersonalTime();buildPersonalSeed()}
@@ -136,11 +136,11 @@ function renderTeamResult(res){const host=$('#tf-result');host.textContent='';
 function runTeamFriction(){
  const req={operation:'team_friction',team_type:$('#tf-type').value,stuck:$('#tf-stuck').value.trim(),decision:+$('#tf-decision').value,ownership:+$('#tf-ownership').value,communication:+$('#tf-communication').value,rhythm:+$('#tf-rhythm').value,next_improvement:$('#tf-step').value.trim()};
  if(!req.stuck){const out={status:'INVALID_INPUT',error:'Describe one concrete operational bottleneck.'};$('#tf-json').textContent=pretty(out);return}
- if(hasSafetySignal(req.stuck+' '+req.next_improvement)){const res={status:'SAFETY_STOP',analysis_performed:false,boundary:'Not HR assessment. Safety/harassment signals require responsible human review.'};renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}});return}
+ if(hasSafetySignal(req.stuck+' '+req.next_improvement)){const res={status:'SAFETY_STOP',analysis_performed:false,boundary:'Not HR assessment. Safety/harassment signals require responsible human review.'};renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}});return {request:req,result:res}}
  const score=req.decision+req.ownership+req.communication+req.rhythm;const band=score>=29?'HIGH FRICTION':score>=21?'MEDIUM FRICTION':'LOW FRICTION';
  const dims=['decision','ownership','communication','rhythm'].map(k=>({key:k,value:req[k],...teamMeta[k]})).sort((a,b)=>b.value-a.value);const top=dims[0];
  const res={status:'OK_DEMO',score,range:'12..36',band,bottleneck:{key:top.key,label:top.label,value:top.value,mechanism:top.mechanism,action:top.action,question:top.question},secondary_signal:{key:dims[1].key,label:dims[1].label,value:dims[1].value},next_improvement:req.next_improvement||'not provided',boundary:'Operational team snapshot only; not HR assessment, employee profiling or performance rating.'};
- renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}})
+ renderTeamResult(res);$('#tf-json').textContent=pretty({request:req,result:res,privacy:{network:false,persistence:false}});return {request:req,result:res}
 }
 function clearTeamFriction(){for(const id of ['#tf-stuck','#tf-step'])$(id).value='';for(const id of ['#tf-type','#tf-decision','#tf-ownership','#tf-communication','#tf-rhythm'])$(id).selectedIndex=0;const host=$('#tf-result');host.className='signal-result-placeholder';host.textContent='';host.append(el('strong','', 'Operations before psychology.'),el('span','', 'Decision · ownership · communication · rhythm.'));$('#tf-json').textContent=pretty({status:'WAITING_FOR_LOCAL_INPUT'})}
 function bindHumanTeam(){
@@ -173,7 +173,7 @@ function renderKnowledgeRoute(res){
  if(res.status!=='OK_DEMO'){const e=el('div','knowledge-empty',res.status==='NO_CONFIDENT_ROUTE'?'No confident public route. Try a more specific concept.':(res.error||'Knowledge map unavailable.'));host.append(e);return}
  res.route.forEach((r,i)=>{if(i){host.append(el('div','knowledge-arrow','→'))}const node=el('div','knowledge-node');node.append(el('small','',r.epistemic_class),el('strong','',r.label),el('span','',r.summary));host.append(node)});
 }
-function runKnowledgeRoute(){const q=$('#kt-query').value;const req={operation:'knowledge_route',query:q};const res=knowledgeRoute(q);$('#kt-req').textContent=pretty(req);$('#kt-res').textContent=pretty(res);renderKnowledgeRoute(res)}
+function runKnowledgeRoute(){const q=$('#kt-query').value;const req={operation:'knowledge_route',query:q};const res=knowledgeRoute(q);$('#kt-req').textContent=pretty(req);$('#kt-res').textContent=pretty(res);renderKnowledgeRoute(res);return {request:req,result:res}}
 function bindKnowledgeRoute(){
  $('#kt-run').onclick=runKnowledgeRoute;$('#kt-query').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runKnowledgeRoute()}});document.querySelectorAll('[data-kt]').forEach(b=>b.onclick=()=>{$('#kt-query').value=b.dataset.kt;runKnowledgeRoute()});runKnowledgeRoute();
 }
@@ -191,21 +191,22 @@ function focusExperimentTarget(id){
  const target=document.getElementById(id);if(!target)return;target.classList.remove('experiment-focus');void target.offsetWidth;target.classList.add('experiment-focus');setTimeout(()=>target.classList.remove('experiment-focus'),1300)
 }
 function applyExperiment(id,{scroll=false}={}){
- const x=experimentById(id); if(!x)return false; const p=x.preset||{};
+ const x=experimentById(id); if(!x)return false; const p=x.preset||{}; let payload=null;
  if(id==='unknown'){
-   setSelect('#er-source',p.source_type);setSelect('#er-fresh',p.freshness);setSelect('#er-direct',p.directly_supported);setSelect('#er-missing',p.material_missing);epistemicRoute();
+   setSelect('#er-source',p.source_type);setSelect('#er-fresh',p.freshness);setSelect('#er-direct',p.directly_supported);setSelect('#er-missing',p.material_missing);payload=epistemicRoute();
  }else if(id==='authority'){
-   setSelect('#ag-actor',p.actor_type);setSelect('#ag-auth',p.authenticated);setSelect('#ag-mandate',p.delegated_mandate);setSelect('#ag-scope',p.scope_match);setSelect('#ag-impact',p.impact);setSelect('#ag-approval',p.approval_policy);authorityCheck();
+   setSelect('#ag-actor',p.actor_type);setSelect('#ag-auth',p.authenticated);setSelect('#ag-mandate',p.delegated_mandate);setSelect('#ag-scope',p.scope_match);setSelect('#ag-impact',p.impact);setSelect('#ag-approval',p.approval_policy);payload=authorityCheck();
  }else if(id==='knowledge'){
-   $('#kt-query').value=p.query||'';runKnowledgeRoute();
+   $('#kt-query').value=p.query||'';payload=runKnowledgeRoute();
  }else if(id==='state'){
-   $('#sd-before').value=pretty(p.before||{});$('#sd-after').value=pretty(p.after||{});stateDelta();
+   $('#sd-before').value=pretty(p.before||{});$('#sd-after').value=pretty(p.after||{});payload=stateDelta();
  }else if(id==='team'){
-   setSelect('#tf-type',p.team_type);$('#tf-stuck').value=p.stuck||'';setSelect('#tf-decision',p.decision);setSelect('#tf-ownership',p.ownership);setSelect('#tf-communication',p.communication);setSelect('#tf-rhythm',p.rhythm);$('#tf-step').value=p.next_improvement||'';runTeamFriction();
+   setSelect('#tf-type',p.team_type);$('#tf-stuck').value=p.stuck||'';setSelect('#tf-decision',p.decision);setSelect('#tf-ownership',p.ownership);setSelect('#tf-communication',p.communication);setSelect('#tf-rhythm',p.rhythm);$('#tf-step').value=p.next_improvement||'';payload=runTeamFriction();
  }else if(id==='signal'){
-   $('#ps-date').value=p.birth_date||'';$('#ps-city').value=p.birth_city||'';$('#ps-time-known').checked=Boolean(p.birth_time);$('#ps-time').value=p.birth_time||'12:00';togglePersonalTime();buildPersonalSeed();
+   $('#ps-date').value=p.birth_date||'';$('#ps-city').value=p.birth_city||'';$('#ps-time-known').checked=Boolean(p.birth_time);$('#ps-time').value=p.birth_time||'12:00';togglePersonalTime();payload=buildPersonalSeed();
  }else return false;
  renderExperimentGallery(id); const status=$('#experiment-status');if(status)status.textContent=`Loaded: ${x.title} · ${x.short}`;focusExperimentTarget(x.target);
+ document.dispatchEvent(new CustomEvent('metacore:experiment-result',{detail:{experiment:x,preset:p,payload}}));
  if(scroll){const target=document.getElementById(x.target);if(target)target.scrollIntoView({behavior:'smooth',block:'start'})}
  return true;
 }

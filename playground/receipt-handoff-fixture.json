@@ -1,0 +1,47 @@
+{
+  "receipt": {
+    "id": "metacore_context_lab_receipt_v1",
+    "receipt_version": "1.0.0",
+    "generated_at": "2026-09-15T00:00:00.000Z",
+    "surface": "https://delta.metacore.lt/context-lab/",
+    "experiment_manifest_version": "1.0.0",
+    "experiment_id": "authority",
+    "instrument": "authority_check",
+    "input_sha256": "sha256:95d0b30fa5b48d90601700ecff4b7615dd548ce1d49da0ccf15dddb26ddccaa4",
+    "observed_sha256": "sha256:4eec530e5ed17cab243159d146ffca1dd056a3effd2c922b3ac288a43180cf64",
+    "observed": {
+      "decision": "BLOCK"
+    },
+    "expected": {
+      "decision": "BLOCK"
+    },
+    "verdict": "PASS",
+    "boundary": "The demo evaluates declared scope/mandate fields; it does not execute any action.",
+    "runtime": {
+      "browser_local": true,
+      "private_runtime_calls": 0,
+      "database_writes": 0,
+      "network_submission": false,
+      "analytics": false,
+      "persistence": false
+    },
+    "attestation": "LOCAL_SELF_CHECKSUM_ONLY_NOT_SERVER_SIGNED",
+    "receipt_sha256": "sha256:bb697d30e785f3daace54a64d6d4c2f87269390fe53835f7d332fcc29c8ba016"
+  },
+  "handoff": {
+    "id": "metacore_context_lab_handoff_v1",
+    "version": "1.0.0",
+    "generated_at": "2026-09-15T00:00:00.000Z",
+    "experiment_id": "authority",
+    "receipt_sha256": "sha256:bb697d30e785f3daace54a64d6d4c2f87269390fe53835f7d332fcc29c8ba016",
+    "environment": "agent_or_app",
+    "desired_next_step": "integration",
+    "workflow_goal": "Evaluate authority boundaries in our deployment workflow.",
+    "constraints": "No production credentials in this draft.",
+    "no_secrets_confirmed": true,
+    "contact_route": "creator@metacore.lt",
+    "boundary": "LOCAL_DRAFT_ONLY_NOT_SUBMITTED_BY_PAGE",
+    "sharing_note": "Review this draft before sharing. Source/LAB access remains scoped and is never granted by a receipt.",
+    "handoff_sha256": "sha256:15c0bec9dbdcbd6bc77f3dbb14b9ef33b22131ceff6e99c77f127e777aab5f5e"
+  }
+}

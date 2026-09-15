@@ -4,7 +4,7 @@
 
 ## ▶ Start here: [Open the live Context Lab](https://delta.metacore.lt/context-lab/)
 
-[**Live Lab ↗**](https://delta.metacore.lt/context-lab/) · [Static Knowledge JSON ↗](https://delta.metacore.lt/context-lab/knowledge-topology.json) · [Inspect playground source](playground/) · [Security model](SECURITY_MODEL.md)
+[**Live Lab ↗**](https://delta.metacore.lt/context-lab/) · [Public catalog JSON ↗](https://delta.metacore.lt/context-lab/catalog.json) · [Knowledge JSON ↗](https://delta.metacore.lt/context-lab/knowledge-topology.json) · [Inspect playground source](playground/) · [Security model](SECURITY_MODEL.md)
 
 **No account · no token · no B1 job · no database write.** The anonymous Lab currently exposes **10 browser-local instruments** and **6 guided experiments**. Click first; inspect the JSON second; read architecture only if you want to go deeper.
 
@@ -18,6 +18,10 @@
 - [What is signal vs assumption?](https://delta.metacore.lt/context-lab/?exp=signal)
 
 Public experiment manifest: `GET https://delta.metacore.lt/context-lab/experiments.json` — see `EXPERIMENT_GALLERY.md`.
+
+Machine-readable Lab catalog: `GET https://delta.metacore.lt/context-lab/catalog.json`.
+
+After a guided experiment, the browser can create a **local checksummed receipt** and a **no-secrets technical handoff draft**. Nothing is submitted automatically; the receipt is explicitly not a server signature. See `CONTEXT_LAB_RECEIPT.md`.
 
 | Instrument | API-shaped operation | What it demonstrates |
 |---|---|---|

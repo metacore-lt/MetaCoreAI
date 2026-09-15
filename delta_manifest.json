@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -70,5 +70,9 @@
     "regions": 8,
     "relations": 15,
     "example_routes": 10
-  }
+  },
+  "context_lab_catalog_url": "https://delta.metacore.lt/context-lab/catalog.json",
+  "local_experiment_receipt": "metacore_context_lab_receipt_v1",
+  "local_technical_handoff": "metacore_context_lab_handoff_v1",
+  "receipt_handoff_docs": "CONTEXT_LAB_RECEIPT.md"
 }

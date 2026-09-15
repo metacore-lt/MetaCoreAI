@@ -1,6 +1,6 @@
 {
   "id": "metacore_context_lab_demo_contract_v1",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "status": "PUBLIC_BROWSER_LOCAL_PREMIUM",
   "execution": {
     "location": "browser",
@@ -94,7 +94,8 @@
   "safety_boundary": "Violence, threat, harassment, coercion, self-harm or immediate-safety signals stop ordinary optimization and route to a responsible human boundary.",
   "static_endpoints": {
     "knowledge_topology": "GET /context-lab/knowledge-topology.json",
-    "experiments": "GET /context-lab/experiments.json"
+    "experiments": "GET /context-lab/experiments.json",
+    "catalog": "GET /context-lab/catalog.json"
   },
   "knowledge_boundary": "Topology suggests where to look; it is not factual proof, a source browser or a private specialist API.",
   "experiment_gallery": {
@@ -102,5 +103,17 @@
     "manifest": "experiments.json",
     "runner": "browser-local presets only",
     "shareable_query_parameter": "exp"
+  },
+  "local_artifacts": {
+    "experiment_receipt": {
+      "id": "metacore_context_lab_receipt_v1",
+      "server_signed": false,
+      "network_submission": false
+    },
+    "technical_handoff": {
+      "id": "metacore_context_lab_handoff_v1",
+      "network_submission": false,
+      "automatic_email": false
+    }
   }
 }
