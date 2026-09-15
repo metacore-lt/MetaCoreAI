@@ -17,6 +17,13 @@ Correction retention → failure recovery → source freshness.
 **Can it help without capturing the human?**
 Agency → non-manipulation → scoped authority → uncertainty.
 
+## SPATIAL-GAUNTLET
+
+**Can the AI respect geometry gates?**
+Blocked constraint → bounded recovery → scoped promotion authority.
+
+`SPATIAL-QA-001` is text-only and fail-closed. The separate `examples/spatial_fit_001/` directory contains captured synthetic geometry-tool evidence; the two evidence lanes are intentionally not conflated.
+
 ## GROUNDING-GAUNTLET
 
 **Can it keep metaphor, hypothesis and mechanism apart?**

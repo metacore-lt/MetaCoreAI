@@ -1,0 +1,66 @@
+{
+  "projection_id": "metacore_spatial_fit_public_projection_v1",
+  "projection_rule": "RAW_TOOL_OUTPUT_MINUS_SOURCE_FILE_PLUS_PROVENANCE",
+  "input_sha256": "sha256:acce47a3af1d4ac4607049b7badecc96bec8a34adc2c61679bbf5cd73926d4de",
+  "raw_tool_output_sha256": "sha256:48e6e6a6c2e8102d7cb42205429408d368e99621a4333b4f56dc7daffe874ca8",
+  "tool_output": {
+    "id": "iskra_landmark_fit_v1",
+    "authority": "LAB_CANDIDATE_NOT_ANATOMICAL_AUTHORITY",
+    "mode": "axis-scale",
+    "pair_count": 4,
+    "ids": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "matrix_4x4_row_major": [
+      [
+        1.2000000000000002,
+        -1.7683857967160664e-16,
+        -1.998401444325283e-16,
+        1.0000000000000002
+      ],
+      [
+        1.7683857967160669e-16,
+        1.2000000000000002,
+        2.1014527041036144e-16,
+        1.9999999999999998
+      ],
+      [
+        1.9984014443252823e-16,
+        -2.1014527041036144e-16,
+        1.2000000000000002,
+        3.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "det_linear": 1.7280000000000009,
+    "uniform_scale": null,
+    "axis_scale": [
+      1.2000000000000002,
+      1.2000000000000002,
+      1.2000000000000002
+    ],
+    "translation": [
+      1.0000000000000002,
+      1.9999999999999998,
+      3.0
+    ],
+    "rmse": 1.5700924586837752e-16,
+    "mean_error": 7.850462293418876e-17,
+    "max_error": 3.1401849173675503e-16,
+    "errors": {
+      "A": 3.1401849173675503e-16,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0
+    }
+  },
+  "boundary": "Synthetic landmark fixture only; not anatomical validation, clinical evidence or production promotion."
+}

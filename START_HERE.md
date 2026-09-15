@@ -7,6 +7,8 @@ python3 tools/delta_lab.py check
 python3 tools/delta_lab.py challenge-list
 python3 tools/delta_lab.py challenge-show TRUST-GAUNTLET
 python3 tools/delta_lab.py challenge-kit TRUST-GAUNTLET --output-dir ./trust-gauntlet-kit
+# Physical AI / geometry lane:
+python3 tools/delta_lab.py challenge-show SPATIAL-GAUNTLET
 ```
 
 Pick one challenge pack. Inspect the capsules. Produce a baseline under declared conditions. When you have an authorized MetaCore treatment result, keep both outputs and verify the receipt.

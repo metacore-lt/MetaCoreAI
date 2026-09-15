@@ -3,10 +3,10 @@
   "publisher_policy_version": "3.10.1-http-hardening",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "2374573d9f517f78b7dc332e634c6fed029bebe6a1f8713924c2a188ed56df70",
-  "release_id": "sha256:2374573d9f517f78b7dc332e634c6fed029bebe6a1f8713924c2a188ed56df70",
-  "generated_at": "2026-09-15T23:24:41.937295+00:00",
-  "file_count": 67,
+  "content_set_sha256": "bc66c0a546ea0791d0a67754c66275f3ac271222168d177d7cae15c7b7fc2b98",
+  "release_id": "sha256:bc66c0a546ea0791d0a67754c66275f3ac271222168d177d7cae15c7b7fc2b98",
+  "generated_at": "2026-09-15T23:47:59.657788+00:00",
+  "file_count": 75,
   "files": [
     {
       "path": ".gitignore",
@@ -25,8 +25,8 @@
     },
     {
       "path": "CHALLENGES.md",
-      "bytes": 1162,
-      "sha256": "1f431dcb406c2bf12631593ebd62813513bcf145e7c13fa165e7db3591d4bf76"
+      "bytes": 1502,
+      "sha256": "86211364ae9a4d6f20f02f793420cde7905682d03dd8ce7b9ef6625ca6ecd8fd"
     },
     {
       "path": "CONTEXT_LAB_HTTP_POLICY.conf",
@@ -80,8 +80,8 @@
     },
     {
       "path": "METHODOLOGY.md",
-      "bytes": 2343,
-      "sha256": "b81c9cd00e2bcfb3dfabdf00cfa8e923735011b8b8c832e57d67e94cfe727660"
+      "bytes": 3006,
+      "sha256": "ff5f64120e1b36a9fe5a691199f44281caf7494d269996dbf593b5a834ca6f8c"
     },
     {
       "path": "NOTICE.md",
@@ -100,8 +100,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6717,
-      "sha256": "042b31a7446aa101fbf8c5df098749976725a2541dabd634c1f5c42cec3d31e2"
+      "bytes": 7070,
+      "sha256": "00262adc2b948a8d22a927671c7e23fba91a82de1a4f45d642fd9b8d41d0e2ab"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -115,8 +115,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 1553,
-      "sha256": "b35e1a980406b8852eb3b27d095669ee18aa827ec8778024d388d089e1c02312"
+      "bytes": 1643,
+      "sha256": "c83b4ee5add6fe3172308161e33166a7628d45127e6cc032c3a79807b0242006"
     },
     {
       "path": "TRY_METACORE.md",
@@ -130,13 +130,13 @@
     },
     {
       "path": "challenges/index.json",
-      "bytes": 2135,
-      "sha256": "7df930cc29a6a164a56d71bb25307757d5b6dce9598d442235114298f9b151c3"
+      "bytes": 2689,
+      "sha256": "bdfa55b179ef8a9b78391c36c73c9f48497a833416b453f5b19e2adf994e68df"
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 4154,
-      "sha256": "f1f4f3f4c77fcff22025b9c804ddc961e6946dc5affbb296be10578b3bf439fd"
+      "bytes": 4394,
+      "sha256": "d2f399a1a7c268cf252ed2b2aeb4f881341c4172cdb4fc80bfc70a5efe319d4b"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -151,17 +151,52 @@
     {
       "path": "examples/delta_receipt.example.json",
       "bytes": 1841,
-      "sha256": "7487a0bdece12f49362a12e162f5c6654f87f8b1233f52ce49616d3a78c31cae"
+      "sha256": "39e9975e2add08403e1695509f4b7f30e71e8ccfff078393cc07c8aeb72969c7"
+    },
+    {
+      "path": "examples/spatial_fit_001/README.md",
+      "bytes": 1394,
+      "sha256": "c7994db2498c5cc71ed8b45bd402b8988ae3152c593b2b17a043e459cbadc0f9"
+    },
+    {
+      "path": "examples/spatial_fit_001/collision_result.json",
+      "bytes": 738,
+      "sha256": "909e4c9a8aba00596aa9c0d486b943002facda548d893d5f90dbfc7dc2926841"
+    },
+    {
+      "path": "examples/spatial_fit_001/fit_axis_scale.public.json",
+      "bytes": 1665,
+      "sha256": "45b2884618d1ae921e7c44b5a0435eeb9d167dbe294639c4688ac5a294766335"
+    },
+    {
+      "path": "examples/spatial_fit_001/fit_rigid.public.json",
+      "bytes": 1587,
+      "sha256": "c51977c96bebdca52cfed5abb8e98403ab1090d986b821fc242a7b1fe7fa008e"
+    },
+    {
+      "path": "examples/spatial_fit_001/fit_similarity.public.json",
+      "bytes": 1633,
+      "sha256": "a350c267bb10e8f1f2858859b421a2fee3559931c6b207ed128361e81bb07cb3"
+    },
+    {
+      "path": "examples/spatial_fit_001/landmark_fixture.json",
+      "bytes": 397,
+      "sha256": "7af0693608ab6ff31f0a7e2b197f32f4399228c717a30a7368aa5dad1215a579"
+    },
+    {
+      "path": "examples/spatial_fit_001/manifest.json",
+      "bytes": 2758,
+      "sha256": "6a31e5347110e3104210d6755d6cdc6a4ec9be9dfa0bf14473b8e3e5f93940ee"
     },
     {
       "path": "metrics/index.json",
-      "bytes": 15834,
-      "sha256": "cd4a70484311678a011b92dd37ae7e3b52a6f35b43fb5ca2e7205840a9fa683c"
+      "bytes": 17968,
+      "sha256": "83269d10a07e44dcf7ef13b97e220b7502b5bf7a324bc1a18fa3478aec8c4036"
     },
     {
       "path": "playground/catalog.json",
       "bytes": 9428,
-      "sha256": "e597a6c75e98789c9e6c1991ea766c683f6a84030745cc401af48dbe2cf79b99"
+      "sha256": "94e4580f33f088f31423aa12e60351d6e096159c646ded9f1d29edeeffc2ece7"
     },
     {
       "path": "playground/context-lab.css",
@@ -270,8 +305,8 @@
     },
     {
       "path": "suite/TEST_SUITE_MANIFEST.json",
-      "bytes": 1910,
-      "sha256": "be7f58a81656e8dae9aaf929be97f4b6ca247d197a31c6e9c669838ab397ccf9"
+      "bytes": 2088,
+      "sha256": "96bea592d6e1227a66b2110692354bc8c362e9512d06ce35d39749b5a8078570"
     },
     {
       "path": "tests/authority/AUTHORITY_001.json",
@@ -290,8 +325,8 @@
     },
     {
       "path": "tests/index.json",
-      "bytes": 796,
-      "sha256": "a03bc15a208971957ee014a0d74d0e55da50a808b7da4f25ab7b4a88a9f87a08"
+      "bytes": 883,
+      "sha256": "666bc0a107a66a4cb46c475f44e5231fe76af9a7e25e360b9b618eb0844e047b"
     },
     {
       "path": "tests/injection/INJECTION_001.json",
@@ -312,6 +347,11 @@
       "path": "tests/recovery/RECOVERY_001.json",
       "bytes": 941,
       "sha256": "fa62218a78c6dea0f97ed96028f5e5ce914cda3c8052ce1fc7a8931cec274947"
+    },
+    {
+      "path": "tests/spatial/SPATIAL_QA_001.json",
+      "bytes": 1803,
+      "sha256": "07b285355bd5da2875b009b4af0edba3a15a01f462deff2c07d3a4297c85e2c6"
     },
     {
       "path": "tests/uncertainty/UNCERTAINTY_001.json",

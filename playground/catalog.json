@@ -4,7 +4,7 @@
   "status": "PUBLIC_STATIC_CATALOG",
   "name": "MetaCore DELTA Context Lab",
   "live_url": "https://delta.metacore.lt/context-lab/",
-  "delta_version": "0.10.2",
+  "delta_version": "0.11.0",
   "summary": "Machine-readable index of the anonymous public Context Lab. It catalogs public instruments, guided presets, static endpoints, proof/handoff artifacts and boundaries; it grants no private runtime authority.",
   "counts": {
     "instruments": 10,

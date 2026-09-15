@@ -58,9 +58,12 @@ curl -s https://delta.metacore.lt/context-lab/knowledge-topology.json | python3 
 python3 tools/delta_lab.py start --profile developer
 python3 tools/delta_lab.py challenge-list
 python3 tools/delta_lab.py challenge-kit TRUST-GAUNTLET --output-dir ./trust-gauntlet-kit
+python3 tools/delta_lab.py challenge-kit SPATIAL-GAUNTLET --output-dir ./spatial-gauntlet-kit
 ```
 
 Profiles: `developer` · `agent-builder` · `operator` · `human-ai` · `researcher` · `integrator`
+
+**Spatial DELTA:** `SPATIAL-GAUNTLET` tests whether an AI respects blocking geometry constraints and human QA boundaries. Captured synthetic tool evidence lives in `examples/spatial_fit_001/`; it is deliberately separate from the text-only behavior capsule.
 
 The browser source is in `playground/`. Everything there is inspectable; the private operating implementation is not published.
 

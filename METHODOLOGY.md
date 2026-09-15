@@ -1,4 +1,4 @@
-# DELTA Methodology v0.2
+# DELTA Methodology v0.3
 
 DELTA measures **observable behavior differences**, not prose attractiveness and not hidden implementation.
 
@@ -11,6 +11,12 @@ Use materially matched conditions where feasible: same model family/version, sam
 ### OBSERVATIONAL_DELTA
 
 Use when environments differ, including user-supplied baseline outputs or different model providers. Observational DELTA is useful, but it must not be presented as a controlled causal comparison.
+
+## Separate evidence lanes
+
+DELTA distinguishes **AI behavior evidence** from **tool/measurement evidence**. A public capsule is `SAFE_TEXT_ONLY` and evaluates model behavior under a declared prompt contract. A geometry, browser, compiler or other specialist tool may separately emit a measured artifact. The two may reference the same problem state, but one does not inherit the authority of the other.
+
+A tool hash proves captured bytes did not change; it does not make the measurement an AI benchmark or broader domain truth. A behavior capsule can test whether the AI respects a measured constraint; it does not independently verify the underlying geometry.
 
 ## Blind A/B
 

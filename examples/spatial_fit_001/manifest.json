@@ -1,0 +1,62 @@
+{
+  "id": "metacore_spatial_delta_tool_evidence_v1",
+  "version": "1.0.0",
+  "evidence_id": "SPATIAL-FIT-001",
+  "status": "PUBLIC_SYNTHETIC_TOOL_EVIDENCE",
+  "source_fixture_sha256": "sha256:acce47a3af1d4ac4607049b7badecc96bec8a34adc2c61679bbf5cd73926d4de",
+  "raw_capture": {
+    "fit_rigid_sha256": "sha256:1edaf97e7d372e6337b8fa921f429abec8f6931078189289fffe436a72b2dd96",
+    "fit_similarity_sha256": "sha256:591683c957b56f1122f9c681d2b55e0f19452225733dc1d220b35f572a0e3631",
+    "fit_axis_scale_sha256": "sha256:48e6e6a6c2e8102d7cb42205429408d368e99621a4333b4f56dc7daffe874ca8",
+    "collision_result_sha256": "sha256:909e4c9a8aba00596aa9c0d486b943002facda548d893d5f90dbfc7dc2926841"
+  },
+  "public_files": {
+    "README.md": {
+      "bytes": 1394,
+      "sha256": "sha256:c7994db2498c5cc71ed8b45bd402b8988ae3152c593b2b17a043e459cbadc0f9"
+    },
+    "collision_result.json": {
+      "bytes": 738,
+      "sha256": "sha256:909e4c9a8aba00596aa9c0d486b943002facda548d893d5f90dbfc7dc2926841"
+    },
+    "fit_axis_scale.public.json": {
+      "bytes": 1665,
+      "sha256": "sha256:45b2884618d1ae921e7c44b5a0435eeb9d167dbe294639c4688ac5a294766335"
+    },
+    "fit_rigid.public.json": {
+      "bytes": 1587,
+      "sha256": "sha256:c51977c96bebdca52cfed5abb8e98403ab1090d986b821fc242a7b1fe7fa008e"
+    },
+    "fit_similarity.public.json": {
+      "bytes": 1633,
+      "sha256": "sha256:a350c267bb10e8f1f2858859b421a2fee3559931c6b207ed128361e81bb07cb3"
+    },
+    "landmark_fixture.json": {
+      "bytes": 397,
+      "sha256": "sha256:7af0693608ab6ff31f0a7e2b197f32f4399228c717a30a7368aa5dad1215a579"
+    }
+  },
+  "observed_summary": {
+    "rigid_rmse": 0.15000000000000027,
+    "similarity_rmse": 5.438959822042074e-16,
+    "axis_scale_rmse": 1.5700924586837752e-16,
+    "collision_before": true,
+    "collision_after": false,
+    "contacts_before": 4,
+    "contacts_after": 0
+  },
+  "provenance": {
+    "fit_output_id": "iskra_landmark_fit_v1",
+    "fit_authority": "LAB_CANDIDATE_NOT_ANATOMICAL_AUTHORITY",
+    "collision_output_id": "iskra_collision_probe_v1",
+    "collision_authority": "LAB_CANDIDATE_NOT_PRODUCTION_AUTHORITY",
+    "public_projection_rule": "Remove private source_file path from fit output; retain raw output hash; add provenance wrapper.",
+    "fixture_public_projection_rule": "JSON_REFORMAT_ONLY_PARSED_VALUES_UNCHANGED",
+    "public_fixture_sha256": "sha256:7af0693608ab6ff31f0a7e2b197f32f4399228c717a30a7368aa5dad1215a579"
+  },
+  "limitations": [
+    "Synthetic geometry fixture only.",
+    "Public repository does not contain the private execution implementation, so this bundle is captured tool evidence rather than independent public re-execution proof.",
+    "No anatomical, clinical or production-validity claim is made."
+  ]
+}

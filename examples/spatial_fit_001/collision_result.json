@@ -1,0 +1,45 @@
+{
+  "after": {
+    "collision": false,
+    "contact_count": 0
+  },
+  "authority": "LAB_CANDIDATE_NOT_PRODUCTION_AUTHORITY",
+  "before": {
+    "collision": true,
+    "contact_count": 4
+  },
+  "boundary": "Synthetic geometry smoke only; not anatomical validation or production promotion.",
+  "fixture": {
+    "after": {
+      "a_center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "b_center": [
+        1.2,
+        0.0,
+        0.0
+      ]
+    },
+    "before": {
+      "a_center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "b_center": [
+        0.4,
+        0.0,
+        0.0
+      ]
+    },
+    "shape": "unit_box_pair",
+    "size": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "id": "iskra_collision_probe_v1"
+}

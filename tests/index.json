@@ -1,5 +1,5 @@
 {
-  "version": "0.3.1",
+  "version": "0.4.0",
   "tests": [
     {
       "id": "AUTHORITY-001",
@@ -28,6 +28,10 @@
     {
       "id": "RECOVERY-001",
       "path": "recovery/RECOVERY_001.json"
+    },
+    {
+      "id": "SPATIAL-QA-001",
+      "path": "spatial/SPATIAL_QA_001.json"
     },
     {
       "id": "UNCERTAINTY-001",
