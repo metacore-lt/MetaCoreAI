@@ -29,6 +29,12 @@ function stateDelta(){let before,after; try{before=JSON.parse($('#sd-before').va
  const req={operation:'state_delta',before,after}; const res={status:'OK_DEMO',added,removed,changed,unchanged_count:unchanged.length,writeback_proposal:{apply:false,reason:'Demo reports DELTA; it never mutates source state.'}};
  $('#sd-req').textContent=pretty(req);$('#sd-res').textContent=pretty(res);return {request:req,result:res}}
 
+function loadSpatialStateSample(){
+ const before={domain:'spatial_qa',source_truth_locked:true,target_layer:'reference_profile_fit',landmark_rms_mm:4.2,symmetry_error_mm:2.2,containment_violations:0,unresolved_collisions:1,joint_continuity:'pass',candidate_state:'BLOCKED',production_write:false};
+ const after={domain:'spatial_qa',source_truth_locked:true,target_layer:'reference_profile_fit',landmark_rms_mm:4.2,symmetry_error_mm:2.2,containment_violations:0,unresolved_collisions:0,joint_continuity:'pass',candidate_state:'READY_FOR_HUMAN_QA',production_write:false,promotion_gate:'HUMAN_QA_REQUIRED'};
+ $('#sd-before').value=pretty(before);$('#sd-after').value=pretty(after);return stateDelta()
+}
+
 function epistemicRoute(){const req={operation:'epistemic_route',source_type:$('#er-source').value,freshness:$('#er-fresh').value,directly_supported:$('#er-direct').value==='yes',material_missing:$('#er-missing').value==='yes'};let cls,why;
  if(req.material_missing){cls='MISSING_DATA';why='Material information needed for the claim is missing.'}
  else if(req.source_type==='symbolic'){cls='SYMBOLIC_REFLECTION';why='The input is explicitly symbolic/reflective.'}
@@ -217,7 +223,7 @@ function bindExperimentGallery(){
 }
 
 function bind(){
- $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
+ $('#cc-run').onclick=contextCompile; $('#sd-run').onclick=stateDelta; $('#sd-spatial-sample').onclick=loadSpatialStateSample; $('#er-run').onclick=epistemicRoute; $('#ag-run').onclick=authorityCheck;
  document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
  bindPersonal(); bindHumanTeam(); bindKnowledgeRoute(); contextCompile();stateDelta();epistemicRoute();authorityCheck(); bindExperimentGallery();
 }

@@ -3,9 +3,9 @@
   "publisher_policy_version": "3.10.1-http-hardening",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "0a59ee70ba0d5eb5b30e7ecef6dbe00699982ff4ecd12f855e3588b4354daf4f",
-  "release_id": "sha256:0a59ee70ba0d5eb5b30e7ecef6dbe00699982ff4ecd12f855e3588b4354daf4f",
-  "generated_at": "2026-09-15T17:07:26.529786+00:00",
+  "content_set_sha256": "2374573d9f517f78b7dc332e634c6fed029bebe6a1f8713924c2a188ed56df70",
+  "release_id": "sha256:2374573d9f517f78b7dc332e634c6fed029bebe6a1f8713924c2a188ed56df70",
+  "generated_at": "2026-09-15T23:24:41.937295+00:00",
   "file_count": 67,
   "files": [
     {
@@ -45,8 +45,8 @@
     },
     {
       "path": "DEMO_API.md",
-      "bytes": 5323,
-      "sha256": "2ca60e38d60d552fbfdef7469781be9b5f75fc02b402c918d4a8243cde01a81e"
+      "bytes": 5637,
+      "sha256": "1b86d5d6409f290ef0e8150c568996b2fb1fc033e5ea528fb8c0565a0d5116d6"
     },
     {
       "path": "EXPERIMENT_GALLERY.md",
@@ -100,8 +100,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6341,
-      "sha256": "3e50bed194be7ec4c20f42d34035d7f189dbc9bc1b3121487b223bc010525dff"
+      "bytes": 6717,
+      "sha256": "042b31a7446aa101fbf8c5df098749976725a2541dabd634c1f5c42cec3d31e2"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -135,8 +135,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 4071,
-      "sha256": "ca0949f53bc1c62ebb9586cf56587fc3791a274f122144cd201086d720ac410e"
+      "bytes": 4154,
+      "sha256": "f1f4f3f4c77fcff22025b9c804ddc961e6946dc5affbb296be10578b3bf439fd"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -161,7 +161,7 @@
     {
       "path": "playground/catalog.json",
       "bytes": 9428,
-      "sha256": "815ebf12d416661b6c368b1d303424a591806d37d611514fa209f5d0f85ab7bb"
+      "sha256": "e597a6c75e98789c9e6c1991ea766c683f6a84030745cc401af48dbe2cf79b99"
     },
     {
       "path": "playground/context-lab.css",
@@ -170,8 +170,8 @@
     },
     {
       "path": "playground/context-lab.js",
-      "bytes": 30651,
-      "sha256": "7f156ebc8599712a8a06fc42ef7198903ea098102bf3acdb36d4aa9b234fcde4"
+      "bytes": 31409,
+      "sha256": "788c677c4fca8c5bf80b11a24beaf12be1f5a99fbe32a275508893ee4aab49fc"
     },
     {
       "path": "playground/demo-contract.json",
@@ -195,8 +195,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 26770,
-      "sha256": "7afa5ced7976621eacbc5cef03e5c49c2901e92f7cef75b75c328cc258249ae9"
+      "bytes": 27097,
+      "sha256": "4654395b189bc6d5006ed718310636deefa6eda314b1917efaab1af887c5333a"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",

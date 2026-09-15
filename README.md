@@ -32,9 +32,11 @@ After a guided experiment, the browser can create a **local checksummed receipt*
 | Team Friction | `POST /demo/v1/team/friction` | decision · ownership · communication · rhythm |
 | **Knowledge Topology** | `POST /demo/v1/knowledge/route` | question → knowledge regions → epistemic classes |
 | Context Compiler | `POST /demo/v1/context/compile` | signal weighting + confidence + unknowns |
-| State DELTA | `POST /demo/v1/state/delta` | explicit before/after state |
+| State DELTA | `POST /demo/v1/state/delta` | explicit before/after state · includes a browser-local spatial QA sample |
 | Epistemic Router | `POST /demo/v1/epistemic/route` | fact / source / inference / hypothesis / symbolic |
 | Authority Gate | `POST /demo/v1/authority/check` | actor → mandate → scope → approval |
+
+A **Spatial QA sample** now rides on the existing State DELTA instrument. It makes one constraint transition visible — an unresolved collision keeps a candidate blocked; resolving it moves the example only to `READY_FOR_HUMAN_QA`. This is a state/proof preset, not a browser 3D solver, mesh inspection or production promotion.
 
 The Knowledge Topology also has a real, static, token-free endpoint:
 

@@ -40,9 +40,11 @@ The score is an operational friction index, not an HR or employee assessment. Sa
 |---|---|---|
 | Knowledge Topology Navigator | `POST /demo/v1/knowledge/route` | question → knowledge regions → epistemic classes; orientation, not proof |
 | Context Compiler | `POST /demo/v1/context/compile` | signal weighting, theme aggregation, confidence and unknowns |
-| State DELTA | `POST /demo/v1/state/delta` | explicit before/after state, writeback discipline |
+| State DELTA | `POST /demo/v1/state/delta` | explicit before/after state, writeback discipline; includes a spatial QA state preset |
 | Epistemic Router | `POST /demo/v1/epistemic/route` | fact / source / inference / hypothesis / symbolic separation |
 | Authority Gate | `POST /demo/v1/authority/check` | authenticated actor → role → mandate → scope → approval boundary |
+
+The spatial QA preset uses the existing `state_delta` operation only. It compares declared candidate states (`unresolved_collisions`, continuity, fit residuals and promotion state); it does **not** validate geometry, infer anatomy, call Blender/solvers or promote a candidate.
 
 The Authority Gate also carries the leadership pattern: decisions and permissions are scoped to role, mandate, impact and approval rather than inferred from personality.
 

@@ -4,7 +4,7 @@
   "status": "PUBLIC_STATIC_CATALOG",
   "name": "MetaCore DELTA Context Lab",
   "live_url": "https://delta.metacore.lt/context-lab/",
-  "delta_version": "0.10.1",
+  "delta_version": "0.10.2",
   "summary": "Machine-readable index of the anonymous public Context Lab. It catalogs public instruments, guided presets, static endpoints, proof/handoff artifacts and boundaries; it grants no private runtime authority.",
   "counts": {
     "instruments": 10,
@@ -160,12 +160,12 @@
     "algorithm": "SHA-256",
     "asset_sha256": {
       "context-lab.css": "sha256:a6b4c2194d9e01cb614c352b90eac13889ba1488ce8952a59a9a895ab5bbc68c",
-      "context-lab.js": "sha256:7f156ebc8599712a8a06fc42ef7198903ea098102bf3acdb36d4aa9b234fcde4",
+      "context-lab.js": "sha256:788c677c4fca8c5bf80b11a24beaf12be1f5a99fbe32a275508893ee4aab49fc",
       "demo-contract.json": "sha256:6d84281687feb32e3e0a6e4997a08e36a97f30eaf204165a54774ba18a5ac68f",
       "experiments-data.js": "sha256:929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d",
       "experiments.json": "sha256:5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5",
       "human-team-fixtures.json": "sha256:ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091",
-      "index.html": "sha256:7afa5ced7976621eacbc5cef03e5c49c2901e92f7cef75b75c328cc258249ae9",
+      "index.html": "sha256:4654395b189bc6d5006ed718310636deefa6eda314b1917efaab1af887c5333a",
       "knowledge-route-fixtures.json": "sha256:97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede",
       "knowledge-topology-data.js": "sha256:239a9c9e583f1d85e2ad225ab2dfbdbad971e2c471d450e65988201035546599",
       "knowledge-topology.json": "sha256:d5dcddae9d42d3bb858b87d8683435bbf240a1f8dd638ff0c9b802fd004d85d7",
@@ -174,7 +174,7 @@
       "receipt-handoff-fixture.json": "sha256:7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
     },
     "server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
-    "release_sha256": "sha256:cde88eea988298b191f218fe4364ff64f7d87f9f20b6e9ffb64c67ae25c79cb6",
+    "release_sha256": "sha256:f140f89f5ebd053a51869928e5a6e53780a4d41bb5ee21a2d90fe72e62e27415",
     "asset_count": 13
   },
   "http_policy": {
