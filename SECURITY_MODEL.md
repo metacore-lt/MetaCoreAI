@@ -27,3 +27,14 @@ Curated publication and live test requests are separate channels. Repository con
 A future live gateway accepts schema-bound asynchronous jobs only. It does not expose shell execution, filesystem browsing, arbitrary network callbacks, internal route selection or credential forwarding. Public errors are reduced to sanitized error classes.
 
 `BRING_YOUR_AI` initially accepts user-supplied baseline output. Arbitrary remote endpoints and user-provided service credentials are outside the first public gateway scope.
+## Anonymous Context Lab static boundary
+
+The anonymous `/context-lab/` surface is deliberately static and read-only:
+
+- only HTTP `GET` and `HEAD` are accepted; other methods return `405`;
+- CSP is enforced as an HTTP response header, including `connect-src 'none'`, `form-action 'none'` and `frame-ancestors 'self'`;
+- the surface forces no-cookie behavior and disables camera, microphone, geolocation, payment, USB and serial capabilities through response policy;
+- HTML/JSON use short revalidation caching; JS/CSS use a five-minute revalidation cache;
+- `catalog.json` contains a content-addressed release fingerprint covering every public playground asset plus the hash of the published `CONTEXT_LAB_HTTP_POLICY.conf`; live deployment maps that policy to `.htaccess`.
+
+This static boundary is separate from any future live gateway. Browser-local API-shaped `POST` examples are illustrative operations only; the public web server itself does not accept anonymous POST jobs.

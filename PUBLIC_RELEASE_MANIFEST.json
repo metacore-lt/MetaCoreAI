@@ -1,12 +1,12 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.10.0-catalog-receipt-handoff",
+  "publisher_policy_version": "3.10.1-http-hardening",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "0e07f4d9e3bd2ffde5503171ae411c690754f18484b982175f1135a3a5b03869",
-  "release_id": "sha256:0e07f4d9e3bd2ffde5503171ae411c690754f18484b982175f1135a3a5b03869",
-  "generated_at": "2026-09-15T14:44:30.022699+00:00",
-  "file_count": 66,
+  "content_set_sha256": "0a59ee70ba0d5eb5b30e7ecef6dbe00699982ff4ecd12f855e3588b4354daf4f",
+  "release_id": "sha256:0a59ee70ba0d5eb5b30e7ecef6dbe00699982ff4ecd12f855e3588b4354daf4f",
+  "generated_at": "2026-09-15T17:07:26.529786+00:00",
+  "file_count": 67,
   "files": [
     {
       "path": ".gitignore",
@@ -27,6 +27,11 @@
       "path": "CHALLENGES.md",
       "bytes": 1162,
       "sha256": "1f431dcb406c2bf12631593ebd62813513bcf145e7c13fa165e7db3591d4bf76"
+    },
+    {
+      "path": "CONTEXT_LAB_HTTP_POLICY.conf",
+      "bytes": 1138,
+      "sha256": "9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9"
     },
     {
       "path": "CONTEXT_LAB_RECEIPT.md",
@@ -100,8 +105,8 @@
     },
     {
       "path": "SECURITY_MODEL.md",
-      "bytes": 1434,
-      "sha256": "b06765c9b0bf2371a03eaaa72b067b7589e1bc289681712aed573c9a44fa90dd"
+      "bytes": 2412,
+      "sha256": "1080f4b635945e0fa70190e69490d01805a90a44060972d9d2185bb069c823dc"
     },
     {
       "path": "SOURCE_ACCESS.md",
@@ -130,8 +135,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 3439,
-      "sha256": "b9890aa457c117e23db5c551c3610cb31c7f5c5e2c4933eab013b03c26f73803"
+      "bytes": 4071,
+      "sha256": "ca0949f53bc1c62ebb9586cf56587fc3791a274f122144cd201086d720ac410e"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -155,8 +160,8 @@
     },
     {
       "path": "playground/catalog.json",
-      "bytes": 7112,
-      "sha256": "68897e9d87eecf20f5a0595d097c9bdd65d26438e564c7cab7bd533e5f3a0875"
+      "bytes": 9428,
+      "sha256": "815ebf12d416661b6c368b1d303424a591806d37d611514fa209f5d0f85ab7bb"
     },
     {
       "path": "playground/context-lab.css",

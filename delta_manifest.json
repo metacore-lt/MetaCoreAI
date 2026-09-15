@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -74,5 +74,20 @@
   "context_lab_catalog_url": "https://delta.metacore.lt/context-lab/catalog.json",
   "local_experiment_receipt": "metacore_context_lab_receipt_v1",
   "local_technical_handoff": "metacore_context_lab_handoff_v1",
-  "receipt_handoff_docs": "CONTEXT_LAB_RECEIPT.md"
+  "receipt_handoff_docs": "CONTEXT_LAB_RECEIPT.md",
+  "context_lab_http_hardening": {
+    "methods_allowed": [
+      "GET",
+      "HEAD"
+    ],
+    "other_methods": "405",
+    "http_csp": true,
+    "referrer_policy": "no-referrer",
+    "permissions_policy": "deny camera/microphone/geolocation/payment/usb/serial",
+    "cookies_forced_off": true,
+    "cache_policy": "HTML/JSON 60s revalidate; JS/CSS 300s revalidate"
+  },
+  "context_lab_release_sha256": "sha256:cde88eea988298b191f218fe4364ff64f7d87f9f20b6e9ffb64c67ae25c79cb6",
+  "context_lab_server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
+  "context_lab_release_asset_count": 13
 }

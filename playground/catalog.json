@@ -1,10 +1,10 @@
 {
   "id": "metacore_context_lab_catalog_v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "PUBLIC_STATIC_CATALOG",
   "name": "MetaCore DELTA Context Lab",
   "live_url": "https://delta.metacore.lt/context-lab/",
-  "delta_version": "0.10.0",
+  "delta_version": "0.10.1",
   "summary": "Machine-readable index of the anonymous public Context Lab. It catalogs public instruments, guided presets, static endpoints, proof/handoff artifacts and boundaries; it grants no private runtime authority.",
   "counts": {
     "instruments": 10,
@@ -153,6 +153,53 @@
       "purpose": "local no-secrets collaboration draft",
       "network_submission": false,
       "automatic_email": false
+    }
+  },
+  "release": {
+    "schema": "METACORE_CONTEXT_LAB_STATIC_RELEASE_V1",
+    "algorithm": "SHA-256",
+    "asset_sha256": {
+      "context-lab.css": "sha256:a6b4c2194d9e01cb614c352b90eac13889ba1488ce8952a59a9a895ab5bbc68c",
+      "context-lab.js": "sha256:7f156ebc8599712a8a06fc42ef7198903ea098102bf3acdb36d4aa9b234fcde4",
+      "demo-contract.json": "sha256:6d84281687feb32e3e0a6e4997a08e36a97f30eaf204165a54774ba18a5ac68f",
+      "experiments-data.js": "sha256:929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d",
+      "experiments.json": "sha256:5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5",
+      "human-team-fixtures.json": "sha256:ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091",
+      "index.html": "sha256:7afa5ced7976621eacbc5cef03e5c49c2901e92f7cef75b75c328cc258249ae9",
+      "knowledge-route-fixtures.json": "sha256:97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede",
+      "knowledge-topology-data.js": "sha256:239a9c9e583f1d85e2ad225ab2dfbdbad971e2c471d450e65988201035546599",
+      "knowledge-topology.json": "sha256:d5dcddae9d42d3bb858b87d8683435bbf240a1f8dd638ff0c9b802fd004d85d7",
+      "personal-signal-fixture.json": "sha256:22e7adac34d4c4bb702f3812a1a7483544317965507d9306736f5b5eb80398cf",
+      "proof-handoff.js": "sha256:4ed197d2de1b6bec0174da655f615ef9c44283999627ef1900af640cf17106ab",
+      "receipt-handoff-fixture.json": "sha256:7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
+    },
+    "server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
+    "release_sha256": "sha256:cde88eea988298b191f218fe4364ff64f7d87f9f20b6e9ffb64c67ae25c79cb6",
+    "asset_count": 13
+  },
+  "http_policy": {
+    "methods_allowed": [
+      "GET",
+      "HEAD"
+    ],
+    "other_methods": "405",
+    "content_security_policy": "HTTP_HEADER_ENFORCED",
+    "connect_src": "none",
+    "form_action": "none",
+    "frame_ancestors": "self",
+    "referrer_policy": "no-referrer",
+    "cookies_forced_off": true,
+    "permissions_denied": [
+      "geolocation",
+      "microphone",
+      "camera",
+      "payment",
+      "usb",
+      "serial"
+    ],
+    "cache": {
+      "html_json": "public, max-age=60, must-revalidate",
+      "js_css": "public, max-age=300, must-revalidate"
     }
   },
   "knowledge_topology": {
