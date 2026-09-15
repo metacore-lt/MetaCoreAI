@@ -3,8 +3,8 @@
   "version": "1.1.0",
   "status": "PUBLIC_SAFE_LIBRARY_MAP",
   "source_map_id": "metacore_knowledge_topology_v1",
-  "source_map_sha256": "sha256:50f8cbbf79d74469633596f736b90df096985e599a429d208e3dda4f6bfdc677",
-  "projection_sha256": "sha256:5c95efe674fe515b4c01facd8696939f66ac72cb86bf367a866fdb9fcba690a1",
+  "source_map_sha256": "sha256:cea2782581a44b168c95cbfa077143d3d149e50cc516a2283c3785e1ced77ff0",
+  "projection_sha256": "sha256:da75c6a5a759032c376196db97c360951ba75b89cd41d260822c23b9af3e6b49",
   "purpose": "A public conceptual map for navigating neighboring knowledge regions and epistemic classes. It is orientation, not factual proof and not a source browser.",
   "rules": {
     "runtime_api_required": false,
@@ -29,6 +29,28 @@
         "uncertainty",
         "health systems",
         "safety"
+      ]
+    },
+    {
+      "id": "physical_fitness_lifestyle",
+      "label": "Physical Fitness, Training & Lifestyle",
+      "epistemic_class": "PRACTICAL_EMPIRICAL_WELLNESS",
+      "summary": "Exercise programming, strength/cardio/mobility, general nutrition habits, recovery, sleep, adherence and progress tracking with health-sensitive escalation boundaries.",
+      "topics": [
+        "fitness",
+        "exercise",
+        "training program",
+        "strength",
+        "muscle gain",
+        "body recomposition",
+        "fat loss",
+        "cardio",
+        "mobility",
+        "recovery",
+        "sleep",
+        "general nutrition",
+        "habits",
+        "progress tracking"
       ]
     },
     {
@@ -208,6 +230,18 @@
       "to": "metaphysics_symbolic",
       "relation": "HAS_INTERPRETIVE_OVERLAP",
       "why": "Some traditions use symbolic explanatory models; empirical claims still require independent validation."
+    },
+    {
+      "from": "physical_fitness_lifestyle",
+      "to": "health_clinical",
+      "relation": "ESCALATES_HEALTH_SENSITIVE_QUESTIONS_TO",
+      "why": "Pain, injury, symptoms, disease, medication, therapeutic nutrition and special-population questions require the health evidence/safety lane."
+    },
+    {
+      "from": "physical_fitness_lifestyle",
+      "to": "science_research",
+      "relation": "USES_METHODS_AND_EVIDENCE_FROM",
+      "why": "Training, nutrition, recovery and progress claims benefit from measurement, study quality and evidence review."
     }
   ],
   "example_routes": [
@@ -270,6 +304,29 @@
         "science_research"
       ],
       "reason": "Interpret the model while keeping empirical status explicit."
+    },
+    {
+      "question_pattern": "build me a realistic fitness or gym plan",
+      "route": [
+        "physical_fitness_lifestyle"
+      ],
+      "reason": "Start with the practical coaching profile and collect only the minimum context needed for a safe executable plan."
+    },
+    {
+      "question_pattern": "exercise plan with injury, symptoms or medical constraints",
+      "route": [
+        "physical_fitness_lifestyle",
+        "health_clinical"
+      ],
+      "reason": "Coach the practical goal while routing health-sensitive safety/clinical questions to the health evidence lane."
+    },
+    {
+      "question_pattern": "compare training or nutrition methods using evidence",
+      "route": [
+        "physical_fitness_lifestyle",
+        "science_research"
+      ],
+      "reason": "Start from the fitness goal, then evaluate methods and measurement quality."
     }
   ]
 }

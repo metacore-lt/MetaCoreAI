@@ -10,7 +10,9 @@ The DELTA Context Lab includes a public **Knowledge Topology Navigator**: a smal
 GET https://delta.metacore.lt/context-lab/knowledge-topology.json
 ```
 
-This JSON file is public, cacheable and requires no token. It contains seven conceptual regions, their public relations and example routes. It contains no private runtime route, private source corpus or specialist-module name.
+This JSON file is public, cacheable and requires no token. It contains the current public-safe conceptual regions, relations and example routes projected from the canonical topology. It contains no private runtime route, private source corpus or specialist-module name.
+
+Current projection: **8 regions · 15 relations · 10 example routes**. The verifier derives integrity from the canonical projection rather than hard-coding those counts as a permanent contract.
 
 It carries two provenance hashes:
 
