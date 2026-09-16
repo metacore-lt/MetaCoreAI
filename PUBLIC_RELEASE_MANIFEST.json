@@ -1,11 +1,11 @@
 {
   "id": "metacore_delta_lab_public_release_manifest_v2",
-  "publisher_policy_version": "3.10.1-http-hardening",
+  "publisher_policy_version": "3.11.0-sri-remote-parity",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "bc66c0a546ea0791d0a67754c66275f3ac271222168d177d7cae15c7b7fc2b98",
-  "release_id": "sha256:bc66c0a546ea0791d0a67754c66275f3ac271222168d177d7cae15c7b7fc2b98",
-  "generated_at": "2026-09-15T23:47:59.657788+00:00",
+  "content_set_sha256": "b17a85e1de10289f8fe70569ee56b8aafcfe91bcdddcd6d2aac1dfb0fcbb9332",
+  "release_id": "sha256:b17a85e1de10289f8fe70569ee56b8aafcfe91bcdddcd6d2aac1dfb0fcbb9332",
+  "generated_at": "2026-09-16T07:19:00.356437+00:00",
   "file_count": 75,
   "files": [
     {
@@ -105,8 +105,8 @@
     },
     {
       "path": "SECURITY_MODEL.md",
-      "bytes": 2412,
-      "sha256": "1080f4b635945e0fa70190e69490d01805a90a44060972d9d2185bb069c823dc"
+      "bytes": 2782,
+      "sha256": "85877b79aa2c846eff14f2afdd21664e720c2e196dea7704697391dbab72f0d1"
     },
     {
       "path": "SOURCE_ACCESS.md",
@@ -135,8 +135,8 @@
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 4394,
-      "sha256": "d2f399a1a7c268cf252ed2b2aeb4f881341c4172cdb4fc80bfc70a5efe319d4b"
+      "bytes": 5226,
+      "sha256": "594c4aa8964a15bd1566fa7cd95d1573098cdccb1eae629f82b764bc98b2155e"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -195,8 +195,8 @@
     },
     {
       "path": "playground/catalog.json",
-      "bytes": 9428,
-      "sha256": "94e4580f33f088f31423aa12e60351d6e096159c646ded9f1d29edeeffc2ece7"
+      "bytes": 10136,
+      "sha256": "0db148ebb64b21ae297c39b97b1b7c5d372df2774598b5fdccef81355732ce2c"
     },
     {
       "path": "playground/context-lab.css",
@@ -230,8 +230,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 27097,
-      "sha256": "4654395b189bc6d5006ed718310636deefa6eda314b1917efaab1af887c5333a"
+      "bytes": 27517,
+      "sha256": "7d1c439d16e4f1c4f04c72b77449b53046ab1500f6a2cbb3e00025b27d9fc9bf"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",

@@ -36,5 +36,7 @@ The anonymous `/context-lab/` surface is deliberately static and read-only:
 - the surface forces no-cookie behavior and disables camera, microphone, geolocation, payment, USB and serial capabilities through response policy;
 - HTML/JSON use short revalidation caching; JS/CSS use a five-minute revalidation cache;
 - `catalog.json` contains a content-addressed release fingerprint covering every public playground asset plus the hash of the published `CONTEXT_LAB_HTTP_POLICY.conf`; live deployment maps that policy to `.htaccess`.
+- browser-loaded CSS/JS carry SHA-384 Subresource Integrity (SRI), so a modified static dependency is rejected by the browser unless the HTML integrity declaration changes with it;
+- the operator verifier also compares an immutable GitHub commit, the catalog release map and LIVE bytes, keeping repository publication and deployed content independently cross-checkable.
 
 This static boundary is separate from any future live gateway. Browser-local API-shaped `POST` examples are illustrative operations only; the public web server itself does not accept anonymous POST jobs.

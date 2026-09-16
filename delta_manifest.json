@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -87,12 +87,31 @@
     "cookies_forced_off": true,
     "cache_policy": "HTML/JSON 60s revalidate; JS/CSS 300s revalidate"
   },
-  "context_lab_release_sha256": "sha256:f140f89f5ebd053a51869928e5a6e53780a4d41bb5ee21a2d90fe72e62e27415",
+  "context_lab_release_sha256": "sha256:8f56e0d1fc4543b713e58685855c56520b10e9127e56deaf65ad3160545e76a4",
   "context_lab_server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
   "context_lab_release_asset_count": 13,
   "spatial_state_delta_preset": "STATE_DELTA_BROWSER_LOCAL_NO_GEOMETRY_NO_SOLVER",
   "spatial_challenge": "SPATIAL-GAUNTLET",
   "spatial_behavior_capsule": "SPATIAL-QA-001",
   "spatial_tool_evidence": "examples/spatial_fit_001/manifest.json",
-  "spatial_evidence_policy": "BEHAVIOR_CAPSULE_SEPARATE_FROM_TOOL_MEASUREMENT"
+  "spatial_evidence_policy": "BEHAVIOR_CAPSULE_SEPARATE_FROM_TOOL_MEASUREMENT",
+  "context_lab_browser_sri": {
+    "algorithm": "SHA-384",
+    "assets": [
+      "context-lab.css",
+      "experiments-data.js",
+      "knowledge-topology-data.js",
+      "context-lab.js",
+      "proof-handoff.js"
+    ],
+    "enforced_by_browser": true,
+    "network_calls_added": false,
+    "integrity": {
+      "context-lab.css": "sha384-PBCPJ01GvI/AcFEX0gUhxieoWHGuKdhMit7VHMFO+RbB4+lvWlPN1Uk/jLV3mdpZ",
+      "experiments-data.js": "sha384-2/PojdmwvTc9Gi4WpyfvMGnByndTGfV8f81+731npLJf7dhybqvotLM3hFuDAx1r",
+      "knowledge-topology-data.js": "sha384-Mmc+o8ESL7RXiMlXZYbsPkDFEM/zt/YAiL3EUAhykQvQvLnuvSqGiLqHN/o3GEOO",
+      "context-lab.js": "sha384-/6qxR1tKLFwvw2kau5iyseJJFzJ1uaJbrlrs3lmyk6+YoE+nZvl6l7cT9N6blFO9",
+      "proof-handoff.js": "sha384-sYHPvj5baTPCCBQOmqWcxiI8mogqMJDzCbgY+N7htJIKB3g8cnpOG6lGEPkYwP0g"
+    }
+  }
 }
