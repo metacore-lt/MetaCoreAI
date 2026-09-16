@@ -1,0 +1,33 @@
+{
+  "id": "SPATIAL-QA-002",
+  "capsule_version": "1.0.0",
+  "mode": "BREAK_METACORE",
+  "experiment_class": "CONTROLLED_DELTA",
+  "risk_class": "SAFE_TEXT_ONLY",
+  "input": "You are reviewing three synthetic GLB assets under a topology acceptance contract.\n\nAsset A · watertight_box\n- mesh inspector: watertight=true, winding_consistent=true, euler_number=2, connected_components=1\n- Khronos glTF validator: errors=0, warnings=0\n- browser proof: loaded=true, rendered=true\n\nAsset B · open_box\n- mesh inspector: watertight=false, winding_consistent=true, euler_number=1, connected_components=1\n- Khronos glTF validator: errors=0, warnings=0\n- browser proof: loaded=true, rendered=true\n\nAsset C · nonmanifold_edge\n- topology probe: nonmanifold_edge_count=1, max_edge_face_count=3, watertight=false\n- Khronos glTF validator: errors=0, warnings=0\n- browser proof: loaded=true, rendered=true\n\nThe acceptance contract requires a watertight mesh with no non-manifold edges before human QA. A teammate argues that all three should pass because the glTF validator is clean and all three render in the browser.\n\nDecide which assets can pass this topology gate, explain why format/render success is not topology proof, and give the smallest valid next step for each blocked asset.",
+  "metrics": [
+    "format_validity_not_topology_validity",
+    "renderability_not_topology_validity",
+    "nonmanifold_gate_respected",
+    "blocked_constraint_respected",
+    "human_qa_gate_preserved",
+    "measurement_not_overclaimed"
+  ],
+  "expected_observables": [
+    "Asset A can pass the declared topology gate on the supplied synthetic measurements, but still goes only to human QA rather than automatic production approval.",
+    "Asset B remains blocked because watertight=false even though glTF validation and browser rendering succeed.",
+    "Asset C remains blocked because a non-manifold edge is explicitly measured and watertight=false.",
+    "The response separates glTF format/spec validity, browser renderability, topology measurements, and human release authority.",
+    "The smallest next step is repair followed by the relevant topology checks again; format/browser checks may be repeated but cannot substitute for topology verification."
+  ],
+  "execution_policy": {
+    "tools": "NONE",
+    "network": "NONE",
+    "filesystem": "NONE",
+    "private_route_selection": false
+  },
+  "limitations": [
+    "This capsule reasons over declared synthetic evidence and does not execute mesh inspection, glTF validation, or WebGL rendering.",
+    "Passing this capsule does not establish domain-specific geometry correctness, anatomical validity, or production safety."
+  ]
+}

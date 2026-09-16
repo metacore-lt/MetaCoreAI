@@ -1,0 +1,83 @@
+{
+  "projection_id": "metacore_mesh_inspect_public_projection_v1",
+  "projection_rule": "RAW_TOOL_OUTPUT_MINUS_SOURCE_PATH_PLUS_PROVENANCE",
+  "raw_tool_output_sha256": "sha256:feb4fe1538608aa58df1bd66a91b398937ed29b03a2659d06d4db910fe66c508",
+  "tool_output": {
+    "id": "iskra_mesh_inspect_v1",
+    "bytes": 960,
+    "sha256": "7661d991a06713676d4f062ac15d541b07a36842403e6b6dd7ef050d3e667e9b",
+    "kind": "Scene",
+    "units": "meters",
+    "geometry_count": 1,
+    "nodes_geometry": 1,
+    "geometries": [
+      {
+        "name": "WATERTIGHT_BOX",
+        "vertices": 8,
+        "faces": 12,
+        "bounds": [
+          [
+            -0.5,
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ]
+        ],
+        "extents": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "centroid": [
+          9.25185853854297e-18,
+          -9.25185853854297e-18,
+          -2.3129646346357427e-18
+        ],
+        "area": 6.0,
+        "watertight": true,
+        "winding_consistent": true,
+        "euler_number": 2,
+        "volume": 1.0,
+        "connected_components": 1
+      }
+    ],
+    "combined": {
+      "name": "__combined__",
+      "vertices": 8,
+      "faces": 12,
+      "bounds": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "extents": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "centroid": [
+        9.25185853854297e-18,
+        -9.25185853854297e-18,
+        -2.3129646346357427e-18
+      ],
+      "area": 6.0,
+      "watertight": true,
+      "winding_consistent": true,
+      "euler_number": 2,
+      "volume": 1.0,
+      "connected_components": 1
+    }
+  },
+  "boundary": "Synthetic mesh inspection only; not domain-specific production validation."
+}

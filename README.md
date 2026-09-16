@@ -63,7 +63,7 @@ python3 tools/delta_lab.py challenge-kit SPATIAL-GAUNTLET --output-dir ./spatial
 
 Profiles: `developer` · `agent-builder` · `operator` · `human-ai` · `researcher` · `integrator`
 
-**Spatial DELTA:** `SPATIAL-GAUNTLET` tests whether an AI respects blocking geometry constraints and human QA boundaries. Captured synthetic tool evidence lives in `examples/spatial_fit_001/`; it is deliberately separate from the text-only behavior capsule.
+**Spatial DELTA:** `SPATIAL-GAUNTLET` tests whether an AI respects blocking geometry constraints, topology gates and human QA boundaries. Captured synthetic tool evidence lives in `examples/spatial_fit_001/` and `examples/spatial_mesh_002/`; it is deliberately separate from the text-only behavior capsules.
 
 The browser source is in `playground/`. Everything there is inspectable; the private operating implementation is not published.
 

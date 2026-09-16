@@ -1,0 +1,18 @@
+{
+  "id": "iskra_spatial_mesh_pair_fixture_v1",
+  "authority": "SYNTHETIC_TOOL_FIXTURE_NOT_DOMAIN_TRUTH",
+  "construction": {
+    "base": "trimesh.creation.box extents 1x1x1",
+    "watertight": "base mesh unchanged",
+    "open": "remove triangles whose centroid lies on max-Z face"
+  },
+  "expected": {
+    "watertight_box": {
+      "watertight": true
+    },
+    "open_box": {
+      "watertight": false
+    }
+  },
+  "boundary": "Synthetic topology fixture only; not anatomical, CAD-production, clinical, or physical safety validation."
+}

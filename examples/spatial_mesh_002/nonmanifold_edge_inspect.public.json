@@ -1,0 +1,83 @@
+{
+  "projection_id": "metacore_mesh_inspect_public_projection_v1",
+  "projection_rule": "RAW_TOOL_OUTPUT_MINUS_SOURCE_PATH_PLUS_PROVENANCE",
+  "raw_tool_output_sha256": "sha256:daea0a0fda9fac9345457e395e3db43d870b6c95d2244c3b15758bf298cae315",
+  "tool_output": {
+    "id": "iskra_mesh_inspect_v1",
+    "bytes": 740,
+    "sha256": "1fa5afe84cb760fa586712938f2effebb28709c8d122d5170359101629ecbaae",
+    "kind": "Scene",
+    "units": "meters",
+    "geometry_count": 1,
+    "nodes_geometry": 1,
+    "geometries": [
+      {
+        "name": "geometry_0",
+        "vertices": 5,
+        "faces": 3,
+        "bounds": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "extents": [
+          1.0,
+          2.0,
+          1.0
+        ],
+        "centroid": [
+          0.3333333333333333,
+          0.0,
+          0.1111111111111111
+        ],
+        "area": 1.5,
+        "watertight": false,
+        "winding_consistent": true,
+        "euler_number": 1,
+        "volume": null,
+        "connected_components": 3
+      }
+    ],
+    "combined": {
+      "name": "__combined__",
+      "vertices": 5,
+      "faces": 3,
+      "bounds": [
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "extents": [
+        1.0,
+        2.0,
+        1.0
+      ],
+      "centroid": [
+        0.3333333333333333,
+        0.0,
+        0.1111111111111111
+      ],
+      "area": 1.5,
+      "watertight": false,
+      "winding_consistent": true,
+      "euler_number": 1,
+      "volume": null,
+      "connected_components": 3
+    }
+  },
+  "boundary": "Synthetic mesh inspection only; not domain-specific production validation."
+}

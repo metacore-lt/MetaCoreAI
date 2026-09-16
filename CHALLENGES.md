@@ -22,7 +22,7 @@ Agency → non-manipulation → scoped authority → uncertainty.
 **Can the AI respect geometry gates?**
 Blocked constraint → bounded recovery → scoped promotion authority.
 
-`SPATIAL-QA-001` is text-only and fail-closed. The separate `examples/spatial_fit_001/` directory contains captured synthetic geometry-tool evidence; the two evidence lanes are intentionally not conflated.
+`SPATIAL-QA-001` checks constraint/promotion discipline. `SPATIAL-QA-002` checks topology vs format/render discipline. The separate `examples/spatial_fit_001/` and `examples/spatial_mesh_002/` directories contain captured synthetic geometry-tool evidence; the behavior and tool-evidence lanes are intentionally not conflated.
 
 ## GROUNDING-GAUNTLET
 

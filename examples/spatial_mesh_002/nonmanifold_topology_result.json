@@ -1,0 +1,23 @@
+{
+  "id": "iskra_nonmanifold_edge_probe_v1",
+  "authority": "SYNTHETIC_TOPOLOGY_MEASUREMENT_NOT_DOMAIN_TRUTH",
+  "mesh_sha256": "sha256:1fa5afe84cb760fa586712938f2effebb28709c8d122d5170359101629ecbaae",
+  "vertices": 5,
+  "faces": 3,
+  "watertight": false,
+  "winding_consistent": true,
+  "euler_number": 1,
+  "nonmanifold_edges": [
+    {
+      "edge": [
+        0,
+        1
+      ],
+      "face_count": 3
+    }
+  ],
+  "nonmanifold_edge_count": 1,
+  "boundary_edge_count": 6,
+  "max_edge_face_count": 3,
+  "boundary": "Synthetic topology fixture only; edge-incidence measurement does not establish domain-specific geometry validity."
+}

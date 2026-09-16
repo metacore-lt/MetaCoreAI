@@ -1,0 +1,115 @@
+{
+  "id": "metacore_spatial_mesh_tool_evidence_v1",
+  "version": "1.0.0",
+  "evidence_id": "SPATIAL-MESH-002",
+  "status": "PUBLIC_SYNTHETIC_TOOL_EVIDENCE",
+  "raw_capture": {
+    "watertight_glb_sha256": "sha256:7661d991a06713676d4f062ac15d541b07a36842403e6b6dd7ef050d3e667e9b",
+    "open_glb_sha256": "sha256:023fc00549949c5cb83e53ddf905cfde41ad3222f7fe6c959c9cfd8ca6094a40",
+    "nonmanifold_glb_sha256": "sha256:1fa5afe84cb760fa586712938f2effebb28709c8d122d5170359101629ecbaae",
+    "watertight_inspect_sha256": "sha256:feb4fe1538608aa58df1bd66a91b398937ed29b03a2659d06d4db910fe66c508",
+    "open_inspect_sha256": "sha256:af4b98be569ac200f27baec27bb4e170a9eccc2b17f31ef7c6be0ff4b52276a0",
+    "nonmanifold_inspect_sha256": "sha256:daea0a0fda9fac9345457e395e3db43d870b6c95d2244c3b15758bf298cae315",
+    "watertight_validator_sha256": "sha256:b9675e5939c8fb79c1261e092a6be4c5e887857ffbc191f0ca5f1a4efd2e0ae4",
+    "open_validator_sha256": "sha256:31e5485dbaef275357a7e8d23733d606269379d67658cac58a7e142c526e7c54",
+    "nonmanifold_validator_sha256": "sha256:57646d087f2ab5fc418964abd2241494755b1e1061ed78d7a2b9dec77b341bb3",
+    "nonmanifold_topology_sha256": "sha256:bdce034ee6a22783c5b30ddf4862fb2815cef2bbbce96cb18b6dc40ce3b852b9",
+    "browser_report_sha256": "sha256:73fc49013609d83c09544b55a8d962902866f7f695691575ade61e98ec91d6cb",
+    "browser_screenshot_sha256": "sha256:995c03a1e37d1e19e867793443e372e3f6bada39a18ef4f73cbf15411d726625"
+  },
+  "public_files": {
+    "README.md": {
+      "bytes": 1527,
+      "sha256": "sha256:c7fe3ad95886e536ace527cb948059ac3d7ede926132e12c803045464629b534"
+    },
+    "browser_proof.public.json": {
+      "bytes": 1089,
+      "sha256": "sha256:71f7c40e4bbfbd5d6a9467915efbe6b8bf5c8fb0afb0dddda3f19764ff521b41"
+    },
+    "fixture_manifest.json": {
+      "bytes": 538,
+      "sha256": "sha256:d5efec8b63e14448ac515922a933e461827d59c09a4c1dc525dee23e9eee74e2"
+    },
+    "mesh_fixtures.public.json": {
+      "bytes": 4221,
+      "sha256": "sha256:f588148672b3c24b9ebcf95a39687b790cff3b518d7fbddded754cf576042b78"
+    },
+    "nonmanifold_edge_gltf_validator.json": {
+      "bytes": 1272,
+      "sha256": "sha256:57646d087f2ab5fc418964abd2241494755b1e1061ed78d7a2b9dec77b341bb3"
+    },
+    "nonmanifold_edge_inspect.public.json": {
+      "bytes": 1813,
+      "sha256": "sha256:6c0ebb66f6acc20f6561fdcea96376fa9b47889064573ef9a11d9a95f73b5c8f"
+    },
+    "nonmanifold_topology_result.json": {
+      "bytes": 637,
+      "sha256": "sha256:bdce034ee6a22783c5b30ddf4862fb2815cef2bbbce96cb18b6dc40ce3b852b9"
+    },
+    "open_box_gltf_validator.json": {
+      "bytes": 1266,
+      "sha256": "sha256:31e5485dbaef275357a7e8d23733d606269379d67658cac58a7e142c526e7c54"
+    },
+    "open_box_inspect.public.json": {
+      "bytes": 1835,
+      "sha256": "sha256:c00812dbb7e2cd7792766ba66486dc6ad3a3d7ebeb977767bc3f1b10c124f1ce"
+    },
+    "watertight_box_gltf_validator.json": {
+      "bytes": 1272,
+      "sha256": "sha256:b9675e5939c8fb79c1261e092a6be4c5e887857ffbc191f0ca5f1a4efd2e0ae4"
+    },
+    "watertight_box_inspect.public.json": {
+      "bytes": 1869,
+      "sha256": "sha256:ec60d2771924209870b930cdc793502d0f917abfacd2dc09684d09e9d29491ef"
+    }
+  },
+  "observed_summary": {
+    "watertight_box": {
+      "watertight": true,
+      "winding_consistent": true,
+      "euler_number": 2,
+      "connected_components": 1,
+      "gltf_errors": 0,
+      "gltf_warnings": 0,
+      "browser_loaded": true
+    },
+    "open_box": {
+      "watertight": false,
+      "winding_consistent": true,
+      "euler_number": 1,
+      "connected_components": 1,
+      "gltf_errors": 0,
+      "gltf_warnings": 0,
+      "browser_loaded": true
+    },
+    "nonmanifold_edge": {
+      "watertight": false,
+      "nonmanifold_edge_count": 1,
+      "max_edge_face_count": 3,
+      "boundary_edge_count": 6,
+      "gltf_errors": 0,
+      "gltf_warnings": 0,
+      "browser_loaded": true
+    },
+    "browser": {
+      "webgl": true,
+      "render_frames": 8,
+      "all_three_loaded": true
+    }
+  },
+  "provenance": {
+    "mesh_inspector": "iskra_mesh_inspect_v1",
+    "gltf_validator": "Khronos glTF Validator via SUPER LAB wrapper",
+    "browser_proof": "iskra_spatial_glb_browser_proof_v1",
+    "nonmanifold_probe": "iskra_nonmanifold_edge_probe_v1",
+    "public_projection_policy": "Text-only public projection: explicit vertices/faces bind to raw GLB SHA-256; inspector source paths and browser local URL are removed; path-safe validator/topology outputs retained.",
+    "mesh_fixture_projection_sha256": "sha256:f588148672b3c24b9ebcf95a39687b790cff3b518d7fbddded754cf576042b78"
+  },
+  "limitations": [
+    "Synthetic topology fixtures only.",
+    "glTF validator success is not topology validation.",
+    "Browser render success is not topology validation.",
+    "Topology checks shown here do not establish domain-specific geometry correctness or production safety.",
+    "Raw binary GLB and screenshot captures are hash-bound in this manifest but are not distributed on the text-only public surface."
+  ]
+}

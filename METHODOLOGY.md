@@ -1,4 +1,4 @@
-# DELTA Methodology v0.3
+# DELTA Methodology v0.4
 
 DELTA measures **observable behavior differences**, not prose attractiveness and not hidden implementation.
 
@@ -17,6 +17,8 @@ Use when environments differ, including user-supplied baseline outputs or differ
 DELTA distinguishes **AI behavior evidence** from **tool/measurement evidence**. A public capsule is `SAFE_TEXT_ONLY` and evaluates model behavior under a declared prompt contract. A geometry, browser, compiler or other specialist tool may separately emit a measured artifact. The two may reference the same problem state, but one does not inherit the authority of the other.
 
 A tool hash proves captured bytes did not change; it does not make the measurement an AI benchmark or broader domain truth. A behavior capsule can test whether the AI respects a measured constraint; it does not independently verify the underlying geometry.
+
+For spatial evidence, format validation, browser renderability and topology measurements are separate signals. A clean glTF validator report or successful WebGL render cannot substitute for watertight/non-manifold checks when those properties are part of the acceptance contract.
 
 ## Blind A/B
 

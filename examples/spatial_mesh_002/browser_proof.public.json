@@ -1,0 +1,35 @@
+{
+  "id": "iskra_spatial_glb_browser_proof_v1",
+  "authority": "LOCAL_BROWSER_RENDER_EVIDENCE_NOT_TOPOLOGY_AUTHORITY",
+  "state": {
+    "ready": true,
+    "models": {
+      "watertight": {
+        "loaded": true,
+        "mesh_count": 1,
+        "vertices": 8,
+        "triangles": 12
+      },
+      "open": {
+        "loaded": true,
+        "mesh_count": 1,
+        "vertices": 8,
+        "triangles": 10
+      },
+      "nonmanifold": {
+        "loaded": true,
+        "mesh_count": 1,
+        "vertices": 5,
+        "triangles": 3
+      }
+    },
+    "render_frames": 8,
+    "webgl": true,
+    "error": null
+  },
+  "screenshot_sha256": "sha256:995c03a1e37d1e19e867793443e372e3f6bada39a18ef4f73cbf15411d726625",
+  "screenshot_bytes": 20622,
+  "raw_browser_report_sha256": "sha256:73fc49013609d83c09544b55a8d962902866f7f695691575ade61e98ec91d6cb",
+  "projection_rule": "REMOVE_LOCAL_URL_AND_PRIVATE_PATH_KEEP_STATE_AND_SCREENSHOT_HASH",
+  "boundary": "Browser load/render proof only. Rendering success does not establish watertightness, manifold topology, anatomy, or production safety."
+}

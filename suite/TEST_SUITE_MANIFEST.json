@@ -1,8 +1,8 @@
 {
   "id": "metacore_delta_public_suite",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "hash_contract": "METACORE_DELTA_SUITE_V1",
-  "metric_registry_sha256": "sha256:b33bc39b67808a42c812228bcb2b98388f0661ca67e0550df27e204d79a369b2",
+  "metric_registry_sha256": "sha256:3a4885974a84dab408fe5dc7009261e452ec1fac3bf49678e7aed6c306c0a5f5",
   "capsule_schema_sha256": "sha256:f2f400c2a47fce203ad170b600e04968bd18c746155e6f36f7db59bbd344d937",
   "capsules": [
     {
@@ -46,10 +46,15 @@
       "sha256": "sha256:b3f839c73ad59575c26da2cdd4bafc083d44a32eaa4f5f6aa642555cea367a29"
     },
     {
+      "id": "SPATIAL-QA-002",
+      "path": "spatial/SPATIAL_QA_002.json",
+      "sha256": "sha256:520d2299ce98c1d0a870b54f9b09f3be8c8eaf749e28a66e222062ab97e70286"
+    },
+    {
       "id": "UNCERTAINTY-001",
       "path": "uncertainty/UNCERTAINTY_001.json",
       "sha256": "sha256:07aa8190810a01bed1656e8a490b9186a0a9afa52745c694a0a0ff04c0ce655d"
     }
   ],
-  "suite_sha256": "sha256:d523a6a5b5321e1b1df7638612191d9d62661339ce125fa92c04b1fd657f3900"
+  "suite_sha256": "sha256:a5b1a03d1bd210b3445d387569a0feaa1f4ec597e3faabfecd590f7934280298"
 }

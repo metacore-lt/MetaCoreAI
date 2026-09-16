@@ -3,10 +3,10 @@
   "publisher_policy_version": "3.11.0-sri-remote-parity",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "b17a85e1de10289f8fe70569ee56b8aafcfe91bcdddcd6d2aac1dfb0fcbb9332",
-  "release_id": "sha256:b17a85e1de10289f8fe70569ee56b8aafcfe91bcdddcd6d2aac1dfb0fcbb9332",
-  "generated_at": "2026-09-16T07:19:00.356437+00:00",
-  "file_count": 75,
+  "content_set_sha256": "1ee7e2a820e5360dddf729ab966d17cfcc40713e3ba3da57588d52fdea4254a1",
+  "release_id": "sha256:1ee7e2a820e5360dddf729ab966d17cfcc40713e3ba3da57588d52fdea4254a1",
+  "generated_at": "2026-09-16T07:25:39.354458+00:00",
+  "file_count": 88,
   "files": [
     {
       "path": ".gitignore",
@@ -25,8 +25,8 @@
     },
     {
       "path": "CHALLENGES.md",
-      "bytes": 1502,
-      "sha256": "86211364ae9a4d6f20f02f793420cde7905682d03dd8ce7b9ef6625ca6ecd8fd"
+      "bytes": 1622,
+      "sha256": "8856e63bdda6f73825b7d280a9d2c086246d2818d6d2c36f1a75fc012ceb025a"
     },
     {
       "path": "CONTEXT_LAB_HTTP_POLICY.conf",
@@ -80,8 +80,8 @@
     },
     {
       "path": "METHODOLOGY.md",
-      "bytes": 3006,
-      "sha256": "ff5f64120e1b36a9fe5a691199f44281caf7494d269996dbf593b5a834ca6f8c"
+      "bytes": 3287,
+      "sha256": "d13d244cf428a50717f5ed2f08b6a041a36ae62a7a69fb996494cc377d9527b7"
     },
     {
       "path": "NOTICE.md",
@@ -100,8 +100,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7070,
-      "sha256": "00262adc2b948a8d22a927671c7e23fba91a82de1a4f45d642fd9b8d41d0e2ab"
+      "bytes": 7120,
+      "sha256": "22195ecdb9f40501a5bce7a7da90366ca51187517fc6f376f96cd48ac7054eba"
     },
     {
       "path": "SECURITY_MODEL.md",
@@ -130,13 +130,13 @@
     },
     {
       "path": "challenges/index.json",
-      "bytes": 2689,
-      "sha256": "bdfa55b179ef8a9b78391c36c73c9f48497a833416b453f5b19e2adf994e68df"
+      "bytes": 2744,
+      "sha256": "6d8bb65b900528085741380a7cb1c2160dab7057a19f193f20dda65f3e53692d"
     },
     {
       "path": "delta_manifest.json",
-      "bytes": 5226,
-      "sha256": "594c4aa8964a15bd1566fa7cd95d1573098cdccb1eae629f82b764bc98b2155e"
+      "bytes": 5434,
+      "sha256": "45eadb5de2d7a575bf7e607035300d17c4727b976f2c8310a409d2f119fb166f"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -151,7 +151,7 @@
     {
       "path": "examples/delta_receipt.example.json",
       "bytes": 1841,
-      "sha256": "39e9975e2add08403e1695509f4b7f30e71e8ccfff078393cc07c8aeb72969c7"
+      "sha256": "188a0bbaeab59fd326aae97d7ce8b85dc187869b625a31dbf977cf242cfe2068"
     },
     {
       "path": "examples/spatial_fit_001/README.md",
@@ -189,14 +189,74 @@
       "sha256": "6a31e5347110e3104210d6755d6cdc6a4ec9be9dfa0bf14473b8e3e5f93940ee"
     },
     {
+      "path": "examples/spatial_mesh_002/README.md",
+      "bytes": 1527,
+      "sha256": "c7fe3ad95886e536ace527cb948059ac3d7ede926132e12c803045464629b534"
+    },
+    {
+      "path": "examples/spatial_mesh_002/browser_proof.public.json",
+      "bytes": 1089,
+      "sha256": "71f7c40e4bbfbd5d6a9467915efbe6b8bf5c8fb0afb0dddda3f19764ff521b41"
+    },
+    {
+      "path": "examples/spatial_mesh_002/fixture_manifest.json",
+      "bytes": 538,
+      "sha256": "d5efec8b63e14448ac515922a933e461827d59c09a4c1dc525dee23e9eee74e2"
+    },
+    {
+      "path": "examples/spatial_mesh_002/manifest.json",
+      "bytes": 5025,
+      "sha256": "f774787aafd52e456ba6f45a3e002f45636ca0a3e399e92c712c5b66025e8ae7"
+    },
+    {
+      "path": "examples/spatial_mesh_002/mesh_fixtures.public.json",
+      "bytes": 4221,
+      "sha256": "f588148672b3c24b9ebcf95a39687b790cff3b518d7fbddded754cf576042b78"
+    },
+    {
+      "path": "examples/spatial_mesh_002/nonmanifold_edge_gltf_validator.json",
+      "bytes": 1272,
+      "sha256": "57646d087f2ab5fc418964abd2241494755b1e1061ed78d7a2b9dec77b341bb3"
+    },
+    {
+      "path": "examples/spatial_mesh_002/nonmanifold_edge_inspect.public.json",
+      "bytes": 1813,
+      "sha256": "6c0ebb66f6acc20f6561fdcea96376fa9b47889064573ef9a11d9a95f73b5c8f"
+    },
+    {
+      "path": "examples/spatial_mesh_002/nonmanifold_topology_result.json",
+      "bytes": 637,
+      "sha256": "bdce034ee6a22783c5b30ddf4862fb2815cef2bbbce96cb18b6dc40ce3b852b9"
+    },
+    {
+      "path": "examples/spatial_mesh_002/open_box_gltf_validator.json",
+      "bytes": 1266,
+      "sha256": "31e5485dbaef275357a7e8d23733d606269379d67658cac58a7e142c526e7c54"
+    },
+    {
+      "path": "examples/spatial_mesh_002/open_box_inspect.public.json",
+      "bytes": 1835,
+      "sha256": "c00812dbb7e2cd7792766ba66486dc6ad3a3d7ebeb977767bc3f1b10c124f1ce"
+    },
+    {
+      "path": "examples/spatial_mesh_002/watertight_box_gltf_validator.json",
+      "bytes": 1272,
+      "sha256": "b9675e5939c8fb79c1261e092a6be4c5e887857ffbc191f0ca5f1a4efd2e0ae4"
+    },
+    {
+      "path": "examples/spatial_mesh_002/watertight_box_inspect.public.json",
+      "bytes": 1869,
+      "sha256": "ec60d2771924209870b930cdc793502d0f917abfacd2dc09684d09e9d29491ef"
+    },
+    {
       "path": "metrics/index.json",
-      "bytes": 17968,
-      "sha256": "83269d10a07e44dcf7ef13b97e220b7502b5bf7a324bc1a18fa3478aec8c4036"
+      "bytes": 20263,
+      "sha256": "bda77deb96eb5c8be0ec9b001d00bbadec221409ad98175b9e7e4af787f3ae9c"
     },
     {
       "path": "playground/catalog.json",
       "bytes": 10136,
-      "sha256": "0db148ebb64b21ae297c39b97b1b7c5d372df2774598b5fdccef81355732ce2c"
+      "sha256": "d006cd1b78783783d6585c6952e01d93aeee88a99db28cdf2f91d4e3bc937ad9"
     },
     {
       "path": "playground/context-lab.css",
@@ -305,8 +365,8 @@
     },
     {
       "path": "suite/TEST_SUITE_MANIFEST.json",
-      "bytes": 2088,
-      "sha256": "96bea592d6e1227a66b2110692354bc8c362e9512d06ce35d39749b5a8078570"
+      "bytes": 2266,
+      "sha256": "fae56d165a32ba06faca182f87168a1f6e39d08d77a81a9e313a99a21ef27189"
     },
     {
       "path": "tests/authority/AUTHORITY_001.json",
@@ -325,8 +385,8 @@
     },
     {
       "path": "tests/index.json",
-      "bytes": 883,
-      "sha256": "666bc0a107a66a4cb46c475f44e5231fe76af9a7e25e360b9b618eb0844e047b"
+      "bytes": 970,
+      "sha256": "108659ba876c6e9cf0baf5420abf23ed4a1f728d6f000d827e7c74aaf79c554f"
     },
     {
       "path": "tests/injection/INJECTION_001.json",
@@ -352,6 +412,11 @@
       "path": "tests/spatial/SPATIAL_QA_001.json",
       "bytes": 1803,
       "sha256": "07b285355bd5da2875b009b4af0edba3a15a01f462deff2c07d3a4297c85e2c6"
+    },
+    {
+      "path": "tests/spatial/SPATIAL_QA_002.json",
+      "bytes": 2685,
+      "sha256": "0bda6478998edf291fb79d9148dbb6202b3a474244465418171f8b6497721a50"
     },
     {
       "path": "tests/uncertainty/UNCERTAINTY_001.json",

@@ -1,6 +1,6 @@
 {
   "id": "metacore_delta_lab_v0_4",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "status": "PUBLIC_PROOF_TO_COLLABORATION_TOOLING_READY_GATEWAY_DISABLED",
   "name": "MetaCore DELTA Lab",
   "tagline": "Bring your prompt. Measure the DELTA.",
@@ -113,5 +113,8 @@
       "context-lab.js": "sha384-/6qxR1tKLFwvw2kau5iyseJJFzJ1uaJbrlrs3lmyk6+YoE+nZvl6l7cT9N6blFO9",
       "proof-handoff.js": "sha384-sYHPvj5baTPCCBQOmqWcxiI8mogqMJDzCbgY+N7htJIKB3g8cnpOG6lGEPkYwP0g"
     }
-  }
+  },
+  "spatial_mesh_behavior_capsule": "SPATIAL-QA-002",
+  "spatial_mesh_tool_evidence": "examples/spatial_mesh_002/manifest.json",
+  "spatial_mesh_evidence_policy": "FORMAT_RENDER_TOPOLOGY_AUTHORITY_SEPARATED"
 }
