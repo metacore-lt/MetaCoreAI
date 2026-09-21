@@ -159,13 +159,13 @@
     "schema": "METACORE_CONTEXT_LAB_STATIC_RELEASE_V1",
     "algorithm": "SHA-256",
     "asset_sha256": {
-      "context-lab.css": "sha256:08b8fc2a1cbb396e536bf9d3474bc7ea417e3e50a2f8e2cb66ce151e78add975",
+      "context-lab.css": "sha256:ff04173ebb4f816a612cca89b9cc9b20750357ac9b6427e34b6b9aeffa15b735",
       "context-lab.js": "sha256:788c677c4fca8c5bf80b11a24beaf12be1f5a99fbe32a275508893ee4aab49fc",
       "demo-contract.json": "sha256:6d84281687feb32e3e0a6e4997a08e36a97f30eaf204165a54774ba18a5ac68f",
       "experiments-data.js": "sha256:929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d",
       "experiments.json": "sha256:5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5",
       "human-team-fixtures.json": "sha256:ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091",
-      "index.html": "sha256:9f36db69af9d2149526ccf788731b7a3c7aacd8e00d9ba0cbcbbac657cd83fdc",
+      "index.html": "sha256:0a6a26e6f56d7a817cec54f68377a2622715d471a121cc9ff00bf131ae41cf48",
       "knowledge-route-fixtures.json": "sha256:97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede",
       "knowledge-topology-data.js": "sha256:239a9c9e583f1d85e2ad225ab2dfbdbad971e2c471d450e65988201035546599",
       "knowledge-topology.json": "sha256:d5dcddae9d42d3bb858b87d8683435bbf240a1f8dd638ff0c9b802fd004d85d7",
@@ -174,14 +174,14 @@
       "receipt-handoff-fixture.json": "sha256:7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
     },
     "server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
-    "release_sha256": "sha256:975cd45e908a28cedaf39a8918e87be66b14ed58d07e5c2d78f75e63c2ac9d19",
+    "release_sha256": "sha256:f2f03c9f50e43b5c3b8449332359b395a5cfe4ab5fcc70c7607215fdf7193ddd",
     "asset_count": 13
   },
   "browser_subresource_integrity": {
     "algorithm": "SHA-384",
     "html_enforced": true,
     "assets": {
-      "context-lab.css": "sha384-geClL1pPWvKC56gC4XQLp3oFl3fA6wJ5hv/0W0oPswiYYm7encydvsz0jad89fcf",
+      "context-lab.css": "sha384-Na1kq+K9BGlqcnezMbkap7ZkCklaVEZH958y1tCEJyGvaL8hUl3PXhK7tJ2Cq9zw",
       "experiments-data.js": "sha384-2/PojdmwvTc9Gi4WpyfvMGnByndTGfV8f81+731npLJf7dhybqvotLM3hFuDAx1r",
       "knowledge-topology-data.js": "sha384-Mmc+o8ESL7RXiMlXZYbsPkDFEM/zt/YAiL3EUAhykQvQvLnuvSqGiLqHN/o3GEOO",
       "context-lab.js": "sha384-/6qxR1tKLFwvw2kau5iyseJJFzJ1uaJbrlrs3lmyk6+YoE+nZvl6l7cT9N6blFO9",

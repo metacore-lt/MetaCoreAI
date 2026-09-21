@@ -87,7 +87,7 @@
     "cookies_forced_off": true,
     "cache_policy": "HTML/JSON 60s revalidate; JS/CSS 300s revalidate"
   },
-  "context_lab_release_sha256": "sha256:975cd45e908a28cedaf39a8918e87be66b14ed58d07e5c2d78f75e63c2ac9d19",
+  "context_lab_release_sha256": "sha256:f2f03c9f50e43b5c3b8449332359b395a5cfe4ab5fcc70c7607215fdf7193ddd",
   "context_lab_server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
   "context_lab_release_asset_count": 13,
   "spatial_state_delta_preset": "STATE_DELTA_BROWSER_LOCAL_NO_GEOMETRY_NO_SOLVER",
@@ -107,7 +107,7 @@
     "enforced_by_browser": true,
     "network_calls_added": false,
     "integrity": {
-      "context-lab.css": "sha384-geClL1pPWvKC56gC4XQLp3oFl3fA6wJ5hv/0W0oPswiYYm7encydvsz0jad89fcf",
+      "context-lab.css": "sha384-Na1kq+K9BGlqcnezMbkap7ZkCklaVEZH958y1tCEJyGvaL8hUl3PXhK7tJ2Cq9zw",
       "experiments-data.js": "sha384-2/PojdmwvTc9Gi4WpyfvMGnByndTGfV8f81+731npLJf7dhybqvotLM3hFuDAx1r",
       "knowledge-topology-data.js": "sha384-Mmc+o8ESL7RXiMlXZYbsPkDFEM/zt/YAiL3EUAhykQvQvLnuvSqGiLqHN/o3GEOO",
       "context-lab.js": "sha384-/6qxR1tKLFwvw2kau5iyseJJFzJ1uaJbrlrs3lmyk6+YoE+nZvl6l7cT9N6blFO9",
