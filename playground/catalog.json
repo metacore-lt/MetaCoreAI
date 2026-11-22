@@ -165,16 +165,16 @@
       "experiments-data.js": "sha256:929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d",
       "experiments.json": "sha256:5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5",
       "human-team-fixtures.json": "sha256:ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091",
-      "index.html": "sha256:0a6a26e6f56d7a817cec54f68377a2622715d471a121cc9ff00bf131ae41cf48",
+      "index.html": "sha256:30cf1d203c1ae88b0e82d9ce05c60c90303c840ac28674428d6abd6271636b27",
       "knowledge-route-fixtures.json": "sha256:97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede",
       "knowledge-topology-data.js": "sha256:239a9c9e583f1d85e2ad225ab2dfbdbad971e2c471d450e65988201035546599",
       "knowledge-topology.json": "sha256:d5dcddae9d42d3bb858b87d8683435bbf240a1f8dd638ff0c9b802fd004d85d7",
       "personal-signal-fixture.json": "sha256:22e7adac34d4c4bb702f3812a1a7483544317965507d9306736f5b5eb80398cf",
-      "proof-handoff.js": "sha256:4ed197d2de1b6bec0174da655f615ef9c44283999627ef1900af640cf17106ab",
+      "proof-handoff.js": "sha256:a043a4a4f51e133738adbb71d93b955fc5b6e7d2e0bd95af42a2d605b93a0d88",
       "receipt-handoff-fixture.json": "sha256:7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
     },
     "server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
-    "release_sha256": "sha256:f2f03c9f50e43b5c3b8449332359b395a5cfe4ab5fcc70c7607215fdf7193ddd",
+    "release_sha256": "sha256:daf9e7b36d1eef2501015625a2a25b2580c3a42d99113f7f8679d398c6d01cbe",
     "asset_count": 13
   },
   "browser_subresource_integrity": {
@@ -185,7 +185,7 @@
       "experiments-data.js": "sha384-2/PojdmwvTc9Gi4WpyfvMGnByndTGfV8f81+731npLJf7dhybqvotLM3hFuDAx1r",
       "knowledge-topology-data.js": "sha384-Mmc+o8ESL7RXiMlXZYbsPkDFEM/zt/YAiL3EUAhykQvQvLnuvSqGiLqHN/o3GEOO",
       "context-lab.js": "sha384-/6qxR1tKLFwvw2kau5iyseJJFzJ1uaJbrlrs3lmyk6+YoE+nZvl6l7cT9N6blFO9",
-      "proof-handoff.js": "sha384-sYHPvj5baTPCCBQOmqWcxiI8mogqMJDzCbgY+N7htJIKB3g8cnpOG6lGEPkYwP0g"
+      "proof-handoff.js": "sha384-GaFddwNyY2tMa5aZpczRDEkpo9E9NVKBSnEgrvR9/1Wisp5FBC/CPibHHqDGUyrY"
     },
     "boundary": "BROWSER_LOADED_STATIC_CSS_JS_ONLY_NO_NETWORK_CALL_ADDED"
   },

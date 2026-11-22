@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s), pretty=x=>JSON.stringify(x,null,2);
-let latestReceipt=null, latestHandoff=null;
+let latestReceipt=null, latestHandoff=null, handoffRevision=0;
 
 function sorted(value){
   if(Array.isArray(value)) return value.map(sorted);
@@ -49,16 +49,24 @@ async function buildReceipt(detail){
   };
   return {...body,receipt_sha256:await sha256(canonical(body))};
 }
+function resetHandoff(message){
+  const revision=++handoffRevision;
+  latestHandoff=null;
+  $('#handoff-copy').disabled=true;$('#handoff-download').disabled=true;
+  $('#handoff-json').textContent=pretty({status:'LOCAL_DRAFT_NOT_GENERATED',receipt_sha256:latestReceipt?.receipt_sha256});
+  const st=$('#handoff-status');st.classList.remove('error');st.textContent=message;
+  return revision;
+}
 function renderReceipt(receipt,exp){
-  latestReceipt=receipt; latestHandoff=null;
+  latestReceipt=receipt;
   const panel=$('#artifact-panel'); panel.hidden=false;
   $('#receipt-verdict').textContent=receipt.verdict; $('#receipt-summary').textContent=receiptSummary(exp,receipt); $('#receipt-hash').textContent=receipt.receipt_sha256; $('#receipt-json').textContent=pretty(receipt);
-  $('#receipt-copy').disabled=false;$('#receipt-download').disabled=false;$('#handoff-generate').disabled=false;$('#handoff-copy').disabled=true;$('#handoff-download').disabled=true;$('#handoff-json').textContent=pretty({status:'LOCAL_DRAFT_NOT_GENERATED',receipt_sha256:receipt.receipt_sha256});
-  const st=$('#handoff-status');st.textContent='Receipt ready. Add only the minimum context needed for a technical conversation.';st.classList.remove('error');
+  $('#receipt-copy').disabled=false;$('#receipt-download').disabled=false;$('#handoff-generate').disabled=false;
+  resetHandoff('Receipt ready. Add only the minimum context needed for a technical conversation.');
 }
 function secretLike(text){return /-----BEGIN [A-Z ]*PRIVATE KEY-----|\b(?:ghp|github_pat|sk-[a-z0-9_-]{8,})\b|\b(?:api[_-]?key|password|passwd|secret|access[_-]?token)\s*[:=]\s*\S+/i.test(text)}
 async function generateHandoff(){
-  const st=$('#handoff-status');st.classList.remove('error');
+  const st=$('#handoff-status'), revision=resetHandoff('Preparing local handoff.');
   if(!latestReceipt){st.textContent='Run a guided experiment first.';st.classList.add('error');return}
   const goal=$('#handoff-goal').value.trim(), constraints=$('#handoff-constraints').value.trim(), env=$('#handoff-env').value, next=$('#handoff-next').value, confirmed=$('#handoff-no-secrets').checked;
   if(!goal){st.textContent='Describe the real workflow or goal first.';st.classList.add('error');return}
@@ -73,11 +81,19 @@ async function generateHandoff(){
     boundary:'LOCAL_DRAFT_ONLY_NOT_SUBMITTED_BY_PAGE',
     sharing_note:'Review this draft before sharing. Source/LAB access remains scoped and is never granted by a receipt.'
   };
-  latestHandoff={...body,handoff_sha256:await sha256(canonical(body))};
+  let hash;
+  try{hash=await sha256(canonical(body))}catch{
+    if(revision===handoffRevision){st.textContent='Could not generate local handoff.';st.classList.add('error')}
+    return;
+  }
+  if(revision!==handoffRevision) return;
+  latestHandoff={...body,handoff_sha256:hash};
   $('#handoff-json').textContent=pretty(latestHandoff);$('#handoff-copy').disabled=false;$('#handoff-download').disabled=false;st.textContent=`Local handoff ready. Suggested route: ${contact}`;
 }
 function bindArtifacts(){
-  const st=$('#handoff-status');
+  const st=$('#handoff-status'), changed=()=>{if(latestReceipt)resetHandoff('Generate a handoff from the current fields.')};
+  for(const selector of ['#handoff-goal','#handoff-constraints']) $(selector).addEventListener('input',changed);
+  for(const selector of ['#handoff-env','#handoff-next','#handoff-no-secrets']) $(selector).addEventListener('change',changed);
   $('#receipt-copy').onclick=()=>latestReceipt&&copyValue(pretty(latestReceipt)+'\n',st);
   $('#receipt-download').onclick=()=>latestReceipt&&downloadJSON(artifactName('metacore-delta-receipt',latestReceipt.experiment_id),latestReceipt);
   $('#handoff-generate').onclick=()=>generateHandoff().catch(()=>{st.textContent='Could not generate local handoff.';st.classList.add('error')});
