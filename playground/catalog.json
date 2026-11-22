@@ -165,7 +165,7 @@
       "experiments-data.js": "sha256:929bbfa2d19dea75fbbb19f02822515ca6c5c8ebad670ba1f8706e02a1443d5d",
       "experiments.json": "sha256:5b7b32ee4ec61cf2bf622680a647db8bc6294ba0aa5a64971be60544c738d8c5",
       "human-team-fixtures.json": "sha256:ff1c45e51dd933c04790e6acd23ff445346f716960efb9fdc6672278bcd97091",
-      "index.html": "sha256:a9fcf816f2a45af7447faee359dfde44b2e98af3d24a43b7ff488058710a9b0e",
+      "index.html": "sha256:3cef3083c48043e767711dabeb161ecfcfb04094cc83d23e7874c123ee24b202",
       "knowledge-route-fixtures.json": "sha256:97349f50f212493be21ef4cf4f72ec56291b27278b4498bb9a91707a0115eede",
       "knowledge-topology-data.js": "sha256:239a9c9e583f1d85e2ad225ab2dfbdbad971e2c471d450e65988201035546599",
       "knowledge-topology.json": "sha256:d5dcddae9d42d3bb858b87d8683435bbf240a1f8dd638ff0c9b802fd004d85d7",
@@ -174,7 +174,7 @@
       "receipt-handoff-fixture.json": "sha256:7e388b8a8873c2a21ad5ef95903f7542112794a00b6a8a71d718ab61be85aac7"
     },
     "server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
-    "release_sha256": "sha256:d7afee6b3f784d25608a04e6fe6fd333d262795523b70db5f5a9a2937a5afc32",
+    "release_sha256": "sha256:02264feef18fd7e5fc1234f4341fc7d17c03fe2ae9ae7b860c19ac4a23df6ec4",
     "asset_count": 13
   },
   "browser_subresource_integrity": {
