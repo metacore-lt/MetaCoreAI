@@ -3,9 +3,9 @@
   "publisher_policy_version": "3.11.0-sri-remote-parity",
   "source_class": "CURATED_PUBLIC_ARTIFACTS_ONLY",
   "private_implementation_included": false,
-  "content_set_sha256": "d4d93110ee682f803036e420b2b5983e768ad711b4ec46fbcd79e41a352e404a",
-  "release_id": "sha256:d4d93110ee682f803036e420b2b5983e768ad711b4ec46fbcd79e41a352e404a",
-  "generated_at": "2026-11-22T07:17:11.288821+00:00",
+  "content_set_sha256": "790cdb51876cd7941d29cb68fbad1ae37777dae7c91a8aa7128d141067b3e540",
+  "release_id": "sha256:790cdb51876cd7941d29cb68fbad1ae37777dae7c91a8aa7128d141067b3e540",
+  "generated_at": "2026-11-22T08:20:08.719201+00:00",
   "file_count": 88,
   "files": [
     {
@@ -136,7 +136,7 @@
     {
       "path": "delta_manifest.json",
       "bytes": 5434,
-      "sha256": "b103fdd8cdc2f0cc3cecea6d0dcad09242851f8b45e976216bcbe13a37857a0f"
+      "sha256": "ac5bc903c9b3b12a2ec47cbb0472df4100220041cd1b923dffd56a6405e65532"
     },
     {
       "path": "engagement/CONTACT_ROUTES.json",
@@ -256,7 +256,7 @@
     {
       "path": "playground/catalog.json",
       "bytes": 10136,
-      "sha256": "a389e38e84dff37c894a51d40ff468f7baf0b3d2ffeff49c6dbb5e1e30362fb0"
+      "sha256": "2e22ffbbafc661cbbc5ebf0945c03deb2d18ac4136a40849ac4a4cd5aa20dedb"
     },
     {
       "path": "playground/context-lab.css",
@@ -290,8 +290,8 @@
     },
     {
       "path": "playground/index.html",
-      "bytes": 30055,
-      "sha256": "30cf1d203c1ae88b0e82d9ce05c60c90303c840ac28674428d6abd6271636b27"
+      "bytes": 30386,
+      "sha256": "a9fcf816f2a45af7447faee359dfde44b2e98af3d24a43b7ff488058710a9b0e"
     },
     {
       "path": "playground/knowledge-route-fixtures.json",
