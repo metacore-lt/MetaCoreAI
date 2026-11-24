@@ -87,7 +87,7 @@
     "cookies_forced_off": true,
     "cache_policy": "HTML/JSON 60s revalidate; JS/CSS 300s revalidate"
   },
-  "context_lab_release_sha256": "sha256:02264feef18fd7e5fc1234f4341fc7d17c03fe2ae9ae7b860c19ac4a23df6ec4",
+  "context_lab_release_sha256": "sha256:28197ca7bd4f8eaa6aac3d816ccce56fda9c69ec3a0522996cbbdf5ca530b63d",
   "context_lab_server_policy_sha256": "sha256:9838008a4e8a5b0bfa23461131c6312a52fd67c0679fac8f1a4d7add956b92b9",
   "context_lab_release_asset_count": 13,
   "spatial_state_delta_preset": "STATE_DELTA_BROWSER_LOCAL_NO_GEOMETRY_NO_SOLVER",
